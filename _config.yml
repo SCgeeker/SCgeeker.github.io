@@ -1,14 +1,13 @@
 # Site settings
-title: Your awesome title
-email: your-email@domain.com
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+title: Sau-Chin Chen
+email: pmsp96@gmail.com
+description: > # this means to ignore newlines until "baseurl:" Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+  This website is hosted by Sau-Chin Chen. You can check the source codes
+  at my github page.
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://yourdomain.com" # the base hostname & protocol for your site
-twitter_username: jekyllrb
-github_username:  jekyll
+url: "http://scchen.com" # the base hostname & protocol for your site
+#twitter_username: jekyllrb
+github_username: SCgeeker
 
 # Build settings
 markdown: kramdown

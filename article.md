@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Item 2
-permalink: /miscellany/item-2/
+title: Article
+permalink: /article/
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc blandit mattis nulla eu cursus. Fusce finibus, orci sit amet tincidunt fermentum, risus ante pharetra nisi, eget tempus tellus tellus ut est. Nunc tempus cursus arcu mattis ultricies. Cras volutpat purus et lectus facilisis tempor. Suspendisse at lorem feugiat, feugiat massa vel, scelerisque dolor. Proin justo nisl, mattis eu sapien in, efficitur fringilla nulla. Phasellus placerat, lacus in venenatis tristique, risus dolor eleifend felis, vitae finibus augue nibh ut libero. Morbi sit amet tincidunt lorem.
@@ -13,4 +13,3 @@ Fusce non eleifend quam. In leo quam, vestibulum vel vulputate a, hendrerit non 
 Nullam libero nunc, rutrum vitae tellus ut, pretium sollicitudin sapien. In auctor ipsum sed orci aliquam, eget malesuada velit auctor. Nulla vel maximus ligula, vel molestie odio. Vivamus ac lorem quis libero dictum blandit. Fusce tincidunt justo quis lorem sollicitudin, sed rhoncus nibh facilisis. Morbi vitae congue nunc. Praesent a enim rhoncus, malesuada urna ac, accumsan ex. Fusce ornare porta ipsum id iaculis. Phasellus consectetur nisl vitae est pretium, at ultrices mauris placerat. Duis pellentesque mauris sapien, sed tristique ante auctor vel. Vivamus at sodales metus, eget malesuada eros.
 
 Nunc quis venenatis nunc. Nunc nec libero non quam suscipit placerat. Pellentesque lobortis sagittis arcu at euismod. Phasellus odio nisl, mattis sed sagittis semper, aliquet id sem. Quisque iaculis nisl urna, ac accumsan elit commodo vel. Proin sagittis eleifend sollicitudin. Sed libero lorem, tempus eget turpis id, aliquet commodo augue. Proin diam dolor, rutrum et magna at, semper rutrum sapien.
-
