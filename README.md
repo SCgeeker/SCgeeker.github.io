@@ -1,14 +1,16 @@
-Steve's No-Good-Very-Bad Jekyll Theme
-=====================================
+# Sau-chin Chen's personal website
 
-This is Jekyll theme created by Steve Miller, which is basically [Joel Glovier](http://joelglovier.com/)'s `jekyll-new` theme smashed with [Alex King](http://www.alexking.org)'s [Favepersonal](https://crowdfavorite.com/favepersonal/) theme for Wordpress. Steve used Favepersonal for his Wordpress site before abandoning it. User can see Steve's site at [svmiller.github.io](http://svmiller.github.io).
+Copyright 2016
+Sau-Chin Chen <pmsp96@gmail.com>
 
-Much of what is contained in here is derivative of those two works. That said, do observe the `embedpdf.html` and `image.html` files in the `_includes` directory. `embedpdf.html` uses Google Docs to allow for embedding of PDF files hosted on Dropbox. `image.html` provides fancier images than what is standard for Markdown. An example use of `embedpdf.html` can be observed in the `cv.md` file. An example use of `image.html` can be observed in the `about.md` file.
+## About
 
-Steve-ngvb uses data-driven navigation, which user can see in the `menu.yml` file in the `_data` directory. There's also a `nav.html` file in the `_includes` directory with modified `header.html`.
+This repository contains the source for my website. Private repository is at [bitbucket](https://bitbucket.org/). Public repository is at [Github](https://github.com/).
 
-Mobile support is clearly functional, though some white-spacing could be improved. Feel free to offer improvements if user has the idea.
+## Where is the content?
 
-`css` and `_sass` directories also functional, if a bit cluttered. Do observe new colors I created for `$clemson-orange` and `$clemson-purple` in `css/main.scss`.
+The `master` branch contains the last version. The content is stored in git branches, each of which corresponds to one particular version of the website site. For example, to view the original website, switch to the `gh-pages` branch.
 
-Feel free to contact the theme author at svmille@clemson.edu. Send along some cheers too if you find it useful.
+## License information
+
+<a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Sau-chin Chen's personal website</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://osdoc.cogsci.nl" property="cc:attributionName" rel="cc:attributionURL">Sau-Chin Chen</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported License</a>.<br />
