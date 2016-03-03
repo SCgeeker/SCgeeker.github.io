@@ -1,0 +1,16 @@
+- title: "About"
+  href: "/about/"
+
+- title: "CV"
+  href: "/cv/"
+
+- title: "Article"
+  href: "/article/"
+  subcategories:
+    - subtitle: "Article 1"
+      subhref: "/article/item-1/"
+    - subtitle: "Article 2"
+      subhref: "/article/item-2/"
+
+- title: "Blog"
+  href: "/blog/"
