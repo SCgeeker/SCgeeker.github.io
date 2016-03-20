@@ -7,9 +7,9 @@
 - title: "Article"
   href: "/article/"
   subcategories:
-    - subtitle: "Article 1"
+    - subtitle: "How to build this site"
       subhref: "/article/item-1/"
-    - subtitle: "Article 2"
+    - subtitle: "TBA"
       subhref: "/article/item-2/"
 
 - title: "Blog"
