@@ -9,7 +9,15 @@ This repository contains the source for my website. Private repository is at [bi
 
 ## Where is the content?
 
-The `master` branch contains the last version. The content is stored in git branches, each of which corresponds to one particular version of the website site. For example, to view the original website, switch to the `gh-pages` branch.
+The `master` branch contains the last released version. The content is stored in git branches, each of which corresponds to one particular version of the website site. For example, to view the content under construction, switch to the `gh-pages` branch.
+
+## Structure of this website
+
+* Homepage: root page opened through http://www.scchen.com
+* About: see `about.md`
+* CV: Link to the least CV I upload to academia.edu
+* Article: see markdown files in `article`
+* Blog: Rmarkdown posts have the source files in `_source`. I use this format to write the posts when I have to embed the codes or demonstrate the computations. As present I am using R package `brocks`. The instruction for `brocks` is summarzied in [this post](https://brendanrocks.com/blogging-with-rmarkdown-knitr-jekyll/). Markdown post have the source files in `_posts`. I use this format when there are only text and pictures.
 
 ## License information
 
