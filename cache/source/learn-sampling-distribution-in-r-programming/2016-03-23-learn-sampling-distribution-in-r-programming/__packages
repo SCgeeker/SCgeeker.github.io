@@ -1,0 +1,13 @@
+base
+datasets
+utils
+grDevices
+graphics
+stats
+knitr
+magrittr
+dplyr
+ggplot2
+xtable
+data.table
+rCharts
