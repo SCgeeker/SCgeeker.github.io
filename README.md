@@ -20,7 +20,12 @@ The `master` branch contains the last released version. The content is stored in
 * Blog: Rmarkdown posts have the source files in `_source`. I use this format to write the posts when I have to embed the codes or demonstrate the computations. As present I am using R package `brocks`. The instruction for `brocks` is summarzied in [this post](https://brendanrocks.com/blogging-with-rmarkdown-knitr-jekyll/). Markdown post have the source files in `_posts`. I use this format when there are only text and pictures.
 
 ## Components
-- `data` This folder has `menu.yml` that define the brandnames of menu in the top of website.
+File structure of a jekyll blog is explained in this [official wiki](https://jekyllrb.com/docs/structure/). The following bullets describe the specific files in this theme.
+- `_source` collects all the Rmarkdown files. Only the Rmarkdown files in this folder will be transfered to blog post. Use the function `new_post()` in `brocks` package, the default Rmarkdown for blog post will be created in `_source` folder.
+- `sass` is a CSS extension used by steve-ngvb theme.
+- `figure` collects all the image files conducted by R programming.
+- `images` collects all the image files unrelated to R programming.
+- `menu.yml` in `_data` folder organizes the responsive buttons on the top of this website.
 
 ## License information
 

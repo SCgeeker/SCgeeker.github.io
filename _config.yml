@@ -12,9 +12,15 @@ github_username: SCgeeker
 # Build settings
 ## highlighter: pygments
 markdown: kramdown
-
+## kramdown:
+##  extensions:
+##    - autolink
+##    - footnotes
+##    - smart
+  
 # Other options
 permalink: blog/:year/:month/:title
+#relative_permalinks: false
 job.title: "Assistant Professor"
 excerpt_separator: "<!--more-->"
 

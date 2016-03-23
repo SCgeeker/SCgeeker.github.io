@@ -4,13 +4,13 @@
 - title: "CV"
   href: "/cv/"
 
-- title: "Article"
-  href: "/article/"
-  subcategories:
-    - subtitle: "How to build this site"
-      subhref: "/article/item-1/"
-    - subtitle: "TBA"
-      subhref: "/article/item-2/"
-
 - title: "Blog"
   href: "/blog/"
+
+- title: "Construction"
+  href: "/construction/"
+  subcategories:
+    - subtitle: "How to build this site"
+      subhref: "/construction/item-1/"
+    - subtitle: "TBA"
+      subhref: "/construction/item-2/"
