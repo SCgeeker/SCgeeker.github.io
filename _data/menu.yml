@@ -4,13 +4,13 @@
 - title: "CV"
   href: "/cv/"
 
-- title: "Article"
-  href: "/article/"
-  subcategories:
-    - subtitle: "Article 1"
-      subhref: "/article/item-1/"
-    - subtitle: "Article 2"
-      subhref: "/article/item-2/"
-
 - title: "Blog"
   href: "/blog/"
+
+- title: "Construction"
+  href: "/construction/"
+  subcategories:
+    - subtitle: "How to build this site"
+      subhref: "/construction/item-1/"
+    - subtitle: "How to post in use of Rmarkdown"
+      subhref: "/construction/item-2/"

@@ -1,9 +1,7 @@
 ---
-layout: post
-title:  Build blog post in Rstudio
-date: 2016-03-10
-published: true
-tags: [R, blog, Rstudio, Rmarkdown]
+layout: page
+title: How to build this site
+permalink: /construction/item-1/
 ---
 
 ## Requirement
@@ -32,12 +30,26 @@ tags: [R, blog, Rstudio, Rmarkdown]
 - Always run `jekyll serve` in `command line` when test personal blog/websit locally out of Rstudio.
 
 ## Initialize local repository
-- Clone or download a [jekyll theme](http://jekyllthemes.org/) 
-- Build folder `_source`; Gather .Rmd files for posters in this folder.
-- install R packages as following(from [Brendan Rocks' blog](https://brendanrocks.com/blogging-with-rmarkdown-knitr-jekyll/)):  
+- Clone or download a [jekyll theme](http://jekyllthemes.org/) you like.
+- Build folder `_source` for .Rmd files.
+- Install R packages as following steps(from [Brendan Rocks' blog](https://brendanrocks.com/blogging-with-rmarkdown-knitr-jekyll/)):  
 
         install.packages(c("knitr", "servr", "devtools"))     # To process .Rmd files  
         devtools::install_github("hadley/lubridate")         # brocks reqs dev version  
         devtools::install_github("brendan-r/brocks")         # My lazy wrapper funs
   
-- 
+- Build a R project for the website in Rstudio. Such as `scchencom.Rproj`.
+- Open R project and fire the post as following stets:
+
+        library(brocks)
+        new_post("My first blog post!")
+
+- Check the website at localhost:4000. Run this command `jekyll serve` in the directory of the website.
+
+## Publish the website on github
+- Register a Github account.
+- Build a github repo in the name `my_github_account.github.io`.
+- Clone the github repo to your local repo.
+- Commit everything in your local repo.
+- Pull and check `my_github_account.github.io` in the web borwser.
+- If you need a customized domain for your website, visit a DNS service you prefer and check this [github help page](https://help.github.com/articles/quick-start-setting-up-a-custom-domain/).
