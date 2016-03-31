@@ -4,7 +4,7 @@ title: Blog
 permalink: /blog/
 ---
 
-Tell us about your blog. Hopefully it's cool.
+Release the stuff deserved to share and to be commented.
 
 <ul class="listing">
 {% for post in site.posts %}
