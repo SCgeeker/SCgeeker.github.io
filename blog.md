@@ -4,11 +4,7 @@ title: Blog
 permalink: /blog/
 ---
 
-<<<<<<< HEAD
-My dynamic writing works.
-=======
-Release the stuff deserved to share and to be commented.
->>>>>>> V0.1.0
+### Release the stuff deserved to share and to be commented.
 
 <ul class="listing">
 {% for post in site.posts %}
