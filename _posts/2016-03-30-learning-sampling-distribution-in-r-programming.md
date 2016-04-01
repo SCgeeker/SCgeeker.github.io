@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Learning Sampling Distribution in R Programming
-date: 2016-03-31
+date: 2016-03-30
 categories: R programming, statistics
 ---
 
@@ -41,14 +41,14 @@ ggplot(Dist.df, aes(Sample_Means, fill = Size)) + geom_histogram() + facet_grid(
 
 ![plot of chunk Sampling](/figure/source/learning-sampling-distribution-in-r-programming/2016-03-30-learning-sampling-distribution-in-r-programming/Sampling-1.png)
 
-We call the set of observations 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 **population** in any circumstance we conduct this experiment. This population has the average 5.5 and the variance/standard deviation 8.25/2.8722813. With the increase of sample size, you find more and more samples collapsed to the average of population. The variation of each sample distribution decreases with the increasing of sample size as well. The following table illustrate the variance/standard deviation of each sampling distribution.  
+We call the set of observations 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 **population** in any circumstance we conduct this experiment. This population has the average 5.5 and the variance/standard deviation 8.25/2.87. With the increase of sample size, you find more and more samples collapsed to the average of population. The variation of each sample distribution decreases with the increasing of sample size as well. The following table illustrate the average and variance/standard deviation of each sampling distribution.  
 
-| Sample Size | Variance | Standard Deviation|
-|:---:|:---:|:---:|
-| 1 | 7 | 2.65|
-| 9 | 0.97 | 0.98|
-| 16 | 0.54 | 0.73|
-| 25 | 0.38 | 0.61|
-| 36 | 0.2 | 0.45|
+| Sample Size | Average | Variance | Standard Deviation|
+|:---:|:---:|:---:|:---:|
+| 1 |5.64| 7 | 2.65|
+| 9 |5.48| 0.97 | 0.98|
+| 16 |5.42| 0.54 | 0.73|
+| 25 |5.47| 0.38 | 0.61|
+| 36 |5.56| 0.2 | 0.45|
 
-
+There are three findings in this simulation. First, the average of every sample is as equal as the average of population. Second, the variance of every sample is close to the divide of population variance by the sample size. Third, the standard deviation of every sample is close to the divide of population standard deviation by the square of sample size. These facts matches [Central limit theorem](https://en.wikipedia.org/wiki/Central_limit_theorem).
