@@ -2,6 +2,7 @@
 layout: post
 title:  Learning Sampling Distribution in R Programming
 date: 2016-03-30
+comments: true
 categories: R programming, statistics
 ---
 
