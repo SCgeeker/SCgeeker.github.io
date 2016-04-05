@@ -18,7 +18,8 @@ destination: ./_site
 ## highlighter: pygments
 markdown: kramdown
 #markdown_ext: markdown
-##kramdown:
+kramdown:
+  math_engine: mathjax
 ##  extensions:
 ##    - autolink
 ##    - footnotes
