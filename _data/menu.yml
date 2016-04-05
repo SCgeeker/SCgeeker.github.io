@@ -6,6 +6,11 @@
 
 - title: "Blog"
   href: "/blog/"
+  subcategories:
+    - subtitle: "by Date"
+      subhref: "/blog/"
+    - subtitle: "by Category"
+      subhref: "/categories/"
 
 - title: "Construction"
   href: "/construction/"

@@ -3,7 +3,7 @@ layout: post
 title:  Learning Sampling Distribution in R Programming
 date: 2016-03-30
 comments: true
-categories: R programming, statistics
+categories: [R_programming, statistics]
 ---
 
 Sampling distribution is the set of possible outcomes when we collect data through the randomization procedure (random sampling, ramond assignment). Do a simulation work is the best way to understand the sampling distribution. A simulation work is unrelated to any context we collect the data. You can connect the simulation work to any randominzation in the real world.  
