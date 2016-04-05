@@ -1,0 +1,55 @@
+---
+layout: post
+title:  Vectors in mathematics and in codes
+date: `r Sys.Date()`
+categories: [R_programming, statistics]
+---
+When a set of data/observations is imported to R, it is usually treated as `vector`. Vector has two mathematical forms as following:  
+
+**column vector**:  
+$$ \vec{a} = \begin{bmatrix}
+ 1\\
+ 2\\
+ 3\\
+\end{bmatrix} $$  
+**row vector**:  
+$$ \vec{a} = [ 1\ 2\ 3 ] $$
+
+Default form of vector in R is column vector. More precisely, it is treated as a matrix:  
+```{r vector, echo=TRUE, message=FALSE, warning=FALSE}
+a <- 1:3
+a
+class(a)
+str(a)
+```
+
+In a statistical work, we used to calcuate the sum of square (SS) for the deviations to mean. The common equation is like:  
+$$ \sum_{i=1}^{n}(Y_{i}-\overline{Y})^2 $$  
+
+This is the fundemental for calculating the variance of this set of data/observations. The equation of variance is like this:  
+$$ \frac{\sum_{i=1}^{n}(Y_{i}-\overline{Y})^2}{n} $$  
+
+Because the data/observations are treated as matrix, we are able to have the sum of square by the multiplication of this matrix.  
+$$ \mathbf{AA'} = 
+\begin{bmatrix} A_1 A_2 A_3 \dots\end{bmatrix}
+\times
+\begin{bmatrix}
+   A_1 \\
+   A_2 \\
+   A_3 \\
+   \vdots
+\end{bmatrix}　$$　　
+
+Here are ten observations `r 1:10`, the average of this data is `r mean(1:10)`. Let's have the SS and variance in use of the multiplication of matrix:  
+```{r multiplication, echo=TRUE, message=FALSE, warning=FALSE}
+SS <- t(1:10 - mean(1:10)) %*% (1:10 - mean(1:10)) 
+VAR <- SS/length(1:10)
+SS
+VAR
+```
+
+In R `base` package, the function `var` outputs a sampling variance, not a population variance as above.
+```{r base, echo=TRUE, message=FALSE, warning=FALSE}
+var(1:10)
+```
+
