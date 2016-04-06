@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  Vectors in mathematics and in codes
-date: 2016-04-05
-categories: [R_programming, statistics]
+date: 2016-04-06
+categories: [R_programming, statistics, latex]
 ---
 When a set of data/observations is imported to R, it is usually treated as `vector`. Vector has two mathematical forms as following:  
 
@@ -42,6 +42,15 @@ str(a)
 ##  int [1:3] 1 2 3
 ```
 
+```r
+t(a)
+```
+
+```
+##      [,1] [,2] [,3]
+## [1,]    1    2    3
+```
+
 In a statistical work, we used to calcuate the sum of square (SS) for the deviations to mean. The common equation is like:  
 $$ \sum_{i=1}^{n}(Y_{i}-\overline{Y})^2 $$  
 
@@ -49,7 +58,7 @@ This is the fundemental for calculating the variance of this set of data/observa
 $$ \frac{\sum_{i=1}^{n}(Y_{i}-\overline{Y})^2}{n} $$  
 
 Because the data/observations are treated as matrix, we are able to have the sum of square by the multiplication of this matrix.  
-$$ \mathbf{AA'} = 
+$$ \mathbf{A'A} = 
 \begin{bmatrix} A_1 A_2 A_3 \dots\end{bmatrix}
 \times
 \begin{bmatrix}
