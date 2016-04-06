@@ -2,7 +2,7 @@
 layout: post
 title:  Vectors in mathematics and in codes
 date: `r Sys.Date()`
-categories: [R_programming, statistics]
+categories: [R_programming, statistics, latex]
 ---
 When a set of data/observations is imported to R, it is usually treated as `vector`. Vector has two mathematical forms as following:  
 
@@ -21,6 +21,7 @@ a <- 1:3
 a
 class(a)
 str(a)
+t(a)
 ```
 
 In a statistical work, we used to calcuate the sum of square (SS) for the deviations to mean. The common equation is like:  
@@ -30,7 +31,7 @@ This is the fundemental for calculating the variance of this set of data/observa
 $$ \frac{\sum_{i=1}^{n}(Y_{i}-\overline{Y})^2}{n} $$  
 
 Because the data/observations are treated as matrix, we are able to have the sum of square by the multiplication of this matrix.  
-$$ \mathbf{AA'} = 
+$$ \mathbf{A'A} = 
 \begin{bmatrix} A_1 A_2 A_3 \dots\end{bmatrix}
 \times
 \begin{bmatrix}

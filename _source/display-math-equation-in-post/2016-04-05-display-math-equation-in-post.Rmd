@@ -3,7 +3,7 @@ layout: post
 title:  Display Math Equation in Post
 date: `r Sys.Date()`
 published: true
-categories: [statistics]
+categories: [statistics, latex]
 ---
 
 There will be many posts demostrate how to transfer the mathematical laws to the codes, and the reversed flaw. I start from this famous equation:  
