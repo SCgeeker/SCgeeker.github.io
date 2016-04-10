@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Text
-permalink: /text/
+permalink: /Text/
 ---
 
 This section presents **writings without codes** for self review and anyone who is interested in my thought. My English and Chinese writings are organized in two sections for now (2016).  
