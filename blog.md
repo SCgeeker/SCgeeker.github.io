@@ -1,10 +1,10 @@
 ---
 layout: page
-title: Blog
+title: CodeBLO
 permalink: /blog/
 ---
 
-### Release the stuff deserved to share and to be commented.
+### All the post in my blog have R codes, text codes and other codes I am learning. This is why I call my blog CODEBLO (_code blog_).
 
 <ul class="listing">
 {% for post in site.posts %}
