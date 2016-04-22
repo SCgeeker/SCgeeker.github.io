@@ -1,0 +1,26 @@
+---
+layout: post
+title:  Check My Tools to Create and Manipulate Golems
+date: `r Sys.Date()`
+published: true
+categories: [R_programming, Rethinking]
+---
+
+Since two weeks before I published this post, I have started read the book [Statistical Rethinking: A Bayesian Course with Examples in R and Stan](http://xcelab.net/rm/statistical-rethinking/) written by [Richard McElreath](http://xcelab.net/rm/). Richard is the evolutionary anthropologist at Max Planck Institute. He wrote this textbook for the PhD students who will use the Bayesian statistics in their research projects. Compared to the textbooks written by statisians and data scientistst, Richard's book explain and demonstrate the statistical methods with examples instead of equations. His intention is to help who are not staticians but used to use statistics realize one fact: we rely on the statistical models as the representations of our answers rather than answer the questions by the raw data or naked truth. Many non-statisticians are used to find and learn what kind of methods or apps to deal with their data, but few are interested to know the models under the mentods and apps they are using. The trouble and danger is that they thought their jobs are done when the program printed the tables and figures but these outputs are from the statistical model is unable to answer their question. This situation is originated from many non-statisticans consider themselves the end-users of statistical models. Like any user of a packaged software, non-statisticans have no time to understand how the tools in their hands designed and conducted by statisticans.  
+Richard introduced the story of [golem](https://en.wikipedia.org/wiki/Golem) to raise the non-statsiticans' attention to the troubles they had made and will make. A statistical model, like a golem, has the power beyond human to finish the work the human are unable to do, for example, trace the passengers' track from the trillion of camera. Its power could be misused or out of control if we do not understand what is the root of its action. A user of ststistical method, no matter you are or are not stistician, have to keep the awareness of engineer when you are dealing with your data. Today everyone has many easier ways than a decade ago to keep the awareness of engineer. One advantage is that the learning curve for being an part-time hacker is getting smooth. Increasing R apps are opening many windows for who are want to outlook and modify the statistical models.  
+Since this post, every post listed in the category `Rethinking` is one of the summaries and feedbacks to [Statistical Rethinking: A Bayesian Course with Examples in R and Stan](https://www.crcpress.com/Statistical-Rethinking-A-Bayesian-Course-with-Examples-in-R-and-Stan/McElreath/9781482253443). At first I have to check my toolkits for create and manipulate the statistical models. They are R core and the packages. Years ago I have used to use the packages in my data processing. Now I show them for who start to use R after read this post.
+  
+```
+install.packages(c("rpart","chron","Hmisc","Design","Matrix","stringr","lme4","coda","e1071","zipfR","ape","languageR","multcomp","contrast","shiny","ggplot2", "dplyr"))
+```  
+  
+Some of the packages are learned from I participated in [Cousera Data Science](https://www.coursera.org/specializations/jhu-data-science). Now I used to use `dplyr` to process the raw data, and I am learning how to draw the figures I need in use of `ggplot2`. When this post is published, I have updated my R to `r R.Version()$version.string`. Through [the codes of Heuristic Andrew](http://xcelab.net/rm/statistical-rethinking/), here are my installed packages.  
+```{r packages, echo=TRUE, message=FALSE, warning=FALSE}
+ip <- as.data.frame(installed.packages()[,c(1,3:4)])
+rownames(ip) <- NULL
+ip <- ip[is.na(ip$Priority),1:2,drop=FALSE]
+print(ip, row.names=FALSE)
+print(paste0("There are ",dim(ip)[1], " packages installed in my laptop."))
+```
+
+Richard's book inspired me help people control their golems/ststistical models in the process of coding. In his book, literature and codes are separated. Readers who are not familiar with coding skill might hardly follow his literature. Literatural coding might be the best way to impliment the `Rethinking`. I am going to accumulating the codes of Bayesian statistics and thake notes of his and others literatures in the coming posts. 
