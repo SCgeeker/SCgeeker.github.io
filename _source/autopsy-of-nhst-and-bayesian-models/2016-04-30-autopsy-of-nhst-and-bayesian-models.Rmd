@@ -1,0 +1,37 @@
+---
+layout: post
+title:  Autopsy of NHST and Bayesian Models (part 1)
+date: `r Sys.Date()`
+published: true
+tags: [statistics, Bayesian, Rethinking]
+---
+
+Chapter 2 of [Statistical Rethinking: A Bayesian Course with Examples in R and Stan](http://xcelab.net/rm/statistical-rethinking/) introduces a water tossing example for the demonstration how Bayesain model run through the data based on the researcher's hypothesis. This chapter defines a three stage process that are used in the coming chapters. We start from a narrated **Data Story**, then **update** the models by filling data in, and finally **evaluate** all the **upated** models. This literated process shows a clear picture for the learners who have yet stuied statistics before read this book. The readers who have studied statistics, like me, will have a hole in the mind what are the differences between Bayesian methods and the null hypothesis significance testing (NHST) in this process. After read Michael Clark's [Bayesian Basics: A Conceptual Introduction with Application in R and Stan](https://sites.google.com/a/umich.edu/micl/miscfiles/IntroBayes.pdf) on [Stan official site](http://mc-stan.org/documentation/), I require the key to understand the difference between the two golems.  
+  
+The critical difference is which type of **conditional probability** the statistical method is used to evaluate the model. Once we collected the data based on some hypothesis, we have the distribution of hypothesis $$ p(\theta) $$ and the distribution of data $$ p(y) $$. NHST compuates the probability we have the data when the hypothesis is true $$ p(y\|\theta) $$. In practical, $$ p\ value $$ refers to the **conditional probability** of the null hypothesis, and $$ confidence\ interval $$ suggests a range of plausible outcomes based on the **confiditional probability** of the real hypothesis. A Bayesian method compuates the probability the hypothesis is approved based on the data we have $$ p(\theta\|y) $$. Because the computation of $$ p(\theta\|y) $$ needs the likelihood $$ p(y\|\theta) $$ and the priori $$ p(\theta) $$, of course a Baysian method cost more steps than NHST.  
+  
+$$ \theta $$ has a term **parameter** in many statstical textbooks. It is a space of numbers that provides the axis where the above probability distribution sit on. **Likelihood** is the **sampling distribution** we have to update before we run NHST. As like I show in [Learning Sampling Distribution in R Programming](/blog/2016/03/learning-sampling-distribution-in-r-programming.html), a sampling distribution will approach one $$ \theta $$ with the increasing sample size. Sample size is the key for NHST because it could change the evaluation criteron on the statistical model.   
+  
+Here is a pseudo experiment I want to know if a test is success based on the expect value smaller than 5 (Obersvations are `r 1:10`). I completed an experiment of 25 observations and an experiment 36 observations. In use of NHST with a critical value (p < .05), the criterion change with the sample size. The simulation 
+
+```{r Comparison, echo=TRUE, message=FALSE, warning=FALSE}
+set.seed(1)
+OBV <- 1:10
+Dist25 <- NULL
+Dist36 <- NULL
+count = 100
+while(count > 0){Dist25 <- c(Dist25,mean(sample(OBV, 25,replace = TRUE) ) ); count <- count - 1}
+Dist25_Density <- data.frame(Theta = density(Dist25, kernel = "gaussian")$x, Density = density(Dist25, kernel = "gaussian")$y)
+CL25 <- max(Dist25_Density$Theta[Dist25_Density$Theta < 5 & Dist25_Density$Density < .05])
+print(CL25)  ## The smallest parameter that could make judgement
+
+count = 100
+while(count > 0){Dist36 <- c(Dist36,mean(sample(OBV, 36,replace = TRUE) ) ); count <- count - 1}
+Dist36_Density <- data.frame(Theta = density(Dist36, kernel = "gaussian")$x, Density = density(Dist36, kernel = "gaussian")$y)
+CL36 <- max(Dist36_Density$Theta[Dist36_Density$Theta < 5 & Dist36_Density$Density < .05])
+print(CL36)  ## The smallest parameter that could make judgement
+```
+
+When this experiment outputs a avarage value between 4.15 and 4.42, would you like to collect the data more than 36 participants? This is the opportunity many researchers have to struggle in their study. Researchers who are educated as like me used to collect the observation till the *p value* is smaller than .05. Most researchers used to stop the experiment till the 36th participant finished the experiment. However, this treatment lacks of the serious scientific thinking. If the hypothesis has set up the conditions to have the average, the sample size should be appointed before the start of experiment.  
+  
+The appointment of sample size could be loose when the possible average is uncertain. When the experiment is conducted at first time in the world, NHST without the appointment of sample size could draw the range of averages that might obey the hypothesis. On the other hand, the following studies better has the appointment of sample size. In this case, NHST has to accompany the other statistical evaluation, such as power, effect size, to find the appropriate sample size. Therefore, NHST will perform well when the researcher conducted the first study or have the preparation as well as the first study. This will be the key in my autopsy of Bayesian method.  
