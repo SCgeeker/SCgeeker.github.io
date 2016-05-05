@@ -7,6 +7,7 @@ permalink: /Text/
 This section presents **writings without codes** for self review and anyone who is interested in my thought. My past Chinese wrirings, before 2016, are tranfered to markdown file and releaed here. Since 2016, all my writings, English and Chinese, are going to be written in markdown format. You will see the source of every article in the [github repo](https://github.com/SCgeeker/SCgeeker.github.io/tree/blog/Text).  
 
 ## 2016
+- [Donders 與 de Groot：兩位荷蘭心理學者代表的時代精神](/Text/text_2016002/)
 - [啟動你對促發實驗的認識](/Text/text_2016001/)  
   
 ## 2015
