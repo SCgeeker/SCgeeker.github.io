@@ -1,3 +1,10 @@
+---
+layout: post
+title:  Why we need a readable data table in behavioral scientific research?
+date: 2016-05-31
+published: true
+categories: [Rethinking, statistics]
+---
 ### A bad case
 
 A few days ago I was dealing with a raw data set as like the following table.
@@ -39,18 +46,18 @@ To make the table readable for the computer, I have to modify the format of this
 
 ```r
 Table <- read.csv("data.csv")
-New_Table = data.frame(ID = rep(Table[,1],6), Group = rep(Table[,2],6), Item = rep(names(Table[,3:8]), each = 6), Resp = unlist(c(Table[,3:8])))
+New_Table = data.frame(ID = rep(Table[,1],6), Group = rep(Table[,2],6), Item = rep(names(Table[,3:8]), each = 6), Resp = unlist(c(Table[,3:8])), row.names = NULL)
 head(New_Table)
 ```
 
 ```
-##       ID Group Item Resp
-## I011 s01     A  I01    3
-## I012 s02     A  I01    2
-## I013 s03     A  I01    4
-## I014 s04     B  I01    2
-## I015 s05     B  I01    2
-## I016 s06     B  I01    2
+##    ID Group Item Resp
+## 1 s01     A  I01    3
+## 2 s02     A  I01    2
+## 3 s03     A  I01    4
+## 4 s04     B  I01    2
+## 5 s05     B  I01    2
+## 6 s06     B  I01    2
 ```
 
 

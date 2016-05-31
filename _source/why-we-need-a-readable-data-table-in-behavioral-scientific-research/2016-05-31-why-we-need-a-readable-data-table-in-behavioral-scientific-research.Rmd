@@ -36,7 +36,7 @@ To make the table readable for the computer, I have to modify the format of this
 
 ```{r new_table, message=FALSE, warning=FALSE, results='hold'}
 Table <- read.csv("data.csv")
-New_Table = data.frame(ID = rep(Table[,1],6), Group = rep(Table[,2],6), Item = rep(names(Table[,3:8]), each = 6), Resp = unlist(c(Table[,3:8])))
+New_Table = data.frame(ID = rep(Table[,1],6), Group = rep(Table[,2],6), Item = rep(names(Table[,3:8]), each = 6), Resp = unlist(c(Table[,3:8])), row.names = NULL)
 head(New_Table)
 ```
 
