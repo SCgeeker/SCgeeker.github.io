@@ -7,7 +7,7 @@ permalink: /Text/
 This section presents **writings without codes** for self review and anyone who is interested in my thought. My past Chinese wrirings, before 2016, are tranfered to markdown file and releaed here. Since 2016, all my writings, English and Chinese, are going to be written in markdown format. You will see the source of every article in the [github repo](https://github.com/SCgeeker/SCgeeker.github.io/tree/blog/Text).  
 
 ## 2016
-- [纪錄已經出現與即將出現的再現危機(持續更新)](/Text/text_2016004/)
+- [纪錄已經出現與即將出現的再現危機~2016版](/Text/text_2016004/)
 - [荷蘭科研補助機構推動提昇科研品質的五年計劃（一）：訊息整理](/Text/text_2016003/)
 - [Donders 與 de Groot：兩位荷蘭心理學者代表的時代精神](/Text/text_2016002/)
 - [啟動你對促發實驗的認識](/Text/text_2016001/)  
