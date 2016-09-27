@@ -5,9 +5,11 @@ permalink: /Text/
 ---
 
 This section collects **writings without codes** for self review and anyone who is interested in my thought. My past Chinese wrirings, before 2016, are tranfered to markdown file and releaed here. Since 2016, all my writings, English and Chinese, are going to be written in markdown format. You will see the source of every article in the [github repo](https://github.com/SCgeeker/SCgeeker.github.io/tree/blog/Text).  
-The slides for open talk are stored here since October, 2016.  
+*The slides for open talk are stored here since October, 2016.*  
 
 ## 2016
+- [註冊研究如何去除有害研究品質的因素~TPA2016簡報](/Text/TPA2016_REP.html)  
+        * [簡報原始碼](/Text/CSC_RR.Rmd)
 - [纪錄已經出現與即將出現的再現危機~2016版](/Text/text_2016004/)
 - [荷蘭科研補助機構推動提昇科研品質的五年計劃（一）：訊息整理](/Text/text_2016003/)
 - [Donders 與 de Groot：兩位荷蘭心理學者代表的時代精神](/Text/text_2016002/)
