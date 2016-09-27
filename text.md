@@ -4,7 +4,8 @@ title: Text
 permalink: /Text/
 ---
 
-This section presents **writings without codes** for self review and anyone who is interested in my thought. My past Chinese wrirings, before 2016, are tranfered to markdown file and releaed here. Since 2016, all my writings, English and Chinese, are going to be written in markdown format. You will see the source of every article in the [github repo](https://github.com/SCgeeker/SCgeeker.github.io/tree/blog/Text).  
+This section collects **writings without codes** for self review and anyone who is interested in my thought. My past Chinese wrirings, before 2016, are tranfered to markdown file and releaed here. Since 2016, all my writings, English and Chinese, are going to be written in markdown format. You will see the source of every article in the [github repo](https://github.com/SCgeeker/SCgeeker.github.io/tree/blog/Text).  
+The slides for open talk are stored here since October, 2016.  
 
 ## 2016
 - [纪錄已經出現與即將出現的再現危機~2016版](/Text/text_2016004/)
