@@ -233,8 +233,8 @@ Am I conducting a Confirmatory Research?
 
 RR workflow
 ========================================================
-<img src="20140102-2.jpg" alt="RR workflow" style="width: 1400px;"/>  
-<small>Chambers, Feredoes, Muthukumaraswamy, and Etchells (2014) Figure 2</small>
+<img src="401-2791-1-PB.jpg" alt="RR workflow" style="width: 1400px;"/>  
+<small>King, M., Dablander, F., Jakob, L., Agan, M., Huber, F., Haslbeck, J., & Brecht, K. (2016). Registered Reports for Student Research. Journal of European Psychology Students, 7. doi:10.5334/jeps.401</small>
 
 Why Sciences being Good?
 ========================================================
@@ -291,6 +291,7 @@ incremental: true
     - Are we struggling in Neyman's view?
 - More writings
 - Fears to open
+- Authority worship
 
 Suggestions
 ========================================================
