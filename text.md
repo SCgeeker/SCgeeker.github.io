@@ -8,7 +8,7 @@ This section collects **writings without codes** for self review and anyone who 
 *The slides for open talk are stored here since October, 2016.*  
 
 ## 2016
-- [JASP~操作像SPSS的開源程序可重製統計軟體](/Text/text_2016007/)
+- [JASP~操作像SPSS的程序可重製統計開源軟體](/Text/text_2016007/)
 - [擺姿勢也許能增加你的自信，但是不能真正改變你](/Text/text_2016005/)
 - [註冊研究如何去除有害研究品質的因素~TPA2016簡報](/Text/TPA2016_REP.html)  
         * [簡報原始碼](/Text/CSC_RR.Rmd)
