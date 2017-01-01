@@ -7,6 +7,9 @@ permalink: /Text/
 This section collects **writings without codes** for self review and anyone who is interested in my thought. My past Chinese wrirings, before 2016, are tranfered to markdown file and releaed here. Since 2016, all my writings, English and Chinese, are going to be written in markdown format. You will see the source of every article in the [github repo](https://github.com/SCgeeker/SCgeeker.github.io/tree/blog/Text).  
 *The slides for open talk are stored here since October, 2016.*  
 
+## 2017
+- [開放科學在荷蘭](/Text/text_2016006/)
+
 ## 2016
 - [JASP~操作像SPSS的程序可重製統計開源軟體](/Text/text_2016007/)
 - [擺姿勢也許能增加你的自信，但是不能真正改變你](/Text/text_2016005/)
