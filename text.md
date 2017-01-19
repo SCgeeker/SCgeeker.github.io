@@ -8,6 +8,7 @@ This section collects **writings without codes** for self review and anyone who 
 *The slides for open talk are stored here since October, 2016.*  
 
 ## 2017
+- [影片介紹：科學家之路](/Text/text_2017001/)
 - [開放科學在荷蘭](/Text/text_2016006/)
 
 ## 2016
