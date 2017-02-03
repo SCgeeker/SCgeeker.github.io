@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>演進中的科學研究方法(3/4) - 假設檢定能衡量研究結果的價值嗎？</title>
+  <meta name="description" content="This website is hosted by Sau-Chin Chen. You can check the source codes at my github page.
+">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://scchen.com/Text/text_20140805/">
+  <link rel="alternate" type="application/rss+xml" title="Sau-Chin Chen" href="http://scchen.com/feed.xml" />
+<link rel='stylesheet' id='open-sans-css'  href='//fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&#038;subset=latin%2Clatin-ext&#038;ver=4.2.4' type='text/css' media='all' />
+<link href='http://fonts.googleapis.com/css?family=Titillium+Web:600italic,600,400,400italic' rel='stylesheet' type='text/css'>
+
+
+
+
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">Sau-Chin Chen</a>
+
+
+    <nav class="site-nav">
+
+      <a href="#" class="menu-icon menu.open">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>  
+
+    <div class="trigger"><h1>Main Navigation</h1>
+
+ <ul class="menu">
+
+    
+    
+     <li><a href="/about/" class="page-link">About</a>
+    
+    </li>
+    
+    
+     <li><a href="/cv/" class="page-link">CV</a>
+    
+    </li>
+    
+    
+    <li><a href="/blog/" class="page-link">CodeBLO</a>
+    <ul class="sub-menu">
+    
+    <li><a href="/blog/">by Date</a></li>
+    
+    <li><a href="/categories/">by Category</a></li>
+    
+    </ul>
+    
+    </li>
+    
+    
+     <li><a href="/Text/" class="page-link">Text</a>
+    
+    </li>
+    
+    
+    <li><a href="/construction/" class="page-link">Construction</a>
+    <ul class="sub-menu">
+    
+    <li><a href="/construction/item-1/">How to build this site</a></li>
+    
+    <li><a href="/construction/item-2/">How to post in use of Rmarkdown</a></li>
+    
+    <li><a href="/construction/item-3/">Update R and reserve management</a></li>
+    
+    </ul>
+    
+    </li>
+    
+    </ul>
+
+
+<!-- <ul class="menu">
+        <li> <a class="page-link" href="/about">About</a></li>
+        <li> <a class="page-link"  href="/blog">Blog</a>
+        <li> <a class="page-link" href="/blog">CV</a>
+        <li> <a class="page-link" href="/blog">For Students</a></li>
+        <li> <a class="page-link"  href="/blog">Research</a></a>
+        <li> <a class="page-link" href="/blog">Teaching</a>
+<ul class="sub-menu">
+	<li><a href="http://svmiller.com/teaching/posc-1020-introduction-to-international-relations/">POSC 1020 – Introduction to International Relations</a></li>
+	<li><a href="http://svmiller.com/teaching/posc-3410-quantitative-methods-in-political-science/">POSC 3410 – Quantitative Methods in Political Science</a></li>
+	<li><a href="http://svmiller.com/teaching/posc-3610-international-politics-in-crisis/">POSC 3610 – International Politics in Crisis</a></li>
+	<li><a href="http://svmiller.com/teaching/posc-3630-united-states-foreign-policy/">POSC 3630 – United States Foreign Policy</a></li>
+</ul></li>
+        <li> <a class="page-link" href="/blog">Miscellany</a>
+<ul class="sub-menu">
+	<li><a href="http://svmiller.com/teaching/posc-1020-introduction-to-international-relations/">Clean USAID Greenbook Data</a></li>
+	<li><a href="http://svmiller.com/teaching/posc-3410-quantitative-methods-in-political-science/">Journal of Peace Research *.bst File</a></li>
+	<li><a href="http://svmiller.com/teaching/posc-3610-international-politics-in-crisis/">My Custom Beamer Style</a></li>
+</ul> 
+
+</li>
+</ul> -->
+
+     </div>  
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">演進中的科學研究方法(3/4) - 假設檢定能衡量研究結果的價值嗎？</h1>
+  </header>
+
+  <article class="post-content">
+    <p>這一篇要談談證偽邏輯在心理科學研究未充分思考的情況，特別是運用假設檢定評估資料有沒有意義所造成的問題。了解什麼是<a href="https://docs.google.com/document/d/1-DiJ_X32GyERzqFLJHEEx86W0qF0VLaJNXX9wsv9yk4/edit?usp=sharing">特設假設</a>，就能理解證偽邏輯的思考模式：排除所有可以解釋原因的特設假設之後，剩下的就是最有解釋力的理論。特設假設是因果關係的概念推論，設定者儘可能列舉各種特設假設會成立的證據要件，讓統計訊息顯現可以排除的特設假設。以證據為本的實驗科學家，任務是確認手上的資料是否符合特設假設的條件，如果符合，就不能以設定為真的理論解釋原因；如果不符合，才能接受設定為真的理論。假設檢定就是完成判斷任務的統計工具，抱著這個認識，來談談運用工具的問題意識如何產生可靠的知識、錯誤的知識和無法帶來啟發的知識等困境。</p>
+
+<h3 id="section">一、不虛無的虛無假設</h3>
+
+<p>不論你的假設檢定學得好或不好，必定記得最後步驟要根據得到的p值，判斷研究資料是不是符合假設的預期。還有一種情況是因為有完程課程要求而收集資料，並且要進行統計檢定撰寫報告，得到的p值越小似乎代表自己做的研究越成功。不過現在了解特設假設的意義，可知虛無假設就是一種特設假設，p值表示不接受虛無假設但結論錯誤的機率。嚴格來說真正的研究假設是不是成立並不能依據p值的大小判斷，除非研究設計讓研究假設與唯一的特設假設相互對決。然而一個研究主題已經進展到公認只有一種假設能解釋因果關係，通常是有多重虛無假設(或特設假設)要逐步排除。這也是為何許多實驗研究報告不會只有一個實驗，也是心理科學的學習與規劃研究的最大難關。</p>
+
+<p>藉著分析一個語言演化理論的筆戰案例，我在此試著呈現設定研究假設與特設假設對決的複雜性。Hauser,Chomsky與Fitch發表在2002年的「自然」期刊，提出遞迴(recursion)是人類語言獨有成份的假設與支持假設的證據。遞迴是程式設計中常見的名詞，指一道編程(program)輸出的結果自動成為下一步計算的輸入，人類語言中有此結構的認知機制僅限於發語習得，語法(syntax)，及特化的語義概念等認知結構適用遞迴運作的機制。Hauser等人將這些設定為狹義語言機關(Faculty of Language Narrow, FLN)，只屬人類獨有。其它也是構成人類語言的認知機制，例如語音辦識與詞彙知識，與非語言的心理功能有相同的演化來源，而且是包括人類在內的靈長類動物都能觀察到的認知能力。Hauser等人將這部分稱為廣義語言機關(Faculty of Language Broad, FLB)，整理支持兩種機關相互獨立的各種證據，大致如下表所示。</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">語言的心智機關</th>
+      <th style="text-align: center">FLB ~ 靈長類皆具備</th>
+      <th style="text-align: center">FLN ~ 只有人類具備</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><strong>推論</strong></td>
+      <td style="text-align: center">與非語言的心理功能共用的工作成份</td>
+      <td style="text-align: center">遞迴計算</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>證據</strong></td>
+      <td style="text-align: center">廣義概念、語音辨識</td>
+      <td style="text-align: center">語言特化概念、發語習得、語法</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>如此的區分使心理學者與語言學者可以透過非人類的靈長類動物為研究對象，測試是否有屬於FLB的能力，以及是否沒有屬於FLN的能力。如果研究的是FLB的能力，特設假設就是此能力並非研究對象所有；反之，如果研究的是FLN的能力，特設假設是研究對象能掌握此類能力。這一套證偽邏輯的推理，是Pinker與Jackendoff發表在2005年「認知」期刊的文章批判重點，因為每種能力的各項證據都不足以支持兩種機關之間的區別，他們花了許多篇幅說明每個主題尚且無法排除對應的特設假設為真的可能性。雖然Pinker與Jakendoff沒有提到研究方法與統計分析的術語(有提到虛無假設，但使用的脈絡其實是指特設假設)，這兩篇論文照出有證偽邏輯瑕疵的理論推理，會妨害有效研究的設計。</p>
+
+<p>現在可以了解研究設計的優劣在設定對立假設與虛無假設的成立條件時，就已經確定，顯著的結果並非好研究的充分條件。以假設檢定做出結論的報告，除非能確定除了對立假設與虛無假設立之外，沒有第三種解釋結果的可能性，否則必須檢討實驗結果的限制與需要改進的地方。現實的科學研究生態是沒有達到統計顯著性的實驗結果通常很難獲得發表機會，造成兩個方面的問題。一個是原始研究結果無法重現的問題，另一個是本系列第一集提過的「不見天日」效應。前者會傷害科學知識的誠篤性(scientific integrity)，後者阻礙科學知識的進展。</p>
+
+<h3 id="section-1">二、無法重現的研究 ＝ 不能重覆推翻的特設假設</h3>
+
+<p>舉Hauser與Pinker的筆戰為例是有用意的，Hauser違反學術倫理的事件是近年心理學界探討的重大案例之一。根據案件爆發當年(2010)曾志朗院士在科學人雜誌發表的<a href="http://sa.ylib.com/MagCont.aspx?Unit=prespective&amp;id=1644">專欄文章</a>，可知事件的引爆點是Hauser的團隊測試猿猴語音辨識能力的實驗，也就是證實是語音辨識是FLB一部分的證據。當時在哈佛大學組織的調查委員會調查過程中，還發生接受爭議論文發表的「認知」(cognition)期刊主編辭職的事件，隔年(2011)調查即將結束時，Hauser主動辭去教授職位，並宣佈致力投入中輟學生的輔導工作，不再參與語言與道德演化的研究。這個動作讓哈佛調查委員會完成報告後，決定不公開發表，當時部落客<a href="http://neuroskeptic.blogspot.tw/2011/07/what-did-marc-hauser-do.html">Neuroskeptic</a>就指出如此一來世人將無法得知全部真相，無法從Hauser的案例學到教訓。</p>
+
+<p><img src="/images/Haucer.jpg" alt="前哈佛大學心理學系教授Mark Hauser" /></p>
+
+<p>不過在撰寫本文的時候(快寫不下去?)，2014年5月，不再做研究的Hauser在Frontiers in Psychology發表兩篇回顧性論文(Hauser et al., 2014, Watumull, J. and Hauser, 2014)，一篇是自已掛第一作者，而且有2002年一起在「科學」發表論文的Chomsky並列共同作者，主要是整理語言演化的理論主張。另一篇是談論語言演化理論與實驗研究面臨的困難。 也許是沈寂三年突然有論文發表，波士頓致力資訊透明化的公民團體，找出當年調查委員會封存的報告並透露給當地媒體。2014年5月30日的<a href="http://www.bostonglobe.com/metro/2014/05/29/internal-harvard-report-shines-light-misconduct-star-psychology-researcher-marc-hauser/maSUowPqL4clXrOgj44aKP/story.html">新聞報導</a>透露的報告內容指出，Hauser早期研究的行為反應編碼資料，有部分並非呈現研究對象(猿猴)的實際表現，導致調查小組從實驗錄影重新編碼的行為資料做出不同的統計分析結果，曾經發表的論文並未忠實呈現編碼與行為觀察的不一致，可以確定Hauser為了得到有顯著性的統計結果而變造部分資料。</p>
+
+<p>我認為可以從Hauser與Pinker的筆戰論點能發現讓Hauser鋌而走險的遠因，儘管理論能明確區分相互對立的假設成立的條件(FLB,FLN)，非人類對象的實驗會有較大的隨機誤差，可以預期得到的差異效果遠較人類實驗小，不大容易獲得顯著的統計結果，而且相同實驗由不同研究團隊進行也會得到不一致的統計結果。但是限於發表的壓力，對於差一點就顯著的差異效果，很難有不去調整的動機。Hauser的早年研究生涯也面臨這樣的壓力，而且他的實驗方法如果可行，能擴大心理學實驗的研究範疇，這是能功成名就的誘惑，凡人能抵抗者幾希。</p>
+
+<h3 id="section-2">三、無法發表的研究 ＝ 很難推翻的特設假設</h3>
+
+<p>極少數研究只會有一個特設假設需要推翻，多數研究要經過許多回合的實驗技術與設計的改良，逐一消去各種特設假設，並且實驗效果經過多次重覆，都能得到一致的統計顯著結果，才能得到同行人士的接受。這也表示有理論意義，但是結果未達到統計顯著的實驗，在早期大多面臨被鎖進抽屜的命運，也就是第一篇提到的「不見天日」偏誤(file drawer bias)。比較著名的案例是錯誤記憶的實驗典範DRM效應，這是首見於1959年Deese發表的論文，1994年由Roediger與 McDermott改良，成為今天記憶研究者廣泛運用的實驗方法，也改變認知心理學對於記憶的看法。</p>
+
+<p>為何以上提到的兩篇論文相差35年？因為Deese的論文發表後並未在其它心理學者的實驗室裡獲得穩定的重現，相當於被鎖在抽屜多年才得到應有的重視。Hauser與DRM的例子互為極端，都指出即使研究者的點子相同不錯，若實驗結果不能穩定地證實特設假設可被推翻，很難在現代科學知識生產體系中出線。實驗結果的統計顯著性並非是確定某個特設假設可被推翻的指標，而是能不能獲得發表機會的基本門檻。現實情況對科學知識的累積有如雙面刃：有好主意但研究結果不顯著的研究者，冒著造假的風險發表有問題的研究，或著沉潛多年等待被肯定的機會。無論是那一種情況，對於科學知識的進步都是損失，但有沒有方法可以改變現況？最後一篇要介紹現在正在進行的一些方式，還有我對未來研究教學趨勢的想法。</p>
+
+<h3 id="section-3">參考文獻</h3>
+
+<p>Deese, J. (1959). On the prediction of occurrence of particular verbal intrusions in immediate recall. Journal of Experimental Psychology, 58, 17–22.</p>
+
+<p>Hauser, M. D., Chomsky, N., and  Fitch, (2002). The Faculty of Language: What Is It, Who Has It, and How Did It Evolve? <em>Science,</em> <em>298</em>, 1569-1579. doi: 10.1126/science.298.5598.1569</p>
+
+<p>Hauser MD, Yang C, Berwick RC, Tattersall I, Ryan MJ, Watumull J, Chomsky N and Lewontin RC (2014) The mystery of language evolution. <em>Frontiers in Psychology</em>. 5:401. doi: 10.3389/fpsyg.2014.00401</p>
+
+<p>Roediger, H.L., &amp; McDermott, K. B. (1995). Creating false memories: Remembering words not presented in lists. Journal of Experimental Psychology: Learning, Memory and Cognition, 24(4), 803–814.</p>
+
+<p>Pinker, S., &amp; Jackendoff, R. (2005). The faculty of language: What’s special about it? <em>Cognition,</em> <em>95</em>, 201-236. doi: 10.1016/j.cognition.2004.08.004</p>
+
+<p>Watumull, J. &amp; Hauser MD, (2014). Conceptual and empirical problems with game theoretic approaches to language evolution. <em>Front. Psychol</em>. 5:226. doi: 10.3389/fpsyg.2014.00226</p>
+
+  </article>
+  
+<div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    /*
+    var disqus_config = function () {
+        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        
+        s.src = '//scchen.disqus.com/embed.js';
+        
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+<!--     <h2 class="footer-heading">Sau-Chin Chen</h2> -->
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li><strong>Sau-Chin Chen</strong></li>
+
+          <li><a href="mailto:pmsp96@gmail.com">pmsp96@gmail.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/SCgeeker">
+              <span class="icon  icon--github">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+                </svg>
+              </span>
+
+              <span class="username">SCgeeker</span>
+            </a>
+          </li>
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+         <p class="text">
+This website is hosted by Sau-Chin Chen. You can check the source codes at my github page.
+ Subscribe the least updated <a href="/feed.xml">via RSS</a>.
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+    <link href="/feed.xml" type="application/rss+xml" rel="alternate" title="Subscribe the least posts (atom)" />
+  </body>
+
+</html>

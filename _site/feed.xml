@@ -1,0 +1,912 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sau-Chin Chen</title>
+    <description>This website is hosted by Sau-Chin Chen. You can check the source codes at my github page.
+</description>
+    <link>http://scchen.com/</link>
+    <atom:link href="http://scchen.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Fri, 03 Feb 2017 22:54:49 +0800</pubDate>
+    <lastBuildDate>Fri, 03 Feb 2017 22:54:49 +0800</lastBuildDate>
+    <generator>Jekyll v3.1.2</generator>
+    
+      <item>
+        <title>Randomization in Latin Square</title>
+        <description>&lt;p&gt;I’m managing an opensesame script for the coming project. In this project, there are four stimuli lists included all the within-participant conditions. I denote the four lists &lt;strong&gt;A&lt;/strong&gt;, &lt;strong&gt;B&lt;/strong&gt;, &lt;strong&gt;C&lt;/strong&gt;, and &lt;strong&gt;D&lt;/strong&gt;. A participant will have one of the stimuli lists in terms of the counter balanced principle. The best assignment method is 4X4 Latin Square. For every 16 participants, there are 24 sequences to be used. Here are three of the sequences.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;##      [,1] [,2] [,3] [,4]
+## [1,] &quot;A&quot;  &quot;B&quot;  &quot;C&quot;  &quot;D&quot; 
+## [2,] &quot;B&quot;  &quot;C&quot;  &quot;D&quot;  &quot;A&quot; 
+## [3,] &quot;C&quot;  &quot;D&quot;  &quot;A&quot;  &quot;B&quot; 
+## [4,] &quot;D&quot;  &quot;A&quot;  &quot;B&quot;  &quot;C&quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;##      [,1] [,2] [,3] [,4]
+## [1,] &quot;C&quot;  &quot;D&quot;  &quot;A&quot;  &quot;B&quot; 
+## [2,] &quot;D&quot;  &quot;A&quot;  &quot;B&quot;  &quot;C&quot; 
+## [3,] &quot;A&quot;  &quot;B&quot;  &quot;C&quot;  &quot;D&quot; 
+## [4,] &quot;B&quot;  &quot;C&quot;  &quot;D&quot;  &quot;A&quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;##      [,1] [,2] [,3] [,4]
+## [1,] &quot;A&quot;  &quot;B&quot;  &quot;C&quot;  &quot;D&quot; 
+## [2,] &quot;D&quot;  &quot;A&quot;  &quot;B&quot;  &quot;C&quot; 
+## [3,] &quot;C&quot;  &quot;D&quot;  &quot;A&quot;  &quot;B&quot; 
+## [4,] &quot;B&quot;  &quot;C&quot;  &quot;D&quot;  &quot;A&quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;If this experiment will recruit 32 participant, the first 16 and second 16 better obtain one of the 24 sequences in a pseudo randomization. On the other hand, I wish to reproduce this random sequence in the other place. The best way is to generate the randomization sequence in terms of a seed. Thanks to &lt;a href=&quot;http://osdoc.cogsci.nl/&quot;&gt;Opensesame&lt;/a&gt;, I found the way to make this plan come true.&lt;/p&gt;
+
+&lt;p&gt;Opensesame is the open source experiment software. Because it is developed in &lt;a href=&quot;https://www.python.org/&quot;&gt;python&lt;/a&gt;, the users are able to create the function based on their need. This program offers the object &lt;strong&gt;inline_script&lt;/strong&gt; where the users put the python codes. I created the python codes to select the stimuli list from the file pool. You can use it before the program runs the object &lt;strong&gt;loop&lt;/strong&gt; based on the list.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;### Get the subject number
+nr = self.get(&#39;subject_nr&#39;)
+
+### Generate a random sequence based the prior seed
+### Defind seed by yourself
+import random
+SEED = 345
+
+seq = [0,4,8,12]
+random.seed(SEED)
+random.shuffle(seq)
+
+### Shift the subject numbers
+### Push to the next sequence
+if nr &amp;lt;=16:
+	nr += seq[0]
+elif nr &amp;gt; 16 &amp;amp; nr &amp;lt;= 32:
+	nr += seq[1]
+elif nr &amp;gt; 32 &amp;amp; nr &amp;lt;= 48:
+	nr += seq[2]
+else:
+	nr += seq[3]
+
+### Assign the list in one Latin Squane
+if (nr / 4) % 4 == 1:
+	if nr % 4 == 0:
+		lst = &#39;List01.csv&#39;
+	elif nr % 4 == 1:
+		lst = &#39;List02.csv&#39;
+	elif nr % 4 == 2:
+		lst = &#39;List03.csv&#39;
+	else:
+		lst = &#39;List04.csv&#39;
+elif (nr / 4) % 4 == 2:
+	if nr % 4 == 1:
+		lst = &#39;List01.csv&#39;
+	elif nr % 4 == 2:
+		lst = &#39;List02.csv&#39;
+	elif nr % 4 == 3:
+		lst = &#39;List03.csv&#39;
+	else:
+		lst = &#39;List04.csv&#39;
+elif (nr / 4) % 4 == 3:
+	if nr % 4 == 2:
+		lst = &#39;List01.csv&#39;
+	elif nr % 4 == 3:
+		lst = &#39;List02.csv&#39;
+	elif nr % 4 == 0:
+		lst = &#39;List03.csv&#39;
+	else:
+		lst = &#39;List04.csv&#39;
+else:
+	if nr % 4 == 3:
+		lst = &#39;List01.csv&#39;
+	elif nr % 4 == 0:
+		lst = &#39;List02.csv&#39;
+	elif nr % 4 == 1:
+		lst = &#39;List03.csv&#39;
+	else:
+		lst = &#39;List04.csv&#39;
+
+### Output [List] to the loop object
+exp.set(&#39;List&#39;, lst)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Wed, 14 Sep 2016 00:00:00 +0800</pubDate>
+        <link>http://scchen.com/blog/2016/09/randomization-in-latin-square.html</link>
+        <guid isPermaLink="true">http://scchen.com/blog/2016/09/randomization-in-latin-square.html</guid>
+        
+        
+        <category>Experiment_Design</category>
+        
+        <category>Opensesame</category>
+        
+      </item>
+    
+      <item>
+        <title>Why we need a readable data table in behavioral scientific research?</title>
+        <description>&lt;h3 id=&quot;a-bad-case&quot;&gt;A bad case&lt;/h3&gt;
+
+&lt;p&gt;A few days ago I was dealing with a raw data set as like the following table.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;ID&lt;/th&gt;
+      &lt;th&gt;Group&lt;/th&gt;
+      &lt;th&gt;I01&lt;/th&gt;
+      &lt;th&gt;I02&lt;/th&gt;
+      &lt;th&gt;I03&lt;/th&gt;
+      &lt;th&gt;I04&lt;/th&gt;
+      &lt;th&gt;I05&lt;/th&gt;
+      &lt;th&gt;I06&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;s01&lt;/td&gt;
+      &lt;td&gt;A&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;s02&lt;/td&gt;
+      &lt;td&gt;A&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;s03&lt;/td&gt;
+      &lt;td&gt;A&lt;/td&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;s04&lt;/td&gt;
+      &lt;td&gt;B&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;s05&lt;/td&gt;
+      &lt;td&gt;B&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;s06&lt;/td&gt;
+      &lt;td&gt;B&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;This table is a tiny version I copied from a master graduate’s spss raw data table. The format of the table is frequently seen in the data files for SPSS software. This format originated the “row cognition” for data in every mind who are not familar with the statistical tools. Without the awareness of structure, people used to stack a lot of bricks horizontally. As like the table shows, there are the data of 6 participants. A new statistical tool user tend to fill all the information and data for a participant in a row as possible. This format fits human cognition for the naive thing who never manipulate before. However, the computers recognize the table by column, in other words, a “column cognition”. I show you how computer deal with the summation of one participant’s scores by the following codes.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;s01_data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;units&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s01_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;[1] 18&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;units&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%*%&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s01_data&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; [,1] [1,]   18
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The function &lt;code class=&quot;highlighter-rouge&quot;&gt;sum&lt;/code&gt; is one of the first functions a new statistical tool user have learned at the first class. &lt;code class=&quot;highlighter-rouge&quot;&gt;sum&lt;/code&gt; is used to add all the scores of a participant. A new user tend to append the summation to the end of a row. But the last code show you a programing language recognizes the scores of a participant by column. The evidence is that the sturcture of &lt;code class=&quot;highlighter-rouge&quot;&gt;t(units)&lt;/code&gt; is row but the structure of &lt;code class=&quot;highlighter-rouge&quot;&gt;s01_data&lt;/code&gt; is a column. How do we eliminate the difference between human and machine cognition? Why human tend to deal with the data by row rather by column?&lt;/p&gt;
+
+&lt;h3 id=&quot;codes-to-make-the-table-readable&quot;&gt;Codes to make the table readable&lt;/h3&gt;
+
+&lt;p&gt;To make the table readable for the computer, I have to modify the format of this table as like this:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Table&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;read.csv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;data.csv&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;New_Table&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data.frame&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ID&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Table&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Group&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Table&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Item&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;names&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Table&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;each&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Resp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;unlist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Table&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;row.names&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;New_Table&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;##    ID Group Item Resp
+## 1 s01     A  I01    3
+## 2 s02     A  I01    2
+## 3 s03     A  I01    4
+## 4 s04     B  I01    2
+## 5 s05     B  I01    2
+## 6 s06     B  I01    2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The new table arrange all the raw scores in one column. I create a new column &lt;code class=&quot;highlighter-rouge&quot;&gt;Item&lt;/code&gt; in this table. &lt;code class=&quot;highlighter-rouge&quot;&gt;Item&lt;/code&gt; is the index like &lt;code class=&quot;highlighter-rouge&quot;&gt;ID&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;Group&lt;/code&gt;. We are able to summarize the total score of each participant by combine the index ‘ID’ and ‘Item’. We also average the group means by the index &lt;code class=&quot;highlighter-rouge&quot;&gt;Group&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;configurate-human-mind-approaching-a-readable-data-table&quot;&gt;Configurate human mind approaching a readable data table&lt;/h3&gt;
+
+&lt;p&gt;Why we have to make effort for waving a table readable for the computer? It is the human nature we prefer every column filled with meanings in a table. Every item has the reason a researcher put it into the study. Organizing all scores of items in a row occupy the meanings in the human cognition, but the index of items is meaningless for every human mind. A researcher need a table filled with the analyzable data for the statitical tool. In the case of this post, the analyzable data is the summation of all 6 items. A table like this case embodies the desired table for the researcher but needs a column of summarized scores for the computer. This gap has to be fixed before a precise statistical process is conducted. The solution I prefer is design the table format at first. This is the main reason I and my students have to prepare a code book before the start of the experiment.&lt;/p&gt;
+
+&lt;p&gt;The secondary solution depends on the packaged functions. There are many raw data table organized like the bad case at first, because the software to collect the raw data and organize them in this way, for example, google From apps. To deal with these data, I have to transform the raw data before I import them to R. A reproducible way is to transform them in use of the R codes. The functions have to isolate which columns are index and which columns are raw responses. To my knowledge, a code book is needed to define the columns to be arranged.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 31 May 2016 00:00:00 +0800</pubDate>
+        <link>http://scchen.com/blog/2016/05/why-we-need-a-readable-data-table-in-behavioral-scientific-research.html</link>
+        <guid isPermaLink="true">http://scchen.com/blog/2016/05/why-we-need-a-readable-data-table-in-behavioral-scientific-research.html</guid>
+        
+        
+        <category>Rethinking</category>
+        
+        <category>statistics</category>
+        
+      </item>
+    
+      <item>
+        <title>Rethink Significance</title>
+        <description>&lt;p&gt;To trace the fallacy of use hypothesis testing, I am programming the examples in Dr. Adrianus D. de Groot’s paper &lt;code class=&quot;highlighter-rouge&quot;&gt;The meaning of “signiﬁcance” for different types of research&lt;/code&gt;. This paper is published in 1956 in the Dutch journal &lt;em&gt;Nederlands Tijdschrift voor de Psychologie en Haar Grensgebieden&lt;/em&gt;. &lt;a href=&quot;https://en.wikipedia.org/wiki/Adriaan_de_Groot&quot;&gt;Adrianus De Groot&lt;/a&gt; is Dutch psychologist and chess master. During 1950s and 1960s, he suggested the concept of emperical cycle for the researchers who use the statistical tools in the social and behavioral researches.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/524px-Empirical_Cycle.png&quot; alt=&quot;Emperical cycle&quot; title=&quot;A visual representation of A.D. de Groot&#39;s empirical cycle. Author: TesseUndDaan&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;de Groot’s emperical cycle distinguish two types of emperical research: &lt;strong&gt;exploratory research&lt;/strong&gt; and &lt;strong&gt;confirmatory research&lt;/strong&gt;. &lt;strong&gt;Exploratory research&lt;/strong&gt; aims to formulate the hypotheses that covers the process from &lt;code class=&quot;highlighter-rouge&quot;&gt;observation&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;induction&lt;/code&gt;. &lt;strong&gt;Confirmatory research&lt;/strong&gt; attempts to test the predicited concequences based the hypothesis. Thus a &lt;strong&gt;Confirmatory research&lt;/strong&gt; covers &lt;code class=&quot;highlighter-rouge&quot;&gt;deduction&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;testing&lt;/code&gt;, and &lt;code class=&quot;highlighter-rouge&quot;&gt;evaluation&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;In the time de Groot started his academic career, the protocol of hypothesis testing has been completed by the leading statisticans, &lt;a href=&quot;https://en.wikipedia.org/wiki/Ronald_Fisher&quot;&gt;Ronald Fisher&lt;/a&gt;, &lt;a href=&quot;https://en.wikipedia.org/wiki/Jerzy_Neyman&quot;&gt;Jerzy Neyman&lt;/a&gt;, and &lt;a href=&quot;https://en.wikipedia.org/wiki/Egon_Pearson&quot;&gt;Egon Pearson&lt;/a&gt;. Psychologists at that time learned and used &lt;em&gt;p value&lt;/em&gt; to evaluate the results. de Groot in his paper has suggested that the hypothesis testing is the appropriate tool to evaluate the result of a confirmatory reserach. He in the same paper also discussed the problems that perhapes happen when the hypothesis testing was used to decide the available hypotheses in an exploratory research. There are two cases of explorartoy research discussed in his paper. One has finite hypotheses, and the other has infinite hypotheses. Both cases show up in front of every researcher in anytime and in anywhere. Many researcher struggle how to pick the available hypotheses up according to the data in hands.&lt;/p&gt;
+
+&lt;h3 id=&quot;exploratory-research-has-finite-hypotheses&quot;&gt;Exploratory research has finite hypotheses&lt;/h3&gt;
+&lt;p&gt;The section title in de Groot’s paper is &lt;code class=&quot;highlighter-rouge&quot;&gt;Hypothesis testing research for multiple hypotheses&lt;/code&gt;. He presumed the case as follow:&lt;/p&gt;
+
+&lt;p&gt;We give &lt;em&gt;N&lt;/em&gt; as the number of hypotheses yet to be tested. Every hypothesis is going to be evaluated by the hypothesis testing. We also give &lt;em&gt;n&lt;/em&gt; as the number of hypothese successfully passed the test. Every hypothesis have the probability .05 pass the test. This probability refers to the type 1 error in the present hypothesis testing.&lt;/p&gt;
+
+&lt;p&gt;Today we have 10 hypotheses (N = 10) to be evaluated by the data. Consider all the consequences, we can calculate all the probabilities given the counts of positive hypotheses.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xtable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;N&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;10&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;alpha&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;.05&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;REJECT_P&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;PASS_P&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;REJECT_P&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;REJECT_P&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;choose&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;N&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;alpha&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;alpha&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;N&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
+        &lt;span class=&quot;n&quot;&gt;PASS_P&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;+1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;REJECT_P&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;SUCCESS&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data.frame&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PASS_P&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;colnames&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SUCCESS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;n&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Probability(Positive Results)&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xtable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SUCCESS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;include.rownames&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;FALSE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;html&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;!-- html table generated in R 3.2.5 by xtable 1.8-2 package --&gt;
+&lt;!-- Thu May 05 11:32:07 2016 --&gt;
+&lt;p&gt;&amp;lt;table border=1&amp;gt;&lt;/p&gt;
+&lt;tr&gt; &lt;th&gt; n &lt;/th&gt; &lt;th&gt; Probability(Positive Results) &lt;/th&gt;  &lt;/tr&gt;
+&lt;tr&gt; &lt;td align=&quot;right&quot;&gt;   0 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.40 &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td align=&quot;right&quot;&gt;   1 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.09 &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td align=&quot;right&quot;&gt;   2 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.01 &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td align=&quot;right&quot;&gt;   3 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.00 &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td align=&quot;right&quot;&gt;   4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.00 &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td align=&quot;right&quot;&gt;   5 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.00 &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td align=&quot;right&quot;&gt;   6 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.00 &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td align=&quot;right&quot;&gt;   7 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.00 &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td align=&quot;right&quot;&gt;   8 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.00 &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td align=&quot;right&quot;&gt;   9 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.00 &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt; &lt;td align=&quot;right&quot;&gt;  10 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.00 &lt;/td&gt; &lt;/tr&gt;
+&lt;p&gt;&amp;lt;/table&amp;gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;plot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PASS_P&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;~&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;xlab&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Smallest Number of Positive Hypotheses&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ylab&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Probability(Positive Results)&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/figure/source/rethink-significance/2016-05-05-rethink-significance/MultiHypo-1.png&quot; alt=&quot;plot of chunk MultiHypo&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;That table is telling us if we wish acquire at least one positive hypothesis, the probability is 0.4012631. That plot shows the probability dramatically decrease with the increasing numbers in our wish. In other words, when we have no precise knowlegde about the use of hyphtesis testing, the more hypotheses we want to induce, the higher risk we get nothing.&lt;/p&gt;
+
+&lt;h3 id=&quot;exploratory-research-has-infinite-hypotheses&quot;&gt;Exploratory research has infinite hypotheses&lt;/h3&gt;
+&lt;p&gt;This case is everywhere in this era of big data. de Groot called this case &lt;code class=&quot;highlighter-rouge&quot;&gt;Material-exploration: N becomes unspeciﬁed&lt;/code&gt;. In his paper, material refers to data because data is a low frequency word in his era. The researchers in his era has realized the best way to deal with this case is &lt;strong&gt;to let the data tell the story&lt;/strong&gt;. The research on this case obviously is an &lt;strong&gt;exploratory research&lt;/strong&gt;. For the researchers in de Groot’s era and in the era of big data, there are two routes to finish this kind of research project. One route is to label and categorize the hypotheses. This route is the hot topic of &lt;a href=&quot;https://en.wikipedia.org/wiki/Machine_learning&quot;&gt;machine learning&lt;/a&gt; in the present data science. The other route is to decide the possible hypotheses. Today the researchers on this route mostly rely on the multiple variate statistical tools.&lt;/p&gt;
+
+&lt;p&gt;de Groot suggests the caution to the research that attempts to decide the potential hypotheses. &lt;strong&gt;N&lt;/strong&gt; is infinite because not all hypotheses could be induced in this case. Whe we have 20 testable hypotheses from 200 potential hypotheses. If a researcher confirmed that 10 of the 20 hypotheses have the positive support by the data, based on the type 1 error, he/she has to understand that 5% hypotheses are positive (10/200) but 50% hypotheses are positive (10/20). This caution is like the misuse of golem that is discussed in &lt;a href=&quot;https://www.crcpress.com/Statistical-Rethinking-A-Bayesian-Course-with-Examples-in-R-and-Stan/McElreath/9781482253443&quot;&gt;Statistical Rethingking&lt;/a&gt;. In the timing I am writing this note, this caution implied the researchers who are thinking the potential hypotheses are decided assumed that they have finished a emperical circle.&lt;/p&gt;
+
+&lt;h3 id=&quot;role-of-preregisteration&quot;&gt;Role of Preregisteration&lt;/h3&gt;
+&lt;p&gt;Decades of misusing the hypothesis testing have resulted in a bad situation we have to faced. There is no clear cutoff between the exploratory research and the confirmatory research. Many published papers in nature are the exploratory researches, but they are packaged in the form of confirmatory research by the authors (editors and reviewers have the responsibility too). This is why de Groot’s originated paper was translated and published 60 years later. This post is one of the fundemental I will cite when I introduce and discuss the preregistration.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 05 May 2016 00:00:00 +0800</pubDate>
+        <link>http://scchen.com/blog/2016/05/rethink-significance.html</link>
+        <guid isPermaLink="true">http://scchen.com/blog/2016/05/rethink-significance.html</guid>
+        
+        
+        <category>R_programming</category>
+        
+        <category>Rethinking</category>
+        
+        <category>statistics</category>
+        
+        <category>preregistration</category>
+        
+      </item>
+    
+      <item>
+        <title>Autopsy of NHST and Bayesian Models (part 1)</title>
+        <description>&lt;p&gt;Chapter 2 of &lt;a href=&quot;http://xcelab.net/rm/statistical-rethinking/&quot;&gt;Statistical Rethinking: A Bayesian Course with Examples in R and Stan&lt;/a&gt; introduces a water tossing example for the demonstration how Bayesain model run through the data based on the researcher’s hypothesis. This chapter defines a three stage process that are used in the coming chapters. We start from a narrated &lt;strong&gt;Data Story&lt;/strong&gt;, then &lt;strong&gt;update&lt;/strong&gt; the models by filling data in, and finally &lt;strong&gt;evaluate&lt;/strong&gt; all the &lt;strong&gt;upated&lt;/strong&gt; models. This literated process shows a clear picture for the learners who have yet stuied statistics before read this book. The readers who have studied statistics, like me, will have a hole in the mind what are the differences between Bayesian methods and the null hypothesis significance testing (NHST) in this process. After read Michael Clark’s &lt;a href=&quot;https://sites.google.com/a/umich.edu/micl/miscfiles/IntroBayes.pdf&quot;&gt;Bayesian Basics: A Conceptual Introduction with Application in R and Stan&lt;/a&gt; on &lt;a href=&quot;http://mc-stan.org/documentation/&quot;&gt;Stan official site&lt;/a&gt;, I require the key to understand the difference between the two golems.&lt;/p&gt;
+
+&lt;p&gt;The critical difference is which type of &lt;strong&gt;conditional probability&lt;/strong&gt; the statistical method is used to evaluate the model. Once we collected the data based on some hypothesis, we have the distribution of hypothesis &lt;script type=&quot;math/tex&quot;&gt;p(\theta)&lt;/script&gt; and the distribution of data &lt;script type=&quot;math/tex&quot;&gt;p(y)&lt;/script&gt;. NHST compuates the probability we have the data when the hypothesis is true &lt;script type=&quot;math/tex&quot;&gt;p(y\|\theta)&lt;/script&gt;. In practical, &lt;script type=&quot;math/tex&quot;&gt;p\ value&lt;/script&gt; refers to the &lt;strong&gt;conditional probability&lt;/strong&gt; of the null hypothesis, and &lt;script type=&quot;math/tex&quot;&gt;confidence\ interval&lt;/script&gt; suggests a range of plausible outcomes based on the &lt;strong&gt;confiditional probability&lt;/strong&gt; of the real hypothesis. A Bayesian method compuates the probability the hypothesis is approved based on the data we have &lt;script type=&quot;math/tex&quot;&gt;p(\theta\|y)&lt;/script&gt;. Because the computation of &lt;script type=&quot;math/tex&quot;&gt;p(\theta\|y)&lt;/script&gt; needs the likelihood &lt;script type=&quot;math/tex&quot;&gt;p(y\|\theta)&lt;/script&gt; and the priori &lt;script type=&quot;math/tex&quot;&gt;p(\theta)&lt;/script&gt;, of course a Baysian method cost more steps than NHST.&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt; has a term &lt;strong&gt;parameter&lt;/strong&gt; in many statstical textbooks. It is a space of numbers that provides the axis where the above probability distribution sit on. &lt;strong&gt;Likelihood&lt;/strong&gt; is the &lt;strong&gt;sampling distribution&lt;/strong&gt; we have to update before we run NHST. As like I show in &lt;a href=&quot;/blog/2016/03/learning-sampling-distribution-in-r-programming.html&quot;&gt;Learning Sampling Distribution in R Programming&lt;/a&gt;, a sampling distribution will approach one &lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt; with the increasing sample size. Sample size is the key for NHST because it could change the evaluation criteron on the statistical model.&lt;/p&gt;
+
+&lt;p&gt;Here is a pseudo experiment I want to know if a test is success based on the expect value smaller than 5 (Obersvations are 1, 2, 3, 4, 5, 6, 7, 8, 9, 10). I completed an experiment of 25 observations and an experiment 36 observations. In use of NHST with a critical value (p &amp;lt; .05), the criterion change with the sample size. The simulation&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;set.seed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;OBV&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;10&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Dist25&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NULL&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Dist36&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NULL&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Dist25&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Dist25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;OBV&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;replace&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TRUE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Dist25_Density&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data.frame&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Theta&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;density&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Dist25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;kernel&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;gaussian&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Density&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;density&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Dist25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;kernel&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;gaussian&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;CL25&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Dist25_Density&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Theta&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Dist25_Density&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Theta&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;5&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Dist25_Density&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Density&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;.05&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CL25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;## The smallest parameter that could make judgement
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;## [1] 4.152939
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Dist36&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Dist36&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;OBV&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;36&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;replace&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TRUE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Dist36_Density&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data.frame&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Theta&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;density&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Dist36&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;kernel&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;gaussian&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Density&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;density&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Dist36&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;kernel&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;gaussian&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;CL36&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Dist36_Density&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Theta&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Dist36_Density&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Theta&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;5&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Dist36_Density&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Density&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;.05&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CL36&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;## The smallest parameter that could make judgement
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;## [1] 4.41705
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;When this experiment outputs a avarage value between 4.15 and 4.42, would you like to collect the data more than 36 participants? This is the opportunity many researchers have to struggle in their study. Researchers who are educated as like me used to collect the observation till the &lt;em&gt;p value&lt;/em&gt; is smaller than .05. Most researchers used to stop the experiment till the 36th participant finished the experiment. However, this treatment lacks of the serious scientific thinking. If the hypothesis has set up the conditions to have the average, the sample size should be appointed before the start of experiment.&lt;/p&gt;
+
+&lt;p&gt;The appointment of sample size could be loose when the possible average is uncertain. When the experiment is conducted at first time in the world, NHST without the appointment of sample size could draw the range of averages that might obey the hypothesis. On the other hand, the following studies better has the appointment of sample size. In this case, NHST has to accompany the other statistical evaluation, such as power, effect size, to find the appropriate sample size. Therefore, NHST will perform well when the researcher conducted the first study or have the preparation as well as the first study. This will be the key in my autopsy of Bayesian method.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 30 Apr 2016 00:00:00 +0800</pubDate>
+        <link>http://scchen.com/blog/2016/04/autopsy-of-nhst-and-bayesian-models.html</link>
+        <guid isPermaLink="true">http://scchen.com/blog/2016/04/autopsy-of-nhst-and-bayesian-models.html</guid>
+        
+        <category>statistics</category>
+        
+        <category>Bayesian</category>
+        
+        <category>Rethinking</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Check My Tools to Create and Manipulate Golems</title>
+        <description>&lt;p&gt;Since two weeks before I published this post, I have started read the book &lt;a href=&quot;http://xcelab.net/rm/statistical-rethinking/&quot;&gt;Statistical Rethinking: A Bayesian Course with Examples in R and Stan&lt;/a&gt; written by &lt;a href=&quot;http://xcelab.net/rm/&quot;&gt;Richard McElreath&lt;/a&gt;. Richard is the evolutionary anthropologist at Max Planck Institute. He wrote this textbook for the PhD students who will use the Bayesian statistics in their research projects. Compared to the textbooks written by statisians and data scientistst, Richard’s book explain and demonstrate the statistical methods with examples instead of equations. His intention is to help who are not staticians but used to use statistics realize one fact: we rely on the statistical models as the representations of our answers rather than answer the questions by the raw data or naked truth. Many non-statisticians are used to find and learn what kind of methods or apps to deal with their data, but few are interested to know the models under the mentods and apps they are using. The trouble and danger is that they thought their jobs are done when the program printed the tables and figures but these outputs are from the statistical model is unable to answer their question. This situation is originated from many non-statisticans consider themselves the end-users of statistical models. Like any user of a packaged software, non-statisticans have no time to understand how the tools in their hands designed and conducted by statisticans.&lt;br /&gt;
+Richard introduced the story of &lt;a href=&quot;https://en.wikipedia.org/wiki/Golem&quot;&gt;golem&lt;/a&gt; to raise the non-statsiticans’ attention to the troubles they had made and will make. A statistical model, like a golem, has the power beyond human to finish the work the human are unable to do, for example, trace the passengers’ track from the trillion of camera. Its power could be misused or out of control if we do not understand what is the root of its action. A user of ststistical method, no matter you are or are not stistician, have to keep the awareness of engineer when you are dealing with your data. Today everyone has many easier ways than a decade ago to keep the awareness of engineer. One advantage is that the learning curve for being an part-time hacker is getting smooth. Increasing R apps are opening many windows for who are want to outlook and modify the statistical models.&lt;br /&gt;
+Since this post, every post listed in the category &lt;code class=&quot;highlighter-rouge&quot;&gt;Rethinking&lt;/code&gt; is one of the summaries and feedbacks to &lt;a href=&quot;https://www.crcpress.com/Statistical-Rethinking-A-Bayesian-Course-with-Examples-in-R-and-Stan/McElreath/9781482253443&quot;&gt;Statistical Rethinking: A Bayesian Course with Examples in R and Stan&lt;/a&gt;. At first I have to check my toolkits for create and manipulate the statistical models. They are R core and the packages. Years ago I have used to use the packages in my data processing. Now I show them for who start to use R after read this post.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;install.packages(c(&quot;rpart&quot;,&quot;chron&quot;,&quot;Hmisc&quot;,&quot;Design&quot;,&quot;Matrix&quot;,&quot;stringr&quot;,&quot;lme4&quot;,&quot;coda&quot;,&quot;e1071&quot;,&quot;zipfR&quot;,&quot;ape&quot;,&quot;languageR&quot;,&quot;multcomp&quot;,&quot;contrast&quot;,&quot;shiny&quot;,&quot;ggplot2&quot;, &quot;dplyr&quot;))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Some of the packages are learned from I participated in &lt;a href=&quot;https://www.coursera.org/specializations/jhu-data-science&quot;&gt;Cousera Data Science&lt;/a&gt;. Now I used to use &lt;code class=&quot;highlighter-rouge&quot;&gt;dplyr&lt;/code&gt; to process the raw data, and I am learning how to draw the figures I need in use of &lt;code class=&quot;highlighter-rouge&quot;&gt;ggplot2&lt;/code&gt;. When this post is published, I have updated my R to R version 3.2.5 (2016-04-14). Through &lt;a href=&quot;http://xcelab.net/rm/statistical-rethinking/&quot;&gt;the codes of Heuristic Andrew&lt;/a&gt;, here are my installed packages.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;ip&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;as.data.frame&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;installed.packages&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()[,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)])&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;rownames&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NULL&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;ip&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;is.na&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ip&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Priority&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;drop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;FALSE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;row.names&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;FALSE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;##             Package    Version
+##             acepack    1.3-3.3
+##                 ape        3.4
+##            argparse      1.0.1
+##          assertthat        0.1
+##           base64enc      0.1-3
+##                  BH   1.60.0-1
+##              bibtex      0.4.0
+##                 bit     1.1-12
+##              bitops      1.0-6
+##            bookdown     0.0.63
+##                brew      1.0-6
+##              brocks        0.4
+##             caTools     1.17.1
+##               chron     2.3-47
+##                coda     0.18-1
+##          colorspace      1.2-6
+##            contrast       0.19
+##                curl      0.9.7
+##               darch     0.10.0
+##          data.table      1.9.6
+##                 DBI      0.3.1
+##            devtools     1.11.1
+##           dichromat      2.0-0
+##              digest      0.6.9
+##               dplyr      0.4.3
+##               e1071      1.6-7
+##            evaluate      0.8.3
+##                  ff     2.2-13
+##          findpython      1.0.1
+##             formatR        1.3
+##             Formula      1.2-1
+##       futile.logger      1.4.1
+##      futile.options      1.0.0
+##           gcookbook        1.0
+##               gdata     2.17.0
+##              getopt     1.20.0
+##             ggplot2      2.1.0
+##               git2r     0.14.0
+##              gplots      3.0.1
+##           gridExtra      2.2.1
+##              gtable      0.2.0
+##              gtools      3.5.0
+##            gWidgets     0.0-54
+##                 h2o    3.8.1.3
+##               highr      0.5.1
+##               Hmisc     3.17-3
+##           htmltools      0.3.5
+##              httpuv      1.3.3
+##                httr      1.1.0
+##              inline     0.3.14
+##            installr     0.17.5
+##            jsonlite     0.9.19
+##       knitcitations      1.0.7
+##               knitr    1.12.22
+##            labeling        0.3
+##            lambda.r      1.1.7
+##           languageR      1.4.1
+##        latticeExtra     0.6-28
+##            lazyeval     0.1.10
+##                lme4     1.1-12
+##                 loo      0.1.6
+##           lubridate      1.5.6
+##            magrittr        1.5
+##          manipulate      1.0.1
+##            markdown      0.7.7
+##        MatrixModels      0.4-1
+##         matrixStats     0.50.1
+##             memoise      1.0.0
+##                mime        0.4
+##              miniUI      0.1.1
+##               minqa      1.2.4
+##            multcomp      1.4-4
+##             munsell      0.4.3
+##             mvtnorm      1.0-5
+##              nloptr      1.0.4
+##             openssl      0.9.2
+##             packrat    0.4.7-1
+##                 PKI      0.1-3
+##                plyr      1.8.3
+##                 png      0.1-7
+##           polspline     1.1.12
+##               proto     0.3-10
+##            quantreg       5.21
+##                  R6      2.1.2
+##        RColorBrewer      1.1-2
+##                Rcpp     0.12.4
+##           RcppEigen  0.3.2.8.1
+##               RCurl   1.95-4.8
+##          RefManageR    0.10.13
+##            reshape2      1.4.1
+##          rethinking       1.58
+##               rjson     0.2.15
+##             RJSONIO      1.3-0
+##           rmarkdown    0.9.5.9
+##                 rms      4.5-0
+##                Rook      1.1-1
+##            roxygen2      5.0.1
+##           rsconnect    0.4.2.2
+##               rstan    2.9.0-3
+##          rstudioapi        0.5
+##               RUnit     0.4.31
+##           rversions      1.0.2
+##               rvest      0.3.1
+##            sandwich      2.3-4
+##              scales      0.4.0
+##             selectr      0.2-3
+##               servr        0.4
+##               shiny     0.13.2
+##            shinyAce      0.2.1
+##             shinyBS       0.61
+##          shinyFiles      0.6.0
+##              slackr        1.2
+##             SparseM        1.7
+##         StanHeaders      2.9.0
+##           statcheck      1.0.1
+##             statmod     1.4.24
+##             stringi      1.0-1
+##             stringr      1.0.0
+##             TH.data      1.0-7
+##             whisker      0.3-2
+##               withr      1.0.1
+##                 XML   3.98-1.4
+##                xml2      0.1.2
+##              xtable      1.8-2
+##                yaml     2.1.13
+##               zipfR      0.6-6
+##                 zoo     1.7-12
+##             acepack    1.3-3.3
+##       addinexamples      0.1.0
+##          assertthat        0.1
+##              bibtex      0.4.0
+##                 bit     1.1-12
+##              bitops      1.0-6
+##                brew      1.0-6
+##              brocks 0.3.999999
+##             caTools     1.17.1
+##               chron     2.3-47
+##          colorspace      1.2-6
+##                curl      0.9.7
+##               darch     0.10.0
+##          data.table      1.9.6
+##                 DBI      0.3.1
+##            devtools     1.11.1
+##           dichromat      2.0-0
+##              digest      0.6.9
+##               dplyr      0.4.3
+##               editR      0.2.2
+##            evaluate      0.8.3
+##                  ff     2.2-13
+##             formatR        1.3
+##             Formula      1.2-1
+##       futile.logger      1.4.1
+##      futile.options      1.0.0
+##           gcookbook        1.0
+##               gdata     2.17.0
+##             ggplot2      2.1.0
+##               git2r     0.14.0
+##              gplots      3.0.1
+##           gridExtra      2.2.1
+##              gtable      0.2.0
+##              gtools      3.5.0
+##            gWidgets     0.0-54
+##  gWidgetsManipulate        1.0
+##                 h2o    3.8.1.4
+##               highr      0.5.1
+##               Hmisc     3.17-3
+##           htmltools      0.3.5
+##              httpuv      1.3.3
+##                httr      1.1.0
+##            installr     0.17.5
+##            jsonlite     0.9.19
+##       knitcitations      1.0.7
+##               knitr     1.12.3
+##            labeling        0.3
+##            lambda.r      1.1.7
+##        latticeExtra     0.6-28
+##            lazyeval     0.1.10
+##                lme4     1.1-12
+##           lubridate      1.5.6
+##            magrittr        1.5
+##          manipulate      1.0.1
+##            markdown      0.7.7
+##             memoise      1.0.0
+##                mime        0.4
+##              miniUI      0.1.1
+##               minqa      1.2.4
+##             munsell      0.4.3
+##              nloptr      1.0.4
+##                plyr      1.8.3
+##                 png      0.1-7
+##                  R6      2.1.2
+##             rCharts      0.4.5
+##        RColorBrewer      1.1-2
+##                Rcpp     0.12.4
+##           RcppEigen  0.3.2.8.1
+##               RCurl   1.95-4.8
+##          RefManageR    0.10.13
+##            reshape2      1.4.1
+##            Rgitbook        0.9
+##               rjson     0.2.15
+##             RJSONIO      1.3-0
+##           rmarkdown      0.9.5
+##                Rook      1.1-1
+##            roxygen2      5.0.1
+##          rstudioapi        0.5
+##           rversions      1.0.2
+##               rvest      0.3.1
+##              scales      0.4.0
+##             selectr      0.2-3
+##               servr        0.4
+##               shiny     0.13.2
+##            shinyAce      0.2.1
+##             shinyBS       0.61
+##         shinyCustom      0.1.0
+##          shinyFiles      0.6.0
+##              slackr 1.3.1.9001
+##             slidify        0.5
+##    slidifyLibraries      0.3.1
+##             statmod     1.4.24
+##             stringi      1.0-1
+##             stringr      1.0.0
+##             whisker      0.3-2
+##               withr      1.0.1
+##                 XML   3.98-1.4
+##                xml2      0.1.2
+##              xtable      1.8-2
+##                yaml     2.1.13
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;paste0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;There are &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot; packages installed in my laptop.&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;## [1] &quot;There are 227 packages installed in my laptop.&quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Richard’s book inspired me help people control their golems/ststistical models in the process of coding. In his book, literature and codes are separated. Readers who are not familiar with coding skill might hardly follow his literature. Literatural coding might be the best way to impliment the &lt;code class=&quot;highlighter-rouge&quot;&gt;Rethinking&lt;/code&gt;. I am going to accumulating the codes of Bayesian statistics and thake notes of his and others literatures in the coming posts.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 22 Apr 2016 00:00:00 +0800</pubDate>
+        <link>http://scchen.com/blog/2016/04/check-my-tools-to-create-and-manipulate-golems.html</link>
+        <guid isPermaLink="true">http://scchen.com/blog/2016/04/check-my-tools-to-create-and-manipulate-golems.html</guid>
+        
+        
+        <category>R_programming</category>
+        
+        <category>Rethinking</category>
+        
+      </item>
+    
+      <item>
+        <title>Vectors in mathematics and in codes</title>
+        <description>&lt;p&gt;When a set of data/observations is imported to R, it is usually treated as &lt;code class=&quot;highlighter-rouge&quot;&gt;vector&lt;/code&gt;. Vector has two mathematical forms as following:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;column vector&lt;/strong&gt;:&lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\vec{a} = \begin{bmatrix}
+ 1\\
+ 2\\
+ 3\\
+\end{bmatrix}&lt;/script&gt;&lt;br /&gt;
+&lt;strong&gt;row vector&lt;/strong&gt;:&lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\vec{a} = [ 1\ 2\ 3 ]&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Default form of vector in R is column vector. More precisely, it is treated as a matrix:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;## [1] 1 2 3
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;## [1] &quot;integer&quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;##  int [1:3] 1 2 3
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;##      [,1] [,2] [,3]
+## [1,]    1    2    3
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;In a statistical work, we used to calcuate the sum of square (SS) for the deviations to mean. The common equation is like:&lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\sum_{i=1}^{n}(Y_{i}-\overline{Y})^2&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;This is the fundemental for calculating the variance of this set of data/observations. The equation of variance is like this:&lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\frac{\sum_{i=1}^{n}(Y_{i}-\overline{Y})^2}{n}&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Because the data/observations are treated as matrix, we are able to have the sum of square by the multiplication of this matrix.&lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\mathbf{A&#39;A} = 
+\begin{bmatrix} A_1 A_2 A_3 \dots\end{bmatrix}
+\times
+\begin{bmatrix}
+   A_1 \\
+   A_2 \\
+   A_3 \\
+   \vdots
+\end{bmatrix}　&lt;/script&gt;　　&lt;/p&gt;
+
+&lt;p&gt;Here are ten observations 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, the average of this data is 5.5. Let’s have the SS and variance in use of the multiplication of matrix:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;SS&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;10&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%*%&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;10&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; 
+&lt;span class=&quot;n&quot;&gt;VAR&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;SS&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;##      [,1]
+## [1,] 82.5
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;VAR&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;##      [,1]
+## [1,] 8.25
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;In R &lt;code class=&quot;highlighter-rouge&quot;&gt;base&lt;/code&gt; package, the function &lt;code class=&quot;highlighter-rouge&quot;&gt;var&lt;/code&gt; outputs a sampling variance, not a population variance as above.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;var&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;## [1] 9.166667
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</description>
+        <pubDate>Wed, 06 Apr 2016 00:00:00 +0800</pubDate>
+        <link>http://scchen.com/blog/2016/04/vectors-in-mathematics-and-in-codes.html</link>
+        <guid isPermaLink="true">http://scchen.com/blog/2016/04/vectors-in-mathematics-and-in-codes.html</guid>
+        
+        
+        <category>R_programming</category>
+        
+        <category>statistics</category>
+        
+        <category>latex</category>
+        
+      </item>
+    
+      <item>
+        <title>Display Math Equation in Post</title>
+        <description>&lt;p&gt;There will be many posts demostrate how to transfer the mathematical laws to the codes, and the reversed flaw. I start from this famous equation:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;E = mc^2&lt;/script&gt;
+
+&lt;p&gt;Use the steps 1 and 2 indtroducted in &lt;a href=&quot;http://tinyheero.github.io/2015/12/06/rmd-to-jekyll-protect-eqn.html&quot;&gt;Fong Chun Chan’s post&lt;/a&gt;, my website is able to show the equation in any post. Because this theme use &lt;code class=&quot;highlighter-rouge&quot;&gt;kramdown&lt;/code&gt; as the engine of markdown, I pass the step 4.&lt;/p&gt;
+
+&lt;p&gt;Here are the proof the central limitation theorem. Mix of inline and one-line equations.&lt;br /&gt;
+We have a sequence of independent random variables,&lt;script type=&quot;math/tex&quot;&gt;X_1, X_2, \ldots&lt;/script&gt;&lt;br /&gt;
+And the mean and variance of them:&lt;br /&gt;
+Mean &lt;script type=&quot;math/tex&quot;&gt;E \left[{X_i}\right] = \mu \in \left({-\infty \,.\,.\, \infty}\right)&lt;/script&gt;&lt;br /&gt;
+Variance &lt;script type=&quot;math/tex&quot;&gt;V \left({X_i}\right) = \sigma^2 &gt; 0&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Assume:&lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;S_n = \sum_{i \mathop = 1}^n X_i&lt;/script&gt;&lt;br /&gt;
+Then:&lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\displaystyle \frac {S_n - n \mu} {\sqrt {n \sigma^2} } \xrightarrow {D} N \left({0, 1}\right)&lt;/script&gt;  as  &lt;script type=&quot;math/tex&quot;&gt;n \to \infty&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Embedded tex codes in &lt;code class=&quot;highlighter-rouge&quot;&gt;$$ ... $$&lt;/code&gt;, the equation was transfered inline or in single line. Thus I pass the step 3 of &lt;a href=&quot;http://tinyheero.github.io/2015/12/06/rmd-to-jekyll-protect-eqn.html&quot;&gt;Fong Chun Chan’s method&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note.&lt;/strong&gt; Justify the last equation in 2016-04-06 09:12:21&lt;/p&gt;
+</description>
+        <pubDate>Wed, 06 Apr 2016 00:00:00 +0800</pubDate>
+        <link>http://scchen.com/blog/2016/04/display-math-equation-in-post.html</link>
+        <guid isPermaLink="true">http://scchen.com/blog/2016/04/display-math-equation-in-post.html</guid>
+        
+        
+        <category>statistics</category>
+        
+        <category>latex</category>
+        
+      </item>
+    
+      <item>
+        <title>Learning Sampling Distribution in R Programming</title>
+        <description>&lt;p&gt;Sampling distribution is the set of possible outcomes when we collect data through the randomization procedure (random sampling, ramond assignment). Do a simulation work is the best way to understand the sampling distribution. A simulation work is unrelated to any context we collect the data. You can connect the simulation work to any randominzation in the real world.&lt;/p&gt;
+
+&lt;p&gt;In this pseudo experiment, there are only ten observations we will collect in every sample. They are 1, 2, 3, 4, 5, 6, 7, 8, 9, 10. Accodring to the design of the experiment, a sample will have one observation to countless observations. I assume the distrubtions are accumulated from 100 samples of 1 observation, 9 observations, ,16 observations, 25 observations, and 36 observations. Every sample will be collapsed to a average value and become the components of sampling distribution. I use &lt;code class=&quot;highlighter-rouge&quot;&gt;ggplot2&lt;/code&gt; to draw the five sampling distributions. Look at what they are look like.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;suppressPackageStartupMessages&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ggplot2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xtable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;set.seed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;OBV&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;10&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Dist1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NULL&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Dist9&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NULL&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Dist16&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NULL&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Dist25&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NULL&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Dist36&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NULL&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Dist1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Dist1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;OBV&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;replace&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TRUE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Dist9&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Dist9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;OBV&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;replace&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TRUE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Dist16&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Dist16&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;OBV&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;16&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;replace&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TRUE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Dist25&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Dist25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;OBV&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;replace&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TRUE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Dist36&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Dist36&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;OBV&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;36&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;replace&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TRUE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Dist.df&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data.frame&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Size&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;factor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;16&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;36&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;each&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Sample_Means&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Dist1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Dist9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Dist16&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Dist25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Dist36&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;ggplot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Dist.df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;aes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Sample_Means&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fill&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;geom_histogram&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;facet_grid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;~&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/figure/source/learning-sampling-distribution-in-r-programming/2016-03-30-learning-sampling-distribution-in-r-programming/Sampling-1.png&quot; alt=&quot;plot of chunk Sampling&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We call the set of observations 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 &lt;strong&gt;population&lt;/strong&gt; in any circumstance we conduct this experiment. This population has the average 5.5 and the variance/standard deviation 8.25/2.87. With the increase of sample size, you find more and more samples collapsed to the average of population. The variation of each sample distribution decreases with the increasing of sample size as well. The following table illustrate the average and variance/standard deviation of each sampling distribution.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Sample Size&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Average&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Variance&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Standard Deviation&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;5.64&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;7&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;2.65&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;9&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;5.48&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0.97&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0.98&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;16&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;5.42&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0.54&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0.73&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;25&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;5.47&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0.38&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0.61&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;36&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;5.56&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0.2&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0.45&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;There are three findings in this simulation. First, the average of every sample is as equal as the average of population. Second, the variance of every sample is close to the divide of population variance by the sample size. Third, the standard deviation of every sample is close to the divide of population standard deviation by the square of sample size. These facts matches &lt;a href=&quot;https://en.wikipedia.org/wiki/Central_limit_theorem&quot;&gt;Central limit theorem&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 30 Mar 2016 00:00:00 +0800</pubDate>
+        <link>http://scchen.com/blog/2016/03/learning-sampling-distribution-in-r-programming.html</link>
+        <guid isPermaLink="true">http://scchen.com/blog/2016/03/learning-sampling-distribution-in-r-programming.html</guid>
+        
+        
+        <category>R_programming</category>
+        
+        <category>statistics</category>
+        
+      </item>
+    
+  </channel>
+</rss>

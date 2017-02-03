@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>演進中的科學研究方法(4/4) - 運用巨量資料評價實驗結果的再現性</title>
+  <meta name="description" content="This website is hosted by Sau-Chin Chen. You can check the source codes at my github page.
+">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://scchen.com/Text/text_20140805A/">
+  <link rel="alternate" type="application/rss+xml" title="Sau-Chin Chen" href="http://scchen.com/feed.xml" />
+<link rel='stylesheet' id='open-sans-css'  href='//fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&#038;subset=latin%2Clatin-ext&#038;ver=4.2.4' type='text/css' media='all' />
+<link href='http://fonts.googleapis.com/css?family=Titillium+Web:600italic,600,400,400italic' rel='stylesheet' type='text/css'>
+
+
+
+
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">Sau-Chin Chen</a>
+
+
+    <nav class="site-nav">
+
+      <a href="#" class="menu-icon menu.open">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>  
+
+    <div class="trigger"><h1>Main Navigation</h1>
+
+ <ul class="menu">
+
+    
+    
+     <li><a href="/about/" class="page-link">About</a>
+    
+    </li>
+    
+    
+     <li><a href="/cv/" class="page-link">CV</a>
+    
+    </li>
+    
+    
+    <li><a href="/blog/" class="page-link">CodeBLO</a>
+    <ul class="sub-menu">
+    
+    <li><a href="/blog/">by Date</a></li>
+    
+    <li><a href="/categories/">by Category</a></li>
+    
+    </ul>
+    
+    </li>
+    
+    
+     <li><a href="/Text/" class="page-link">Text</a>
+    
+    </li>
+    
+    
+    <li><a href="/construction/" class="page-link">Construction</a>
+    <ul class="sub-menu">
+    
+    <li><a href="/construction/item-1/">How to build this site</a></li>
+    
+    <li><a href="/construction/item-2/">How to post in use of Rmarkdown</a></li>
+    
+    <li><a href="/construction/item-3/">Update R and reserve management</a></li>
+    
+    </ul>
+    
+    </li>
+    
+    </ul>
+
+
+<!-- <ul class="menu">
+        <li> <a class="page-link" href="/about">About</a></li>
+        <li> <a class="page-link"  href="/blog">Blog</a>
+        <li> <a class="page-link" href="/blog">CV</a>
+        <li> <a class="page-link" href="/blog">For Students</a></li>
+        <li> <a class="page-link"  href="/blog">Research</a></a>
+        <li> <a class="page-link" href="/blog">Teaching</a>
+<ul class="sub-menu">
+	<li><a href="http://svmiller.com/teaching/posc-1020-introduction-to-international-relations/">POSC 1020 – Introduction to International Relations</a></li>
+	<li><a href="http://svmiller.com/teaching/posc-3410-quantitative-methods-in-political-science/">POSC 3410 – Quantitative Methods in Political Science</a></li>
+	<li><a href="http://svmiller.com/teaching/posc-3610-international-politics-in-crisis/">POSC 3610 – International Politics in Crisis</a></li>
+	<li><a href="http://svmiller.com/teaching/posc-3630-united-states-foreign-policy/">POSC 3630 – United States Foreign Policy</a></li>
+</ul></li>
+        <li> <a class="page-link" href="/blog">Miscellany</a>
+<ul class="sub-menu">
+	<li><a href="http://svmiller.com/teaching/posc-1020-introduction-to-international-relations/">Clean USAID Greenbook Data</a></li>
+	<li><a href="http://svmiller.com/teaching/posc-3410-quantitative-methods-in-political-science/">Journal of Peace Research *.bst File</a></li>
+	<li><a href="http://svmiller.com/teaching/posc-3610-international-politics-in-crisis/">My Custom Beamer Style</a></li>
+</ul> 
+
+</li>
+</ul> -->
+
+     </div>  
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">演進中的科學研究方法(4/4) - 運用巨量資料評價實驗結果的再現性</h1>
+  </header>
+
+  <article class="post-content">
+    <p>前三篇文章討論難以透過統計分析顯現的實驗效應，有可能是統計分析方法的限制，或者實驗方法還不能穩定再現實驗效應，或者實驗效應本來就很微弱。如果某種實驗效應有明確的理論意義，實際發生的案例故事告訴我們，曾經面對如此困境的研究者，會冒著竄改或假造資料數據的風險，爭取發表的機會，或者坦然面對同儕審查的考驗，投稿數十寒暑皆無法發表的「暗無天日」歲月。無論是那種狀況，對於科學知識的前進，或是科學研究者的生涯進程都是一種損耗。到底有沒有讓微弱但有意義的實驗效應，又能兼顧研究品質與誠信的研究及發表程序？使認真做實驗的研究者可以不走險路，發表再現性經得起同儕考驗的研究呢？</p>
+
+<p>最後這一篇介紹二種有研究者或組織正在嘗試的方式，認識這些方式能理解考自已正在接受的科學新知是在什麼樣的狀況所產生的。因為我自已是從事行為科學領域的研究與教學，介紹的內容侷限於這領域的方法，如果讀者在其它科學領域涉獵已有一定程度，可做個比較，看看能不能從其中獲得啟發。</p>
+
+<h2 id="registered-replication-research">一、先登錄再現研究(Registered Replication Research)</h2>
+
+<p>我曾經在這篇文章：<a href="https://docs.google.com/document/d/1Fru7Y6IddBPWSVxkTV1m6ZmEXaDUHMdt7_IRBCMga_c/edit?usp=sharing">可重覆的實驗結果是科學進步的基礎？</a>，介紹兩位心理學者，<a href="http://rolfzwaan.blogspot.tw/">Rolf Zwaan</a>與<a href="http://blog.dansimons.com/">Daniel Simons</a>，發起與參與先登錄再現研究(Registered Replication Research)的過程所產生的討論，這次一起合作重現Hart與Albarracin於2011年發表在Pscyhological Science的原創性研究。這份研究設計兩篇內容相同的犯罪情節報導，一篇描述嫌疑犯意圖行為的動詞以未完成時貌描寫(imperfect aspect，例如 was doing)，另一篇的動詞以完成時貌描寫(perfect aspect，例如did)。參與者隨機閱讀其中一篇報導，接著進行缺字母填空作業(例如將S _ _ P，中間缺少的兩個字母補起來)，評估報導中主角的行為動機，或評估報導中犯人與受害者之間的意圖理解。三種評估都顯示閱讀用未完成時貌描寫的報導，參與者的表現分數都高於閱讀另一種報導的參與者，Hart與Albarracin稱此為未完成時貌效應(effect of imperfect aspect)。Zwann與Simons參與的這個專案( <a href="https://osf.io/d3mw4/">https://osf.io/d3mw4/</a> )，就是在不同實驗室以相同的程序及材料，測試此效應的再現性。</p>
+
+<p>寫這篇文章的時候這個專案還在進行中，我的介紹重點放在串連合作研究者的平台：open science framework (以下簡稱OSF)，以及參與專案的研究與專業期刊的合作模式。OSF是一家非營利組織，成立於2011年，辦公室位於美國維吉尼亞州Charlottesville，採用<a href="https://github.com/">github</a>的運作架構，提供註冊的研究者組織合作研究的平台。現在已有結案的研究專案發表正式論文，例如之前我曾介紹的<a href="https://sites.google.com/site/pmsp96/Home/teaching-1/columns/big-replication">Many Lab Project</a>(Klein et al., 2014)。Zwann與Simons都有參與的這個專案更是採用<a href="http://www.psychologicalscience.org/index.php/replication">APS公布的預先登錄研究規劃協議(Pre-registered Protocol)</a>，專案成立之初就登錄於psychological science，投稿程序也同時開始，所有共同合作者都是未來通過psychological science的審查程序後，論文的共同作者。</p>
+
+<p>不僅是研究完成後的原始數據，研究準備到執行的過程一切公開透明，不僅可維持研究誠信，因為投稿程序也同時展開，也可以加速實驗完成之後的審查時程。但是這種模式有研究題材的侷限性，最明顯的是專案題目一定要有明確預測結果的假設及實驗效應，因此再現已發表但多數研究者依然質疑的研究是最可能成案的題目，如果研究結果會牽涉科學發現產生的公益之外的利益，例如<a href="http://www.cogsci.nl/blog/miscellaneous/215-the-pros-and-cons-of-pre-registration-in-fundamental-research">這篇blog</a>提到的藥物開發研究，能否成案的因素有非科學的商業或政治因素考量。</p>
+
+<p>為了達到參與專案的合作研究者都能在最接近的研究條件進行實驗，像是相同型號的電腦設備，個別差異條件接近的參與者，執行實驗的成本必定不能太高。因為每位合作者擁有的資源條件都不相同，需要高檔配備的神經電位紀錄或腦部活動造影研究，很難達成跨實驗室的共同再現。所以至目前為止經過OSF平台「揪團」的專案，多數是透過網路施測，或在個人電腦進行實驗的研究。而且除非主題有普世性，並非所有有意願的研究者都能合作。當重現Hart與Albarracin的專題開放徵求合作者時，我曾致信詢問專案發起人能否將實驗材料轉換為中文，找母語為中文的人士參與實驗，探討有無動詞時貌效應。果不其然得到無法合作的回覆，不過專案發起人肯定在不同語言文化背景中，探討有沒有存在類似效應的想法，也許中文地區的心理學者可以合作進行一個新的題目。</p>
+
+<h2 id="mega-study">二、巨量研究(Mega Study)</h2>
+
+<p>實驗心理學的巨量研究是一種實驗讓有能力的人類產生反應的所有刺激，分批呈現給參與者，紀錄而得的資料庫，可以說是數個小實驗組合而成的超大型實驗。這種研究方式的概念可以追溯到實驗心理學的祖師爺<a href="http://en.wikipedia.org/wiki/Wilhelm_Wundt">Wilhelm Wundt</a>，上個世紀末研究字詞閱讀的語言心理學家們開始使用這種方法突破不同小型實驗結果不一致的限制，方法就是請參與實驗的人員，對學過所有的母語詞彙(英語)，進行真假詞判斷(Lexicon decision)與朗讀(reading aloud)，參與者對每一條字詞的反應時間與錯誤反應，都用規劃好的紀錄方式儲存為資料庫。</p>
+
+<p>在此介紹兩種語言心理學的巨量研究實例。第一種是由單一實驗團隊完成的英文詞彙專案(<a href="http://elexicon.wustl.edu/">English Lexicon Project</a>)，這是由華盛頓大學聖路易校區的David Balota教授領導的團隊收集815位的參與者對40,481個英文真詞與40,481個英文假詞進行的反應，讓有興趣應用的研究者能檢索這些資料，或者運用有理論意義的拼寫或拼音規則，從資料庫選擇可做小型實驗的詞彙。所以這個專案絕對沒有把所有心理學者的實驗都做盡，反而產生新的實驗操作指標，例如orthographic Levenshtein distance 20 (OLD 20，Yarkoni, Balota, and Yap, 2008)。</p>
+
+<p>這個指標的定義非專業人士要理解會有些困難，但指標帶來的後續研究對科學新知有興趣的人者會想了解。OLD 20是評價英文詞彙之間外形相似度的量尺，如果用中文字類比，OLD 20可以告訴我們「王」與「玉」的外形相似度，和「王」與「主」的外形相似度是不同的，而且可以用數字表達相似的程度。這個指標比只用筆劃或字母的差異的相似度基準，提供更明確的計量尺度，之後引用這個指標的著名研究是法國Grainger教授領導的團隊，進行的狒狒識字實驗(Grainger, Dufau, Montant, Ziegler, and Fagot,  2012)，泛科學的編輯也曾做過<a href="http://pansci.tw/archives/15277">中文報導</a>，只是不論中英文報導都沒有寫到Grainger教授是用OLD 20挑選給狒狒的實驗材料，以及做為分析狒狒識字反應的指標。如果因為我的解說，能促成研究中文的心理學家挑戰台灣彌猴的識字能力研究，也是不錯的貢獻。</p>
+
+<p>另一種實例是跨實驗室團隊的合作成果，類似先登錄再現研究的模式，但是參與合作者不只關切一種或數種實驗的再現，而是所有能產生反應的刺激，以及長期以來相關的實驗研究因為程序的設定而有不一致的發現，例如呈現刺激的時間控制。語義促發(Semantic priming ，Hutchison et al., 2013)和遮蔽促發(Masked priming，Adelman et al., 2014)是這類代表，兩者都是讓要反應的刺激項目跟在呈現促發項目(probe 或 prime word)之後呈現，測量促發項目與刺激項目有關(例如「護士-醫生」，「蝴蝶-蜜蜂」)與兩者無關產生的反應差異。語義促發的項目之間時間差距較長(至少200毫秒)，關聯性的操作以字詞語義為主；遮蔽促發的項目之間時間差距極短(約50毫秒左右)，關聯性的操作以字詞外形相似度為主。兩種實驗分別用於探討晚期語義處理與早期知覺歷程，有心理學者提出整合兩者的理論，但直到今天還是以專注於一種歷程的理論與實驗方法的研究最有成果，也累積不少爭議。舉遮蔽促發的一項爭議，有英文字詞辨識是一個字母接著一個字母處理的理論，還是整體一起處理的理論。兩種理論的壁壘分明，傳統同儕審查很可能會使其中一方過度挑另一方的毛病，造成「不見天日」的問題。</p>
+
+<p>Adelman等人合作的遮蔽促發巨量研究就有突破「不見天日」的目的，不僅納入已被兩方廣泛接受的實驗效應，也同時測量有爭議的實驗效應。這種模式可稱為「母雞帶小雞」，不是指學術界大咖帶領小咖，而是再現程度高的穩定實驗效應，與再現程度低但有理論意義的實驗效應放在一起測量。同時也能嘗試小型實驗少用的分析方法，例如這份遮蔽促發的巨量研究是供參與的各實驗室設備與參與者個別差異參數，各式已知的字詞外形相似度指標(如OLD 20)，與各種實驗效應的相關性分析，讓其它研究者能探討有爭議的實驗效應為何微弱的原因。</p>
+
+<h2 id="section">三、新世代的學習思維</h2>
+
+<p>實驗結果的可再現性是所有科學知識能被人類記載與傳達的基礎，行為科學的複雜度讓多數理論不易獲得有穩定再現的實驗證據支持，因此有先登錄再現研究與巨量研究的出現，補充小型實驗無法呈現所有可能性的侷限，這系列的前三篇說明這些侷限與研究者設定可驗證假設的否證哲學有關。小型實驗依然是研究者最能掌握的知識工具，這篇文章介紹的例子都顯示先登錄再現研究與巨量研究是開拓新題材的作業模式，大量資料為微弱實驗效應的再現性提供充份的評估，讓需要驗證或不易發表的小型研究有獲得肯定的機會。</p>
+
+<p>傳統學習實驗的設計與分析的方針是再現經典小型實驗效應，著重實驗操作細節的安排與分析方法的演練， 不過缺乏對實驗主題演進的體認。我認為這樣的體認才能刺激學習者產生對知識現狀的了解，並提出新的問題與解決方法。先登錄再現研究不只完整公開研究過程，也強調有意願合作者必須理解參與過程的責任，如果能將這種模式落實於學習或訓練，不但能培養後進研究者鑑賞研究題目的眼光，以及執行研究過程應遵守的誠篤原則。我寫這四篇文章的期許是未來能培養有此見識的科學研究者，這樣的科學家才有能力將自已專攻的知識領域，真正落實在自已身處的社會環境之中。</p>
+
+<h3 id="section-1">參考文獻</h3>
+
+<p>Adelman, J., Johnson, R., McCormick, S., McKague, M., Kinoshita, S., Bowers, J., . . . Davis, C. (2014). A behavioral database for masked form priming. Behavior Research Methods, 1-16. doi: 10.3758/s13428-013-0442-y</p>
+
+<p>Balota, D. A., Yap, M. J., Hutchison, K. A., Cortese, M. J., Kessler, B., Loftis, B., … Treiman, R. (2007, 12). The English Lexicon Project. <em>Behavior Research Methods,</em> <em>39</em>(3), 445-459. doi: 10.3758/BF03193014</p>
+
+<p>Grainger, J., Dufau, S., Montant, M., Ziegler, J. C., &amp; Fagot, J. (2012, 12). Orthographic Processing in Baboons (Papio papio). <em>Science,</em> <em>336</em>(6078), 245-248. doi: 10.1126/science.1218152</p>
+
+<p>Hart, W., &amp; Albarracin, D. (2011, 12). Learning About What Others Were Doing: Verb Aspect and Attributions of Mundane and Criminal Intent for Past Actions. <em>Psychological Science,</em> <em>22</em>(2), 261-266. doi: 10.1177/0956797610395393</p>
+
+<p>Hutchison, K. A., Balota, D. A., Neely, J. H., Cortese, M. J., Cohen-Shikora, E. R., Tse, C., … Buchanan, E. (2013, 12). The semantic priming project. <em>Behavior Research Methods,</em> <em>45</em>(4), 1099-1114. doi: 10.3758/s13428-012-0304-z</p>
+
+<p>Klein, R. A., Ratliff, K. A., Vianello, M., Adams Jr, R. B., Bahník, Š., Bernstein, M. J., . . . Nosek, B. A. (2014). Investigating Variation in Replicability. Social Psychology, 45(3), 142-152. doi: 10.1027/1864-9335/a000178</p>
+
+<p>Yarkoni, T., Balota, D., &amp; Yap, M. (2008, 12). Moving beyond Coltheart’s N: A new measure of orthographic similarity. <em>Psychonomic Bulletin &amp; Review,</em> <em>15</em>(5), 971-979. doi: 10.3758/PBR.15.5.971</p>
+
+
+  </article>
+  
+<div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    /*
+    var disqus_config = function () {
+        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        
+        s.src = '//scchen.disqus.com/embed.js';
+        
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+<!--     <h2 class="footer-heading">Sau-Chin Chen</h2> -->
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li><strong>Sau-Chin Chen</strong></li>
+
+          <li><a href="mailto:pmsp96@gmail.com">pmsp96@gmail.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/SCgeeker">
+              <span class="icon  icon--github">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+                </svg>
+              </span>
+
+              <span class="username">SCgeeker</span>
+            </a>
+          </li>
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+         <p class="text">
+This website is hosted by Sau-Chin Chen. You can check the source codes at my github page.
+ Subscribe the least updated <a href="/feed.xml">via RSS</a>.
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+    <link href="/feed.xml" type="application/rss+xml" rel="alternate" title="Subscribe the least posts (atom)" />
+  </body>
+
+</html>
