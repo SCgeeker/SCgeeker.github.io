@@ -8,6 +8,7 @@ This section collects **writings without codes** for self review and anyone who 
 *The slides for open talk are stored here since October, 2016.*  
 
 ## 2017
+- [時態門](/Text/text_2017004/)
 - [從科學危機認識開放科學](/Text/text_2017003/)
 - [註冊研究(Registered Research)](/Text/text_2017002/)
 - [影片介紹：科學家之路](/Text/text_2017001/)
