@@ -160,20 +160,20 @@
 
 <p>Today we have 10 hypotheses (N = 10) to be evaluated by the data. Consider all the consequences, we can calculate all the probabilities given the counts of positive hypotheses.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">require</span><span class="p">(</span><span class="n">xtable</span><span class="p">)</span>
-<span class="n">N</span> <span class="o">&lt;-</span> <span class="m">10</span>
-<span class="n">n</span> <span class="o">&lt;-</span> <span class="m">0</span><span class="o">:</span><span class="m">10</span>
-<span class="n">alpha</span> <span class="o">&lt;-</span> <span class="m">.05</span>
-<span class="n">REJECT_P</span> <span class="o">&lt;-</span> <span class="m">0</span>
-<span class="n">PASS_P</span> <span class="o">&lt;-</span> <span class="n">rep</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="n">length</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
-<span class="k">for</span><span class="p">(</span><span class="n">k</span> <span class="k">in</span> <span class="n">n</span><span class="p">){</span>
-        <span class="n">REJECT_P</span> <span class="o">=</span> <span class="n">REJECT_P</span> <span class="o">+</span> <span class="n">choose</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="o">*</span><span class="n">alpha</span><span class="o">^</span><span class="n">k</span><span class="o">*</span><span class="p">(</span><span class="m">1</span> <span class="o">-</span> <span class="n">alpha</span><span class="p">)</span><span class="o">^</span><span class="p">(</span><span class="n">N</span> <span class="o">-</span> <span class="n">k</span><span class="p">)</span> 
-        <span class="n">PASS_P</span><span class="p">[</span><span class="n">k</span><span class="m">+1</span><span class="p">]</span> <span class="o">=</span> <span class="m">1</span> <span class="o">-</span> <span class="n">REJECT_P</span>
-<span class="p">}</span>
-<span class="n">SUCCESS</span> <span class="o">=</span> <span class="n">data.frame</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">PASS_P</span><span class="p">)</span>
-<span class="n">colnames</span><span class="p">(</span><span class="n">SUCCESS</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="n">c</span><span class="p">(</span><span class="s2">"n"</span><span class="p">,</span> <span class="s2">"Probability(Positive Results)"</span><span class="p">)</span>
-<span class="n">print</span><span class="p">(</span><span class="n">xtable</span><span class="p">(</span><span class="n">SUCCESS</span><span class="p">),</span> <span class="n">include.rownames</span> <span class="o">=</span> <span class="n">FALSE</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s2">"html"</span> <span class="p">)</span> 
-</code></pre>
+<div class="language-r highlighter-rouge"><pre class="highlight"><code><span class="n">require</span><span class="p">(</span><span class="n">xtable</span><span class="p">)</span><span class="w">
+</span><span class="n">N</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">10</span><span class="w">
+</span><span class="n">n</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">0</span><span class="o">:</span><span class="m">10</span><span class="w">
+</span><span class="n">alpha</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">.05</span><span class="w">
+</span><span class="n">REJECT_P</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">0</span><span class="w">
+</span><span class="n">PASS_P</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rep</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="nf">length</span><span class="p">(</span><span class="n">n</span><span class="p">))</span><span class="w">
+</span><span class="k">for</span><span class="p">(</span><span class="n">k</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">n</span><span class="p">){</span><span class="w">
+        </span><span class="n">REJECT_P</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">REJECT_P</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">choose</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="o">*</span><span class="n">alpha</span><span class="o">^</span><span class="n">k</span><span class="o">*</span><span class="p">(</span><span class="m">1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">alpha</span><span class="p">)</span><span class="o">^</span><span class="p">(</span><span class="n">N</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">k</span><span class="p">)</span><span class="w"> 
+        </span><span class="n">PASS_P</span><span class="p">[</span><span class="n">k</span><span class="m">+1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">REJECT_P</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="n">SUCCESS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data.frame</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">PASS_P</span><span class="p">)</span><span class="w">
+</span><span class="n">colnames</span><span class="p">(</span><span class="n">SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s2">"n"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Probability(Positive Results)"</span><span class="p">)</span><span class="w">
+</span><span class="n">print</span><span class="p">(</span><span class="n">xtable</span><span class="p">(</span><span class="n">SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="n">include.rownames</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"html"</span><span class="w"> </span><span class="p">)</span><span class="w"> 
+</span></code></pre>
 </div>
 
 <!-- html table generated in R 3.2.5 by xtable 1.8-2 package -->
@@ -193,8 +193,8 @@
 <tr> <td align="right">  10 </td> <td align="right"> 0.00 </td> </tr>
 <p>&lt;/table&gt;</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">plot</span><span class="p">(</span><span class="n">PASS_P</span> <span class="o">~</span> <span class="n">n</span><span class="p">,</span> <span class="n">xlab</span> <span class="o">=</span> <span class="s2">"Smallest Number of Positive Hypotheses"</span><span class="p">,</span> <span class="n">ylab</span> <span class="o">=</span> <span class="s2">"Probability(Positive Results)"</span><span class="p">)</span>
-</code></pre>
+<div class="language-r highlighter-rouge"><pre class="highlight"><code><span class="n">plot</span><span class="p">(</span><span class="n">PASS_P</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">xlab</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Smallest Number of Positive Hypotheses"</span><span class="p">,</span><span class="w"> </span><span class="n">ylab</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Probability(Positive Results)"</span><span class="p">)</span><span class="w">
+</span></code></pre>
 </div>
 
 <p><img src="/figure/source/rethink-significance/2016-05-05-rethink-significance/MultiHypo-1.png" alt="plot of chunk MultiHypo" /></p>

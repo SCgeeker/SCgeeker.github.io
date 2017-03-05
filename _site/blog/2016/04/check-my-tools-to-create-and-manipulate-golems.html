@@ -151,11 +151,11 @@ Since this post, every post listed in the category <code class="highlighter-roug
 
 <p>Some of the packages are learned from I participated in <a href="https://www.coursera.org/specializations/jhu-data-science">Cousera Data Science</a>. Now I used to use <code class="highlighter-rouge">dplyr</code> to process the raw data, and I am learning how to draw the figures I need in use of <code class="highlighter-rouge">ggplot2</code>. When this post is published, I have updated my R to R version 3.2.5 (2016-04-14). Through <a href="http://xcelab.net/rm/statistical-rethinking/">the codes of Heuristic Andrew</a>, here are my installed packages.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">ip</span> <span class="o">&lt;-</span> <span class="n">as.data.frame</span><span class="p">(</span><span class="n">installed.packages</span><span class="p">()[,</span><span class="n">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">3</span><span class="o">:</span><span class="m">4</span><span class="p">)])</span>
-<span class="n">rownames</span><span class="p">(</span><span class="n">ip</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="n">NULL</span>
-<span class="n">ip</span> <span class="o">&lt;-</span> <span class="n">ip</span><span class="p">[</span><span class="n">is.na</span><span class="p">(</span><span class="n">ip</span><span class="o">$</span><span class="n">Priority</span><span class="p">),</span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">,</span><span class="n">drop</span><span class="o">=</span><span class="n">FALSE</span><span class="p">]</span>
-<span class="n">print</span><span class="p">(</span><span class="n">ip</span><span class="p">,</span> <span class="n">row.names</span><span class="o">=</span><span class="n">FALSE</span><span class="p">)</span>
-</code></pre>
+<div class="language-r highlighter-rouge"><pre class="highlight"><code><span class="n">ip</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">as.data.frame</span><span class="p">(</span><span class="n">installed.packages</span><span class="p">()[,</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">3</span><span class="o">:</span><span class="m">4</span><span class="p">)])</span><span class="w">
+</span><span class="n">rownames</span><span class="p">(</span><span class="n">ip</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="kc">NULL</span><span class="w">
+</span><span class="n">ip</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">ip</span><span class="p">[</span><span class="nf">is.na</span><span class="p">(</span><span class="n">ip</span><span class="o">$</span><span class="n">Priority</span><span class="p">),</span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">,</span><span class="n">drop</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">]</span><span class="w">
+</span><span class="n">print</span><span class="p">(</span><span class="n">ip</span><span class="p">,</span><span class="w"> </span><span class="n">row.names</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span><span class="w">
+</span></code></pre>
 </div>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>##             Package    Version
@@ -389,8 +389,8 @@ Since this post, every post listed in the category <code class="highlighter-roug
 </code></pre>
 </div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">print</span><span class="p">(</span><span class="n">paste0</span><span class="p">(</span><span class="s2">"There are "</span><span class="p">,</span><span class="n">dim</span><span class="p">(</span><span class="n">ip</span><span class="p">)[</span><span class="m">1</span><span class="p">],</span> <span class="s2">" packages installed in my laptop."</span><span class="p">))</span>
-</code></pre>
+<div class="language-r highlighter-rouge"><pre class="highlight"><code><span class="n">print</span><span class="p">(</span><span class="n">paste0</span><span class="p">(</span><span class="s2">"There are "</span><span class="p">,</span><span class="nf">dim</span><span class="p">(</span><span class="n">ip</span><span class="p">)[</span><span class="m">1</span><span class="p">],</span><span class="w"> </span><span class="s2">" packages installed in my laptop."</span><span class="p">))</span><span class="w">
+</span></code></pre>
 </div>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>## [1] "There are 227 packages installed in my laptop."
