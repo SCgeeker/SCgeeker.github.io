@@ -1,6 +1,21 @@
 {
     "debugBreakpointsState" : {
         "breakpoints" : [
+            {
+                "editor_line_number" : 17,
+                "editor_state" : 1,
+                "function_name" : "toplevel",
+                "function_steps" : "",
+                "id" : 0,
+                "is_package_breakpoint" : false,
+                "is_pending_debug_completion" : false,
+                "line_number" : 17,
+                "needs_updated_steps" : false,
+                "package_name" : "",
+                "path" : "D:/core/LAB/Analysis/R/Bayes/8steps/Lindley1991.R",
+                "state" : 1,
+                "type" : 1
+            }
         ]
     }
 }
