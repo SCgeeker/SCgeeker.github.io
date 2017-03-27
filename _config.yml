@@ -16,7 +16,7 @@ destination: ./_site
 
 # Build settings
 ## highlighter: pygments
-markdown: kramdown
+markdown: Kramdown
 #markdown_ext: markdown
 kramdown:
   math_engine: mathjax
