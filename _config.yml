@@ -28,6 +28,7 @@ kramdown:
 #exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 #auto: true
 #pygments: true
+# Regeneration: --watch
   
 # Other options
 ### Disable permalink, blog posts are available
