@@ -6,8 +6,8 @@
 </description>
     <link>http://scchen.com/</link>
     <atom:link href="http://scchen.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 03 Apr 2017 20:07:34 +0800</pubDate>
-    <lastBuildDate>Mon, 03 Apr 2017 20:07:34 +0800</lastBuildDate>
+    <pubDate>Fri, 07 Apr 2017 19:31:43 +0800</pubDate>
+    <lastBuildDate>Fri, 07 Apr 2017 19:31:43 +0800</lastBuildDate>
     <generator>Jekyll v3.4.2</generator>
     
       <item>
@@ -108,157 +108,14 @@ exp.set('List', lst)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 </description>
-        <pubDate>Wed, 14 Sep 2016 00:00:00 +0800</pubDate>
-        <link>http://scchen.com/blog/2016/09/randomization-in-latin-square.html</link>
-        <guid isPermaLink="true">http://scchen.com/blog/2016/09/randomization-in-latin-square.html</guid>
+        <pubDate>Fri, 07 Apr 2017 00:00:00 +0800</pubDate>
+        <link>http://scchen.com/blog/2017/04/randomization-in-latin-square.html</link>
+        <guid isPermaLink="true">http://scchen.com/blog/2017/04/randomization-in-latin-square.html</guid>
         
         
         <category>Experiment_Design</category>
         
         <category>Opensesame</category>
-        
-      </item>
-    
-      <item>
-        <title>Why we need a readable data table in behavioral scientific research?</title>
-        <description>&lt;h3 id=&quot;a-bad-case&quot;&gt;A bad case&lt;/h3&gt;
-
-&lt;p&gt;A few days ago I was dealing with a raw data set as like the following table.&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;ID&lt;/th&gt;
-      &lt;th&gt;Group&lt;/th&gt;
-      &lt;th&gt;I01&lt;/th&gt;
-      &lt;th&gt;I02&lt;/th&gt;
-      &lt;th&gt;I03&lt;/th&gt;
-      &lt;th&gt;I04&lt;/th&gt;
-      &lt;th&gt;I05&lt;/th&gt;
-      &lt;th&gt;I06&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;s01&lt;/td&gt;
-      &lt;td&gt;A&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt;4&lt;/td&gt;
-      &lt;td&gt;5&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;s02&lt;/td&gt;
-      &lt;td&gt;A&lt;/td&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt;5&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;s03&lt;/td&gt;
-      &lt;td&gt;A&lt;/td&gt;
-      &lt;td&gt;4&lt;/td&gt;
-      &lt;td&gt;5&lt;/td&gt;
-      &lt;td&gt;4&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;s04&lt;/td&gt;
-      &lt;td&gt;B&lt;/td&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;5&lt;/td&gt;
-      &lt;td&gt;4&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;s05&lt;/td&gt;
-      &lt;td&gt;B&lt;/td&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt;5&lt;/td&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;s06&lt;/td&gt;
-      &lt;td&gt;B&lt;/td&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt;4&lt;/td&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;This table is a tiny version I copied from a master graduate’s spss raw data table. The format of the table is frequently seen in the data files for SPSS software. This format originated the “row cognition” for data in every mind who are not familar with the statistical tools. Without the awareness of structure, people used to stack a lot of bricks horizontally. As like the table shows, there are the data of 6 participants. A new statistical tool user tend to fill all the information and data for a participant in a row as possible. This format fits human cognition for the naive thing who never manipulate before. However, the computers recognize the table by column, in other words, a “column cognition”. I show you how computer deal with the summation of one participant’s scores by the following codes.&lt;/p&gt;
-
-&lt;div class=&quot;language-r highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;01&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;units&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;rep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;01&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;[1] 18&lt;/p&gt;
-
-&lt;div class=&quot;language-r highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;units&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%*%&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;01&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; [,1] [1,]   18
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;The function &lt;code class=&quot;highlighter-rouge&quot;&gt;sum&lt;/code&gt; is one of the first functions a new statistical tool user have learned at the first class. &lt;code class=&quot;highlighter-rouge&quot;&gt;sum&lt;/code&gt; is used to add all the scores of a participant. A new user tend to append the summation to the end of a row. But the last code show you a programing language recognizes the scores of a participant by column. The evidence is that the sturcture of &lt;code class=&quot;highlighter-rouge&quot;&gt;t(units)&lt;/code&gt; is row but the structure of &lt;code class=&quot;highlighter-rouge&quot;&gt;s01_data&lt;/code&gt; is a column. How do we eliminate the difference between human and machine cognition? Why human tend to deal with the data by row rather by column?&lt;/p&gt;
-
-&lt;h3 id=&quot;codes-to-make-the-table-readable&quot;&gt;Codes to make the table readable&lt;/h3&gt;
-
-&lt;p&gt;To make the table readable for the computer, I have to modify the format of this table as like this:&lt;/p&gt;
-
-&lt;div class=&quot;language-r highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Table&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;read.csv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;data.csv&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;New_Table&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data.frame&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ID&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;rep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Table&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Group&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;rep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Table&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Item&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;rep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;names&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Table&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]),&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;each&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Resp&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;unlist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Table&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])),&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;row.names&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;New_Table&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;##    ID Group Item Resp
-## 1 s01     A  I01    3
-## 2 s02     A  I01    2
-## 3 s03     A  I01    4
-## 4 s04     B  I01    2
-## 5 s05     B  I01    2
-## 6 s06     B  I01    2
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;The new table arrange all the raw scores in one column. I create a new column &lt;code class=&quot;highlighter-rouge&quot;&gt;Item&lt;/code&gt; in this table. &lt;code class=&quot;highlighter-rouge&quot;&gt;Item&lt;/code&gt; is the index like &lt;code class=&quot;highlighter-rouge&quot;&gt;ID&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;Group&lt;/code&gt;. We are able to summarize the total score of each participant by combine the index ‘ID’ and ‘Item’. We also average the group means by the index &lt;code class=&quot;highlighter-rouge&quot;&gt;Group&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;configurate-human-mind-approaching-a-readable-data-table&quot;&gt;Configurate human mind approaching a readable data table&lt;/h3&gt;
-
-&lt;p&gt;Why we have to make effort for waving a table readable for the computer? It is the human nature we prefer every column filled with meanings in a table. Every item has the reason a researcher put it into the study. Organizing all scores of items in a row occupy the meanings in the human cognition, but the index of items is meaningless for every human mind. A researcher need a table filled with the analyzable data for the statitical tool. In the case of this post, the analyzable data is the summation of all 6 items. A table like this case embodies the desired table for the researcher but needs a column of summarized scores for the computer. This gap has to be fixed before a precise statistical process is conducted. The solution I prefer is design the table format at first. This is the main reason I and my students have to prepare a code book before the start of the experiment.&lt;/p&gt;
-
-&lt;p&gt;The secondary solution depends on the packaged functions. There are many raw data table organized like the bad case at first, because the software to collect the raw data and organize them in this way, for example, google From apps. To deal with these data, I have to transform the raw data before I import them to R. A reproducible way is to transform them in use of the R codes. The functions have to isolate which columns are index and which columns are raw responses. To my knowledge, a code book is needed to define the columns to be arranged.&lt;/p&gt;
-
-</description>
-        <pubDate>Tue, 31 May 2016 00:00:00 +0800</pubDate>
-        <link>http://scchen.com/blog/2016/05/why-we-need-a-readable-data-table-in-behavioral-scientific-research.html</link>
-        <guid isPermaLink="true">http://scchen.com/blog/2016/05/why-we-need-a-readable-data-table-in-behavioral-scientific-research.html</guid>
-        
-        
-        <category>Rethinking</category>
-        
-        <category>statistics</category>
         
       </item>
     
@@ -295,8 +152,8 @@ exp.set('List', lst)
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;!-- html table generated in R 3.2.5 by xtable 1.8-2 package --&gt;
-&lt;!-- Thu May 05 11:32:07 2016 --&gt;
+&lt;!-- html table generated in R 3.3.3 by xtable 1.8-2 package --&gt;
+&lt;!-- Fri Apr 07 19:31:39 2017 --&gt;
 &lt;p&gt;&amp;lt;table border=1&amp;gt;&lt;/p&gt;
 &lt;tr&gt; &lt;th&gt; n &lt;/th&gt; &lt;th&gt; Probability(Positive Results) &lt;/th&gt;  &lt;/tr&gt;
 &lt;tr&gt; &lt;td align=&quot;right&quot;&gt;   0 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.40 &lt;/td&gt; &lt;/tr&gt;
@@ -328,9 +185,9 @@ exp.set('List', lst)
 &lt;h3 id=&quot;role-of-preregisteration&quot;&gt;Role of Preregisteration&lt;/h3&gt;
 &lt;p&gt;Decades of misusing the hypothesis testing have resulted in a bad situation we have to faced. There is no clear cutoff between the exploratory research and the confirmatory research. Many published papers in nature are the exploratory researches, but they are packaged in the form of confirmatory research by the authors (editors and reviewers have the responsibility too). This is why de Groot’s originated paper was translated and published 60 years later. This post is one of the fundemental I will cite when I introduce and discuss the preregistration.&lt;/p&gt;
 </description>
-        <pubDate>Thu, 05 May 2016 00:00:00 +0800</pubDate>
-        <link>http://scchen.com/blog/2016/05/rethink-significance.html</link>
-        <guid isPermaLink="true">http://scchen.com/blog/2016/05/rethink-significance.html</guid>
+        <pubDate>Fri, 07 Apr 2017 00:00:00 +0800</pubDate>
+        <link>http://scchen.com/blog/2017/04/rethink-significance.html</link>
+        <guid isPermaLink="true">http://scchen.com/blog/2017/04/rethink-significance.html</guid>
         
         
         <category>R_programming</category>
@@ -385,9 +242,9 @@ exp.set('List', lst)
 
 &lt;p&gt;The appointment of sample size could be loose when the possible average is uncertain. When the experiment is conducted at first time in the world, NHST without the appointment of sample size could draw the range of averages that might obey the hypothesis. On the other hand, the following studies better has the appointment of sample size. In this case, NHST has to accompany the other statistical evaluation, such as power, effect size, to find the appropriate sample size. Therefore, NHST will perform well when the researcher conducted the first study or have the preparation as well as the first study. This will be the key in my autopsy of Bayesian method.&lt;/p&gt;
 </description>
-        <pubDate>Sat, 30 Apr 2016 00:00:00 +0800</pubDate>
-        <link>http://scchen.com/blog/2016/04/autopsy-of-nhst-and-bayesian-models.html</link>
-        <guid isPermaLink="true">http://scchen.com/blog/2016/04/autopsy-of-nhst-and-bayesian-models.html</guid>
+        <pubDate>Fri, 07 Apr 2017 00:00:00 +0800</pubDate>
+        <link>http://scchen.com/blog/2017/04/autopsy-of-nhst-and-bayesian-models.html</link>
+        <guid isPermaLink="true">http://scchen.com/blog/2017/04/autopsy-of-nhst-and-bayesian-models.html</guid>
         
         <category>statistics</category>
         
@@ -408,7 +265,7 @@ Since this post, every post listed in the category &lt;code class=&quot;highligh
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;Some of the packages are learned from I participated in &lt;a href=&quot;https://www.coursera.org/specializations/jhu-data-science&quot;&gt;Cousera Data Science&lt;/a&gt;. Now I used to use &lt;code class=&quot;highlighter-rouge&quot;&gt;dplyr&lt;/code&gt; to process the raw data, and I am learning how to draw the figures I need in use of &lt;code class=&quot;highlighter-rouge&quot;&gt;ggplot2&lt;/code&gt;. When this post is published, I have updated my R to R version 3.2.5 (2016-04-14). Through &lt;a href=&quot;http://xcelab.net/rm/statistical-rethinking/&quot;&gt;the codes of Heuristic Andrew&lt;/a&gt;, here are my installed packages.&lt;/p&gt;
+&lt;p&gt;Some of the packages are learned from I participated in &lt;a href=&quot;https://www.coursera.org/specializations/jhu-data-science&quot;&gt;Cousera Data Science&lt;/a&gt;. Now I used to use &lt;code class=&quot;highlighter-rouge&quot;&gt;dplyr&lt;/code&gt; to process the raw data, and I am learning how to draw the figures I need in use of &lt;code class=&quot;highlighter-rouge&quot;&gt;ggplot2&lt;/code&gt;. When this post is published, I have updated my R to R version 3.3.3 (2017-03-06). Through &lt;a href=&quot;http://xcelab.net/rm/statistical-rethinking/&quot;&gt;the codes of Heuristic Andrew&lt;/a&gt;, here are my installed packages.&lt;/p&gt;
 
 &lt;div class=&quot;language-r highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;ip&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;as.data.frame&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;installed.packages&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()[,&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)])&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
 &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rownames&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
@@ -418,233 +275,197 @@ Since this post, every post listed in the category &lt;code class=&quot;highligh
 &lt;/div&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;##             Package    Version
-##             acepack    1.3-3.3
-##                 ape        3.4
-##            argparse      1.0.1
-##          assertthat        0.1
-##           base64enc      0.1-3
-##                  BH   1.60.0-1
-##              bibtex      0.4.0
-##                 bit     1.1-12
-##              bitops      1.0-6
-##            bookdown     0.0.63
-##                brew      1.0-6
-##              brocks        0.4
-##             caTools     1.17.1
-##               chron     2.3-47
-##                coda     0.18-1
-##          colorspace      1.2-6
-##            contrast       0.19
-##                curl      0.9.7
-##               darch     0.10.0
-##          data.table      1.9.6
-##                 DBI      0.3.1
-##            devtools     1.11.1
-##           dichromat      2.0-0
-##              digest      0.6.9
-##               dplyr      0.4.3
-##               e1071      1.6-7
-##            evaluate      0.8.3
-##                  ff     2.2-13
-##          findpython      1.0.1
-##             formatR        1.3
-##             Formula      1.2-1
-##       futile.logger      1.4.1
-##      futile.options      1.0.0
-##           gcookbook        1.0
-##               gdata     2.17.0
-##              getopt     1.20.0
-##             ggplot2      2.1.0
-##               git2r     0.14.0
-##              gplots      3.0.1
-##           gridExtra      2.2.1
-##              gtable      0.2.0
-##              gtools      3.5.0
-##            gWidgets     0.0-54
-##                 h2o    3.8.1.3
-##               highr      0.5.1
-##               Hmisc     3.17-3
-##           htmltools      0.3.5
-##              httpuv      1.3.3
-##                httr      1.1.0
-##              inline     0.3.14
-##            installr     0.17.5
-##            jsonlite     0.9.19
-##       knitcitations      1.0.7
-##               knitr    1.12.22
-##            labeling        0.3
-##            lambda.r      1.1.7
-##           languageR      1.4.1
-##        latticeExtra     0.6-28
-##            lazyeval     0.1.10
-##                lme4     1.1-12
-##                 loo      0.1.6
-##           lubridate      1.5.6
-##            magrittr        1.5
-##          manipulate      1.0.1
-##            markdown      0.7.7
-##        MatrixModels      0.4-1
-##         matrixStats     0.50.1
-##             memoise      1.0.0
-##                mime        0.4
-##              miniUI      0.1.1
-##               minqa      1.2.4
-##            multcomp      1.4-4
-##             munsell      0.4.3
-##             mvtnorm      1.0-5
-##              nloptr      1.0.4
-##             openssl      0.9.2
-##             packrat    0.4.7-1
-##                 PKI      0.1-3
-##                plyr      1.8.3
-##                 png      0.1-7
-##           polspline     1.1.12
-##               proto     0.3-10
-##            quantreg       5.21
-##                  R6      2.1.2
-##        RColorBrewer      1.1-2
-##                Rcpp     0.12.4
-##           RcppEigen  0.3.2.8.1
-##               RCurl   1.95-4.8
-##          RefManageR    0.10.13
-##            reshape2      1.4.1
-##          rethinking       1.58
-##               rjson     0.2.15
-##             RJSONIO      1.3-0
-##           rmarkdown    0.9.5.9
-##                 rms      4.5-0
-##                Rook      1.1-1
-##            roxygen2      5.0.1
-##           rsconnect    0.4.2.2
-##               rstan    2.9.0-3
-##          rstudioapi        0.5
-##               RUnit     0.4.31
-##           rversions      1.0.2
-##               rvest      0.3.1
-##            sandwich      2.3-4
-##              scales      0.4.0
-##             selectr      0.2-3
-##               servr        0.4
-##               shiny     0.13.2
-##            shinyAce      0.2.1
-##             shinyBS       0.61
-##          shinyFiles      0.6.0
-##              slackr        1.2
-##             SparseM        1.7
-##         StanHeaders      2.9.0
-##           statcheck      1.0.1
-##             statmod     1.4.24
-##             stringi      1.0-1
-##             stringr      1.0.0
-##             TH.data      1.0-7
-##             whisker      0.3-2
-##               withr      1.0.1
-##                 XML   3.98-1.4
-##                xml2      0.1.2
-##              xtable      1.8-2
-##                yaml     2.1.13
-##               zipfR      0.6-6
-##                 zoo     1.7-12
-##             acepack    1.3-3.3
+##              R2jags      0.5-7
+##               rjags        4-6
+##               abind      1.4-5
+##             acepack      1.4.1
 ##       addinexamples      0.1.0
 ##          assertthat        0.1
+##           backports      1.0.5
+##           base64enc      0.1-3
+##         BayesFactor   0.9.12-2
+##           bayesplot      1.1.0
+##                  BH   1.62.0-1
 ##              bibtex      0.4.0
+##               binom      1.1-1
 ##                 bit     1.1-12
 ##              bitops      1.0-6
 ##                brew      1.0-6
 ##              brocks 0.3.999999
+##                 car      2.1-4
 ##             caTools     1.17.1
-##               chron     2.3-47
-##          colorspace      1.2-6
-##                curl      0.9.7
-##               darch     0.10.0
-##          data.table      1.9.6
-##                 DBI      0.3.1
-##            devtools     1.11.1
+##           checkmate      1.8.2
+##               chron     2.3-50
+##                coda     0.19-1
+##          colorspace      1.3-2
+##        colourpicker        0.3
+##          commonmark        1.2
+##          compute.es      0.2-4
+##                covr      2.2.2
+##              crayon      1.3.2
+##                 CTT        2.1
+##                curl        2.3
+##               darch     0.12.0
+##          data.table     1.10.4
+##                 DBI        0.6
+##                desc      1.1.0
+##            devtools     1.12.0
 ##           dichromat      2.0-0
-##              digest      0.6.9
-##               dplyr      0.4.3
+##              digest     0.6.12
+##          doParallel     1.0.10
+##               dplyr      0.5.0
+##                  DT        0.2
+##            dygraphs    1.1.1.4
 ##               editR      0.2.2
-##            evaluate      0.8.3
+##            evaluate       0.10
 ##                  ff     2.2-13
-##             formatR        1.3
+##             foreach      1.4.3
+##             formatR        1.4
 ##             Formula      1.2-1
-##       futile.logger      1.4.1
+##       futile.logger      1.4.3
 ##      futile.options      1.0.0
 ##           gcookbook        1.0
 ##               gdata     2.17.0
-##             ggplot2      2.1.0
-##               git2r     0.14.0
+##             ggplot2      2.2.1
+##               git2r     0.18.0
+##              gmailr      0.7.1
 ##              gplots      3.0.1
+##            gridBase      0.4-7
 ##           gridExtra      2.2.1
 ##              gtable      0.2.0
 ##              gtools      3.5.0
 ##            gWidgets     0.0-54
 ##  gWidgetsManipulate        1.0
-##                 h2o    3.8.1.4
-##               highr      0.5.1
-##               Hmisc     3.17-3
+##                 h2o   3.10.3.6
+##               highr        0.6
+##               Hmisc      4.0-2
+##                 hms        0.3
+##           htmlTable        1.9
 ##           htmltools      0.3.5
+##         htmlwidgets        0.8
 ##              httpuv      1.3.3
-##                httr      1.1.0
-##            installr     0.17.5
-##            jsonlite     0.9.19
+##                httr      1.2.1
+##            hunspell        2.3
+##              igraph      1.0.1
+##              inline     0.3.14
+##            installr     0.18.0
+##               irlba      2.1.2
+##           iterators      1.0.8
+##                jpeg      0.1-8
+##            jsonlite        1.3
 ##       knitcitations      1.0.7
-##               knitr     1.12.3
+##               knitr     1.15.1
 ##            labeling        0.3
-##            lambda.r      1.1.7
+##            lambda.r      1.1.9
 ##        latticeExtra     0.6-28
-##            lazyeval     0.1.10
+##            lazyeval      0.2.0
+##               lintr      1.0.0
 ##                lme4     1.1-12
-##           lubridate      1.5.6
+##                 loo      1.0.0
+##           lubridate      1.6.0
 ##            magrittr        1.5
 ##          manipulate      1.0.1
 ##            markdown      0.7.7
+##        MatrixModels      0.4-1
+##         matrixStats     0.51.0
+##                mcmc      0.9-4
+##            MCMCpack      1.3-9
+##              memisc     0.99.8
 ##             memoise      1.0.0
-##                mime        0.4
+##             metafor      1.9-9
+##                mime        0.5
 ##              miniUI      0.1.1
 ##               minqa      1.2.4
+##              mnormt      1.5-5
+##        ModelMetrics      1.1.0
 ##             munsell      0.4.3
+##                 MVR     1.31.0
+##             mvtnorm      1.0-6
+##            nhstplot      1.0.1
 ##              nloptr      1.0.4
-##                plyr      1.8.3
+##                 NMF     0.20.6
+##             openssl      0.9.6
+##                osfr 0.0.0.9000
+##             packrat    0.4.8-1
+##              pacman      0.4.1
+##             pbapply      1.3-2
+##            pbkrtest      0.4-6
+##            pkgmaker       0.22
+##                 PKI      0.1-3
+##                plyr      1.8.4
 ##                 png      0.1-7
-##                  R6      2.1.2
+##           polspline     1.1.12
+##              praise      1.0.0
+##                 psy        1.1
+##               psych     1.6.12
+##                 pwr      1.2-0
+##           qualtRics        0.3
+##            quantreg       5.29
+##              R2jags      0.5-7
+##           R2WinBUGS     2.1-21
+##                  R6      2.2.0
+##            rappdirs      0.3.1
 ##             rCharts      0.4.5
 ##        RColorBrewer      1.1-2
-##                Rcpp     0.12.4
-##           RcppEigen  0.3.2.8.1
+##                Rcpp     0.12.9
+##           RcppEigen  0.3.2.9.0
 ##               RCurl   1.95-4.8
-##          RefManageR    0.10.13
-##            reshape2      1.4.1
+##               readr      1.0.0
+##          RefManageR     0.13.1
+##            registry        0.3
+##            reshape2      1.4.2
+##          rethinking       1.59
+##                 rex      1.1.1
 ##            Rgitbook        0.9
+##               rJava      0.9-8
 ##               rjson     0.2.15
 ##             RJSONIO      1.3-0
-##           rmarkdown      0.9.5
+##           rmarkdown        1.3
+##            rngtools      1.2.4
 ##                Rook      1.1-1
-##            roxygen2      5.0.1
-##          rstudioapi        0.5
-##           rversions      1.0.2
-##               rvest      0.3.1
-##              scales      0.4.0
-##             selectr      0.2-3
-##               servr        0.4
-##               shiny     0.13.2
-##            shinyAce      0.2.1
+##            roxygen2      6.0.1
+##           rprojroot        1.2
+##             rpsychi        0.8
+##           rsconnect        0.7
+##               rstan     2.14.1
+##          rstudioapi        0.6
+##               RUnit     0.4.31
+##           rversions      1.0.3
+##               rvest      0.3.2
+##              scales      0.4.1
+##             selectr      0.3-1
+##               servr        0.5
+##               shiny      1.0.0
 ##             shinyBS       0.61
 ##         shinyCustom      0.1.0
-##          shinyFiles      0.6.0
-##              slackr 1.3.1.9001
+##             shinyjs        0.9
+##           shinystan      2.3.0
+##         shinythemes      1.1.1
+##              slackr      1.4.2
 ##             slidify        0.5
 ##    slidifyLibraries      0.3.1
-##             statmod     1.4.24
-##             stringi      1.0-1
-##             stringr      1.0.0
+##         sourcetools      0.1.5
+##             SparseM       1.74
+##             statmod     1.4.29
+##          stringdist    0.9.4.4
+##             stringi      1.1.2
+##             stringr      1.2.0
+##            testthat      1.0.2
+##             threejs      0.2.2
+##              tibble        1.2
+##               tutor      0.2.0
+##             viridis      0.3.4
 ##             whisker      0.3-2
-##               withr      1.0.1
-##                 XML   3.98-1.4
-##                xml2      0.1.2
+##               withr      1.0.2
+##                xlsx      0.5.7
+##            xlsxjars      0.6.1
+##                 XML   3.98-1.5
+##                xml2      1.1.1
 ##              xtable      1.8-2
-##                yaml     2.1.13
+##                 xts      0.9-7
+##                yaml     2.1.14
+##               yarrr      0.1.4
+##                 zoo     1.7-14
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
@@ -652,15 +473,15 @@ Since this post, every post listed in the category &lt;code class=&quot;highligh
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;## [1] &quot;There are 227 packages installed in my laptop.&quot;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;## [1] &quot;There are 191 packages installed in my laptop.&quot;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
 &lt;p&gt;Richard’s book inspired me help people control their golems/ststistical models in the process of coding. In his book, literature and codes are separated. Readers who are not familiar with coding skill might hardly follow his literature. Literatural coding might be the best way to impliment the &lt;code class=&quot;highlighter-rouge&quot;&gt;Rethinking&lt;/code&gt;. I am going to accumulating the codes of Bayesian statistics and thake notes of his and others literatures in the coming posts.&lt;/p&gt;
 </description>
-        <pubDate>Fri, 22 Apr 2016 00:00:00 +0800</pubDate>
-        <link>http://scchen.com/blog/2016/04/check-my-tools-to-create-and-manipulate-golems.html</link>
-        <guid isPermaLink="true">http://scchen.com/blog/2016/04/check-my-tools-to-create-and-manipulate-golems.html</guid>
+        <pubDate>Fri, 07 Apr 2017 00:00:00 +0800</pubDate>
+        <link>http://scchen.com/blog/2017/04/check-my-tools-to-create-and-manipulate-golems.html</link>
+        <guid isPermaLink="true">http://scchen.com/blog/2017/04/check-my-tools-to-create-and-manipulate-golems.html</guid>
         
         
         <category>R_programming</category>
@@ -768,9 +589,9 @@ Since this post, every post listed in the category &lt;code class=&quot;highligh
 &lt;/div&gt;
 
 </description>
-        <pubDate>Wed, 06 Apr 2016 00:00:00 +0800</pubDate>
-        <link>http://scchen.com/blog/2016/04/vectors-in-mathematics-and-in-codes.html</link>
-        <guid isPermaLink="true">http://scchen.com/blog/2016/04/vectors-in-mathematics-and-in-codes.html</guid>
+        <pubDate>Fri, 07 Apr 2017 00:00:00 +0800</pubDate>
+        <link>http://scchen.com/blog/2017/04/vectors-in-mathematics-and-in-codes.html</link>
+        <guid isPermaLink="true">http://scchen.com/blog/2017/04/vectors-in-mathematics-and-in-codes.html</guid>
         
         
         <category>R_programming</category>
@@ -802,16 +623,155 @@ Then:&lt;br /&gt;
 
 &lt;p&gt;Embedded tex codes in &lt;code class=&quot;highlighter-rouge&quot;&gt;$$ ... $$&lt;/code&gt;, the equation was transfered inline or in single line. Thus I pass the step 3 of &lt;a href=&quot;http://tinyheero.github.io/2015/12/06/rmd-to-jekyll-protect-eqn.html&quot;&gt;Fong Chun Chan’s method&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Note.&lt;/strong&gt; Justify the last equation in 2016-04-06 09:12:21&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note.&lt;/strong&gt; Justify the last equation in 2017-04-07 19:31:38&lt;/p&gt;
 </description>
-        <pubDate>Wed, 06 Apr 2016 00:00:00 +0800</pubDate>
-        <link>http://scchen.com/blog/2016/04/display-math-equation-in-post.html</link>
-        <guid isPermaLink="true">http://scchen.com/blog/2016/04/display-math-equation-in-post.html</guid>
+        <pubDate>Fri, 07 Apr 2017 00:00:00 +0800</pubDate>
+        <link>http://scchen.com/blog/2017/04/display-math-equation-in-post.html</link>
+        <guid isPermaLink="true">http://scchen.com/blog/2017/04/display-math-equation-in-post.html</guid>
         
         
         <category>statistics</category>
         
         <category>latex</category>
+        
+      </item>
+    
+      <item>
+        <title>Why We Need A Readable Data Table In Behavioral Scientific Research</title>
+        <description>&lt;h3 id=&quot;a-bad-case&quot;&gt;A bad case&lt;/h3&gt;
+
+&lt;p&gt;A few days ago I was dealing with a raw data set as like the following table.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;ID&lt;/th&gt;
+      &lt;th&gt;Group&lt;/th&gt;
+      &lt;th&gt;I01&lt;/th&gt;
+      &lt;th&gt;I02&lt;/th&gt;
+      &lt;th&gt;I03&lt;/th&gt;
+      &lt;th&gt;I04&lt;/th&gt;
+      &lt;th&gt;I05&lt;/th&gt;
+      &lt;th&gt;I06&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;s01&lt;/td&gt;
+      &lt;td&gt;A&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;s02&lt;/td&gt;
+      &lt;td&gt;A&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;s03&lt;/td&gt;
+      &lt;td&gt;A&lt;/td&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;s04&lt;/td&gt;
+      &lt;td&gt;B&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;s05&lt;/td&gt;
+      &lt;td&gt;B&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;s06&lt;/td&gt;
+      &lt;td&gt;B&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;This table is a tiny version I copied from a master graduate’s spss raw data table. The format of the table is frequently seen in the data files for SPSS software. This format originated the “row cognition” for data in every mind who are not familar with the statistical tools. Without the awareness of structure, people used to stack a lot of bricks horizontally. As like the table shows, there are the data of 6 participants. A new statistical tool user tend to fill all the information and data for a participant in a row as possible. This format fits human cognition for the naive thing who never manipulate before. However, the computers recognize the table by column, in other words, a “column cognition”. I show you how computer deal with the summation of one participant’s scores by the following codes.&lt;/p&gt;
+
+&lt;div class=&quot;language-r highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;01&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;units&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;rep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;01&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;[1] 18&lt;/p&gt;
+
+&lt;div class=&quot;language-r highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;units&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%*%&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;01&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; [,1] [1,]   18
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The function &lt;code class=&quot;highlighter-rouge&quot;&gt;sum&lt;/code&gt; is one of the first functions a new statistical tool user have learned at the first class. &lt;code class=&quot;highlighter-rouge&quot;&gt;sum&lt;/code&gt; is used to add all the scores of a participant. A new user tend to append the summation to the end of a row. But the last code show you a programing language recognizes the scores of a participant by column. The evidence is that the sturcture of &lt;code class=&quot;highlighter-rouge&quot;&gt;t(units)' is row but the structure of &lt;/code&gt;s01_data` is a column. How do we eliminate the difference between human and machine cognition? Why human tend to deal with the data by row rather by column?&lt;/p&gt;
+
+&lt;h3 id=&quot;codes-to-make-the-table-readable&quot;&gt;Codes to make the table readable&lt;/h3&gt;
+
+&lt;p&gt;To make the table readable for the computer, I have to modify the format of this table as like this:&lt;/p&gt;
+
+&lt;div class=&quot;language-r highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Table&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;read.csv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;data.csv&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;New_Table&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data.frame&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ID&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;rep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Table&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Group&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;rep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Table&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Item&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;rep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;names&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Table&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]),&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;each&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Resp&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;unlist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Table&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])))&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;New_Table&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;##       ID Group Item Resp
+## I011 s01     A  I01    3
+## I012 s02     A  I01    2
+## I013 s03     A  I01    4
+## I014 s04     B  I01    2
+## I015 s05     B  I01    2
+## I016 s06     B  I01    2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The new table arrange all the raw scores in one column. I create a new column &lt;code class=&quot;highlighter-rouge&quot;&gt;Item&lt;/code&gt; in this table. &lt;code class=&quot;highlighter-rouge&quot;&gt;Item&lt;/code&gt; is the index like &lt;code class=&quot;highlighter-rouge&quot;&gt;ID&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;Group&lt;/code&gt;. We are able to summarize the total score of each participant by combine the index ‘ID’ and ‘Item’. We also average the group means by the index `Group’.&lt;/p&gt;
+
+&lt;h3 id=&quot;congigurate-human-mind-approaching-a-readable-data-table&quot;&gt;Congigurate human mind approaching a readable data table&lt;/h3&gt;
+
+&lt;p&gt;Why we have to make effort for waving a table readable for the computer? It is the human nature we prefer every column filled with meanings in a table. Every item has the reason a researcher put it into the study. Organizing all scores of items in a row occupy the meanings in the human cognition, but the index of items is meaningless for every human mind. A researcher need a table filled with the analyzable data for the statitical tool. In the case of this post, the analyzable data is the summation of all 6 items. A table like this case embodies the desired table for the researcher but needs a column of summarized scores for the computer. This gap has to be fixed before a precise statistical process is conducted. The solution I prefer is design the table format at first. This is the main reason I and my students have to prepare a code book before the start of the experiment.&lt;/p&gt;
+
+&lt;p&gt;The secondary solution depends on the packaged functions. There are many raw data table organized like the bad case at first, because the software to collect the raw data and organize them in this way, for example, google From apps. To deal with these data, I have to transform the raw data before I import them to R. A reproducible way is to transform them in use of the R codes. The functions have to isolate which columns are index and which columns are raw responses. To my knowledge, a code book is needed to define the columns to be arranged.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 31 May 2016 00:00:00 +0800</pubDate>
+        <link>http://scchen.com/blog/2016/05/why-we-need-a-readable-data-table-in-behavioral-scientific-research.html</link>
+        <guid isPermaLink="true">http://scchen.com/blog/2016/05/why-we-need-a-readable-data-table-in-behavioral-scientific-research.html</guid>
+        
         
       </item>
     

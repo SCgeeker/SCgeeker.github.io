@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Vectors in mathematics and in codes
-date: 2016-04-06
+date: 2017-04-07
 categories: [R_programming, statistics, latex]
 ---
 When a set of data/observations is imported to R, it is usually treated as `vector`. Vector has two mathematical forms as following:  

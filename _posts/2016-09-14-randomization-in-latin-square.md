@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Randomization in Latin Square
-date: 2016-09-14
+date: 2017-04-07
 published: true
 categories: [Experiment_Design, Opensesame]
 ---

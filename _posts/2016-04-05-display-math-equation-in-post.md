@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Display Math Equation in Post
-date: 2016-04-06
+date: 2017-04-07
 published: true
 categories: [statistics, latex]
 ---
@@ -25,4 +25,4 @@ $$ \displaystyle \frac {S_n - n \mu} {\sqrt {n \sigma^2} } \xrightarrow {D} N \l
 
 Embedded tex codes in `$$ ... $$`, the equation was transfered inline or in single line. Thus I pass the step 3 of [Fong Chun Chan's method](http://tinyheero.github.io/2015/12/06/rmd-to-jekyll-protect-eqn.html).
 
-**Note.** Justify the last equation in 2016-04-06 09:12:21
+**Note.** Justify the last equation in 2017-04-07 19:31:38

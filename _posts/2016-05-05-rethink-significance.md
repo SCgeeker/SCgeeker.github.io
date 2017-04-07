@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Rethink Significance
-date: 2016-05-05
+date: 2017-04-07
 published: true
 categories: [R_programming, Rethinking, statistics, preregistration]
 ---
@@ -39,8 +39,8 @@ colnames(SUCCESS) <- c("n", "Probability(Positive Results)")
 print(xtable(SUCCESS), include.rownames = FALSE, type = "html" ) 
 ```
 
-<!-- html table generated in R 3.2.5 by xtable 1.8-2 package -->
-<!-- Thu May 05 11:32:07 2016 -->
+<!-- html table generated in R 3.3.3 by xtable 1.8-2 package -->
+<!-- Fri Apr 07 19:31:39 2017 -->
 <table border=1>
 <tr> <th> n </th> <th> Probability(Positive Results) </th>  </tr>
   <tr> <td align="right">   0 </td> <td align="right"> 0.40 </td> </tr>

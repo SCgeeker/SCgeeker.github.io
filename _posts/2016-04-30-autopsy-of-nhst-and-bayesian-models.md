@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Autopsy of NHST and Bayesian Models (part 1)
-date: 2016-04-30
+date: 2017-04-07
 published: true
 tags: [statistics, Bayesian, Rethinking]
 ---
