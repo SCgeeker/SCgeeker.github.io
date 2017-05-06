@@ -6,9 +6,33 @@
 </description>
     <link>http://scchen.com/</link>
     <atom:link href="http://scchen.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 07 Apr 2017 19:31:43 +0800</pubDate>
-    <lastBuildDate>Fri, 07 Apr 2017 19:31:43 +0800</lastBuildDate>
+    <pubDate>Sat, 06 May 2017 11:54:01 +0800</pubDate>
+    <lastBuildDate>Sat, 06 May 2017 11:54:01 +0800</lastBuildDate>
     <generator>Jekyll v3.4.2</generator>
+    
+      <item>
+        <title>Template of a citable blog post</title>
+        <description>&lt;h2 id=&quot;this-post-is-for-future-posts&quot;&gt;This post is for future posts.&lt;/h2&gt;
+
+&lt;p&gt;My post template &lt;code class=&quot;highlighter-rouge&quot;&gt;head.html&lt;/code&gt; has these meta tags.&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &amp;lt;meta name=&quot;generator&quot; content=&quot;blogger&quot;/&amp;gt;
+  &amp;lt;meta name=&quot;author&quot; content=&quot;Sau-Chin Chen&quot;/&amp;gt;
+  &amp;lt;meta property=&quot;og:title&quot; content=&quot;Template of a citable blog post&quot;/&amp;gt;
+  &amp;lt;meta property=&quot;article:published_time&quot; content=&quot;May 5, 2017&quot;/&amp;gt;
+  &amp;lt;meta property=&quot;og:site_name&quot; content=&quot;Sau-Chin Chen's website&quot;/&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Fri, 05 May 2017 00:00:00 +0800</pubDate>
+        <link>http://scchen.com/blog/2017/05/templete-of-a-citable-blog-post.html</link>
+        <guid isPermaLink="true">http://scchen.com/blog/2017/05/templete-of-a-citable-blog-post.html</guid>
+        
+        
+        <category>blog_skills</category>
+        
+        <category>knowledge_management</category>
+        
+      </item>
     
       <item>
         <title>Randomization in Latin Square</title>
