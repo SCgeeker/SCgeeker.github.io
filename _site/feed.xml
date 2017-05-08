@@ -6,9 +6,55 @@
 </description>
     <link>http://scchen.com/</link>
     <atom:link href="http://scchen.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 06 May 2017 13:17:07 +0800</pubDate>
-    <lastBuildDate>Sat, 06 May 2017 13:17:07 +0800</lastBuildDate>
+    <pubDate>Mon, 08 May 2017 20:53:20 +0800</pubDate>
+    <lastBuildDate>Mon, 08 May 2017 20:53:20 +0800</lastBuildDate>
     <generator>Jekyll v3.4.2</generator>
+    
+      <item>
+        <title>Manage a blog for the easier bibliography management optimization</title>
+        <description>&lt;p&gt;Many promoters of open-accessible literature spread their preprinted articles through the personal and collaborative blogs. Bloggers and followers like me usually manage the last updated posts in the reference managers. My &lt;a href=&quot;https://www.zotero.org/&quot;&gt;zotero&lt;/a&gt; have collected a lot of blog posts to be commented and to be cited in my coming articles. After collected hundreds of posts, I found that zotero not always imported the meta data of the blog posts for the correct citations. This post presents why not all the necessary meta data can be imported by the reference managers, and shows how the readers and bloggers could manage these situations.&lt;/p&gt;
+
+&lt;p&gt;Referring to the 76th example of APA 6th style and the &lt;a href=&quot;http://blog.apastyle.org/apastyle/2016/04/how-to-cite-a-blog-post-in-apa-style.html&quot;&gt;explain of Timothy McAdoo (2016)&lt;/a&gt;, I demonstrates the reference format of a blog post like following:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&quot;Who&quot;. (Year, Month, Day). &quot;Title of the post&quot;[Blog post]. Retrieved from &quot;my url&quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;For a long time, I was confused why some imported posts have no released date, and some do not include the author’s name. Last week, read this blog post about &lt;a href=&quot;https://moz.com/blog/meta-data-templates-123&quot;&gt;social meta tags&lt;/a&gt;, I realized that &lt;strong&gt;zotero&lt;/strong&gt; establish the items for the blog posts and webpages in terms of the &lt;code class=&quot;highlighter-rouge&quot;&gt;meta&lt;/code&gt; tags in the source html files. To have the correct citation of a blog post, this post at least have the three &lt;code class=&quot;highlighter-rouge&quot;&gt;meta&lt;/code&gt; tags: &lt;code class=&quot;highlighter-rouge&quot;&gt;author&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;article:published_time&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;og:title&lt;/code&gt;. I built a &lt;a href=&quot;http://scchen.com/blog/2017/05/templete-of-a-citable-blog-post.html&quot;&gt;template&lt;/a&gt; showing how these tag are included in the &lt;code class=&quot;highlighter-rouge&quot;&gt;head.html&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Many of my collected posts are from the active psychologists. &lt;a href=&quot;http://psychbrief.com&quot;&gt;PsychBrief&lt;/a&gt; has gathered the &lt;a href=&quot;http://psychbrief.com/psychological-methods-blog-feed/&quot;&gt;blog feed&lt;/a&gt; of 43 blogs. After a short survey, I found that &lt;strong&gt;WordPress&lt;/strong&gt; is the favorite of psycho bloggers (29 blogs). &lt;strong&gt;Google blogpost&lt;/strong&gt; is the second preference (7 blogs). Almost the &lt;strong&gt;WordPress&lt;/strong&gt; blog posts are able to export all the &lt;code class=&quot;highlighter-rouge&quot;&gt;meta&lt;/code&gt; tags to the reference managers. However, some collaborative blogs, such as Andrew Gelman’s &lt;a href=&quot;http://andrewgelman.com/&quot;&gt;Statistical Modeling, Causal Inference, and Social Science&lt;/a&gt;, have no the &lt;code class=&quot;highlighter-rouge&quot;&gt;author&lt;/code&gt; tag. &lt;strong&gt;Google blogpost&lt;/strong&gt; at default have no the tag &lt;code class=&quot;highlighter-rouge&quot;&gt;article:published_time&lt;/code&gt;. As a user of &lt;strong&gt;zotero&lt;/strong&gt;, I have to fill in these information by hands after imported these blog posts.&lt;/p&gt;
+
+&lt;p&gt;To help the supporters of open accessible literature have the efficient bibliography management, I summarize three situations according to my survey and experience:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Single bloggers manages the &lt;strong&gt;WordPress&lt;/strong&gt; blog.&lt;br /&gt;
+&lt;em&gt;For readers&lt;/em&gt;: It’s fortune. All necessary tags are able to be imported.&lt;br /&gt;
+&lt;em&gt;For bloggers&lt;/em&gt;: The author’s name had been registered since the day you opened your blog. When some posts are collaborative works, the default &lt;code class=&quot;highlighter-rouge&quot;&gt;author&lt;/code&gt; tag can not show the authorship.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Many bloggers manage the &lt;strong&gt;WordPress&lt;/strong&gt; blog. Bloggers manage the personal site in the other platform.&lt;br /&gt;
+&lt;em&gt;For readers&lt;/em&gt;: Keep in mind that not all the necessary tags could be exported from these posts.&lt;br /&gt;
+&lt;em&gt;For bloogers&lt;/em&gt;: If you want to help your readers’ managements easier, you could take hours to study how to put all the necessary tags on each post.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Bloggers manage the &lt;strong&gt;jekyll-based&lt;/strong&gt; blog.&lt;br /&gt;
+&lt;em&gt;For readers&lt;/em&gt;: It’s the worst that many jekyll themes set the fewest &lt;code class=&quot;highlighter-rouge&quot;&gt;meta&lt;/code&gt; tags at default. It’s the best that the bloggers realized every things the readers need. &lt;br /&gt;
+&lt;em&gt;For bloggers&lt;/em&gt;: In use of the &lt;a href=&quot;https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet&quot;&gt;markdown syntax&lt;/a&gt;, each blog post are able to fetch the &lt;code class=&quot;highlighter-rouge&quot;&gt;author&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;published_time&lt;/code&gt;, and &lt;code class=&quot;highlighter-rouge&quot;&gt;og:title&lt;/code&gt; in &lt;a href=&quot;https://en.wikipedia.org/wiki/YAML&quot;&gt;YAML&lt;/a&gt; in the time it created. There is the flexibility that a blog collects the works of single authors and collaboration.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+</description>
+        <pubDate>Mon, 08 May 2017 00:00:00 +0800</pubDate>
+        <link>http://scchen.com/blog/2017/05/manage-a-blog-for-the-easier-bibliography-management-optimization.html</link>
+        <guid isPermaLink="true">http://scchen.com/blog/2017/05/manage-a-blog-for-the-easier-bibliography-management-optimization.html</guid>
+        
+        
+        <category>blog_skills</category>
+        
+        <category>knowledge_management</category>
+        
+      </item>
     
       <item>
         <title>Template of a citable blog post</title>
