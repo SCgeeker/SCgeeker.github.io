@@ -1,5 +1,6 @@
 ---
 layout: post
+author: Sau-Chin Chen
 title:  Manage a blog for the easier bibliography management optimization
 date: 2017-05-08
 comments: true
