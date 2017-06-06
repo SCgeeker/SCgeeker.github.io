@@ -8,6 +8,7 @@ This section collects **writings without codes** for self review and anyone who 
 *The slides for open talk are stored here since October, 2016.*  
 
 ## 2017
+- [披薩門：「瞎吃」教主的完美自爆](/Text/text_2017006/)
 - [擺姿勢也許能增加你的自信，但是不能真正改變你(2017增強版)](/Text/text_2016005e01/)
 - [貝氏八步](/Text/text_2017005/)
 - [時態門](/Text/text_2017004/)
