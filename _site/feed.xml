@@ -6,8 +6,8 @@
 </description>
     <link>http://scchen.com/</link>
     <atom:link href="http://scchen.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 03 Aug 2017 09:33:19 -0400</pubDate>
-    <lastBuildDate>Thu, 03 Aug 2017 09:33:19 -0400</lastBuildDate>
+    <pubDate>Mon, 21 Aug 2017 09:56:16 +0800</pubDate>
+    <lastBuildDate>Mon, 21 Aug 2017 09:56:16 +0800</lastBuildDate>
     <generator>Jekyll v3.4.2</generator>
     
       <item>
@@ -49,7 +49,7 @@
 &lt;/ol&gt;
 
 </description>
-        <pubDate>Mon, 08 May 2017 00:00:00 -0400</pubDate>
+        <pubDate>Mon, 08 May 2017 00:00:00 +0800</pubDate>
         <link>http://scchen.com/blog/2017/05/manage-a-blog-for-the-easier-bibliography-management-optimization.html</link>
         <guid isPermaLink="true">http://scchen.com/blog/2017/05/manage-a-blog-for-the-easier-bibliography-management-optimization.html</guid>
         
@@ -76,7 +76,7 @@
 &lt;/div&gt;
 
 </description>
-        <pubDate>Fri, 05 May 2017 00:00:00 -0400</pubDate>
+        <pubDate>Fri, 05 May 2017 00:00:00 +0800</pubDate>
         <link>http://scchen.com/blog/2017/05/templete-of-a-citable-blog-post.html</link>
         <guid isPermaLink="true">http://scchen.com/blog/2017/05/templete-of-a-citable-blog-post.html</guid>
         
@@ -185,7 +185,7 @@ exp.set('List', lst)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 </description>
-        <pubDate>Fri, 07 Apr 2017 00:00:00 -0400</pubDate>
+        <pubDate>Fri, 07 Apr 2017 00:00:00 +0800</pubDate>
         <link>http://scchen.com/blog/2017/04/randomization-in-latin-square.html</link>
         <guid isPermaLink="true">http://scchen.com/blog/2017/04/randomization-in-latin-square.html</guid>
         
@@ -262,7 +262,7 @@ exp.set('List', lst)
 &lt;h3 id=&quot;role-of-preregisteration&quot;&gt;Role of Preregisteration&lt;/h3&gt;
 &lt;p&gt;Decades of misusing the hypothesis testing have resulted in a bad situation we have to faced. There is no clear cutoff between the exploratory research and the confirmatory research. Many published papers in nature are the exploratory researches, but they are packaged in the form of confirmatory research by the authors (editors and reviewers have the responsibility too). This is why de Groot’s originated paper was translated and published 60 years later. This post is one of the fundemental I will cite when I introduce and discuss the preregistration.&lt;/p&gt;
 </description>
-        <pubDate>Fri, 07 Apr 2017 00:00:00 -0400</pubDate>
+        <pubDate>Fri, 07 Apr 2017 00:00:00 +0800</pubDate>
         <link>http://scchen.com/blog/2017/04/rethink-significance.html</link>
         <guid isPermaLink="true">http://scchen.com/blog/2017/04/rethink-significance.html</guid>
         
@@ -319,7 +319,7 @@ exp.set('List', lst)
 
 &lt;p&gt;The appointment of sample size could be loose when the possible average is uncertain. When the experiment is conducted at first time in the world, NHST without the appointment of sample size could draw the range of averages that might obey the hypothesis. On the other hand, the following studies better has the appointment of sample size. In this case, NHST has to accompany the other statistical evaluation, such as power, effect size, to find the appropriate sample size. Therefore, NHST will perform well when the researcher conducted the first study or have the preparation as well as the first study. This will be the key in my autopsy of Bayesian method.&lt;/p&gt;
 </description>
-        <pubDate>Fri, 07 Apr 2017 00:00:00 -0400</pubDate>
+        <pubDate>Fri, 07 Apr 2017 00:00:00 +0800</pubDate>
         <link>http://scchen.com/blog/2017/04/autopsy-of-nhst-and-bayesian-models.html</link>
         <guid isPermaLink="true">http://scchen.com/blog/2017/04/autopsy-of-nhst-and-bayesian-models.html</guid>
         
@@ -556,7 +556,7 @@ Since this post, every post listed in the category &lt;code class=&quot;highligh
 
 &lt;p&gt;Richard’s book inspired me help people control their golems/ststistical models in the process of coding. In his book, literature and codes are separated. Readers who are not familiar with coding skill might hardly follow his literature. Literatural coding might be the best way to impliment the &lt;code class=&quot;highlighter-rouge&quot;&gt;Rethinking&lt;/code&gt;. I am going to accumulating the codes of Bayesian statistics and thake notes of his and others literatures in the coming posts.&lt;/p&gt;
 </description>
-        <pubDate>Fri, 07 Apr 2017 00:00:00 -0400</pubDate>
+        <pubDate>Fri, 07 Apr 2017 00:00:00 +0800</pubDate>
         <link>http://scchen.com/blog/2017/04/check-my-tools-to-create-and-manipulate-golems.html</link>
         <guid isPermaLink="true">http://scchen.com/blog/2017/04/check-my-tools-to-create-and-manipulate-golems.html</guid>
         
@@ -666,7 +666,7 @@ Since this post, every post listed in the category &lt;code class=&quot;highligh
 &lt;/div&gt;
 
 </description>
-        <pubDate>Fri, 07 Apr 2017 00:00:00 -0400</pubDate>
+        <pubDate>Fri, 07 Apr 2017 00:00:00 +0800</pubDate>
         <link>http://scchen.com/blog/2017/04/vectors-in-mathematics-and-in-codes.html</link>
         <guid isPermaLink="true">http://scchen.com/blog/2017/04/vectors-in-mathematics-and-in-codes.html</guid>
         
@@ -702,7 +702,7 @@ Then:&lt;br /&gt;
 
 &lt;p&gt;&lt;strong&gt;Note.&lt;/strong&gt; Justify the last equation in 2017-04-07 19:31:38&lt;/p&gt;
 </description>
-        <pubDate>Fri, 07 Apr 2017 00:00:00 -0400</pubDate>
+        <pubDate>Fri, 07 Apr 2017 00:00:00 +0800</pubDate>
         <link>http://scchen.com/blog/2017/04/display-math-equation-in-post.html</link>
         <guid isPermaLink="true">http://scchen.com/blog/2017/04/display-math-equation-in-post.html</guid>
         
@@ -845,7 +845,7 @@ Then:&lt;br /&gt;
 &lt;p&gt;The secondary solution depends on the packaged functions. There are many raw data table organized like the bad case at first, because the software to collect the raw data and organize them in this way, for example, google From apps. To deal with these data, I have to transform the raw data before I import them to R. A reproducible way is to transform them in use of the R codes. The functions have to isolate which columns are index and which columns are raw responses. To my knowledge, a code book is needed to define the columns to be arranged.&lt;/p&gt;
 
 </description>
-        <pubDate>Tue, 31 May 2016 00:00:00 -0400</pubDate>
+        <pubDate>Tue, 31 May 2016 00:00:00 +0800</pubDate>
         <link>http://scchen.com/blog/2016/05/why-we-need-a-readable-data-table-in-behavioral-scientific-research.html</link>
         <guid isPermaLink="true">http://scchen.com/blog/2016/05/why-we-need-a-readable-data-table-in-behavioral-scientific-research.html</guid>
         
@@ -934,7 +934,7 @@ Then:&lt;br /&gt;
 
 &lt;p&gt;There are three findings in this simulation. First, the average of every sample is as equal as the average of population. Second, the variance of every sample is close to the divide of population variance by the sample size. Third, the standard deviation of every sample is close to the divide of population standard deviation by the square of sample size. These facts matches &lt;a href=&quot;https://en.wikipedia.org/wiki/Central_limit_theorem&quot;&gt;Central limit theorem&lt;/a&gt;.&lt;/p&gt;
 </description>
-        <pubDate>Wed, 30 Mar 2016 00:00:00 -0400</pubDate>
+        <pubDate>Wed, 30 Mar 2016 00:00:00 +0800</pubDate>
         <link>http://scchen.com/blog/2016/03/learning-sampling-distribution-in-r-programming.html</link>
         <guid isPermaLink="true">http://scchen.com/blog/2016/03/learning-sampling-distribution-in-r-programming.html</guid>
         
