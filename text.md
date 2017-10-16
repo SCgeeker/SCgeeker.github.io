@@ -8,6 +8,7 @@ This section collects **writings without codes** for self review and anyone who 
 *The slides for open talk are stored here since October, 2016.*  
 
 ## 2017
+- [開放科學與資料科學如何兼容？](/Text/text_2017011)
 - [更嚴苛的標準能否打造嚴謹的科學？](/Text/text_2017010)
 - [「提昇你的統計推論功力」中文資源使用說明及學習指南](/Text/text_2017009/)
 - [再等等，你確定這不是"雷"研究嗎？](/Text/text_2017008/)
