@@ -7,17 +7,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="generator" content="blogger"/>
   <meta name="author" content="Sau-Chin Chen"/>
-  <meta property="og:title" content="Text"/>
-  <meta property="article:published_time" content=""/>
+  <meta property="og:title" content="Randomization in Latin Square"/>
+  <meta property="article:published_time" content="April 7, 2017"/>
   <meta property="og:site_name" content="Sau-Chin Chen's website"/>
 
-  <!--title>Text</title-->
-  <!--meta name="description" content="This website is hosted by Sau-Chin Chen. You can check the source codes at my github page.
-"-->
+  <!--title>Randomization in Latin Square</title-->
+  <!--meta name="description" content="I’m managing an opensesame script for the coming project. In this project, there are four stimuli lists included all the within-participant conditions. I den..."-->
   
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://scchen.com/Text/">
+  <link rel="canonical" href="http://scchen.com/blog/2017/04/randomization-in-latin-square.html">
   <link rel="alternate" type="application/rss+xml" title="Sau-Chin Chen" href="http://scchen.com/feed.xml" />
 <link rel='stylesheet' id='open-sans-css'  href='//fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&#038;subset=latin%2Clatin-ext&#038;ver=4.2.4' type='text/css' media='all' />
 <link href='http://fonts.googleapis.com/css?family=Titillium+Web:600italic,600,400,400italic' rel='stylesheet' type='text/css'>
@@ -133,64 +132,119 @@
         <div class="post">
 
   <header class="post-header">
-            <h1 class="post-title">Text</h1>
+    <h1 class="post-title">Randomization in Latin Square</h1>
+    <p class="post-meta">Posted on April 7, 2017 by   
+
+  in
+  
+  <a href="/categories/#Experiment_Design" title="Experiment_Design">Experiment_Design</a>&nbsp;
+  
+  <a href="/categories/#Opensesame" title="Opensesame">Opensesame</a>&nbsp;
+  
+
+
+</p>
   </header>
 
   <article class="post-content">
-    <p>This section collects <strong>writings without codes</strong> for self review and anyone who is interested in my thought. My past Chinese wrirings, before 2016, are tranfered to markdown file and releaed here. Since 2016, all my writings, English and Chinese, are going to be written in markdown format. You will see the source of every article in my <a href="https://github.com/SCgeeker/SCgeeker.github.io/tree/master/Text">github repo</a>.<br />
-<em>The slides for open talk are stored here since October, 2016.</em></p>
+    <p>I’m managing an opensesame script for the coming project. In this project, there are four stimuli lists included all the within-participant conditions. I denote the four lists <strong>A</strong>, <strong>B</strong>, <strong>C</strong>, and <strong>D</strong>. A participant will have one of the stimuli lists in terms of the counter balanced principle. The best assignment method is 4X4 Latin Square. For every 16 participants, there are 24 sequences to be used. Here are three of the sequences.</p>
 
-<h2 id="2017">2017</h2>
-<ul>
-  <li><a href="/Text/text_2017011">開放科學與資料科學如何兼容？</a><br />
-  <a href="https://hackmd.io/p/rJxEkDpq-#/">2017資料科學年會簡報</a></li>
-  <li><a href="/Text/text_2017010">更嚴苛的標準能否打造嚴謹的科學？</a></li>
-  <li><a href="/Text/text_2017009/">「提昇你的統計推論功力」中文資源使用說明及學習指南</a></li>
-  <li><a href="/Text/text_2017008/">再等等，你確定這不是”雷”研究嗎？</a></li>
-  <li><a href="/Text/text_2017007/">讀書心得：現代心理科學的七大罪</a></li>
-  <li><a href="/Text/text_2017006/">披薩門：「瞎吃」教主的完美自爆</a></li>
-  <li><a href="/Text/text_2016005e01/">擺姿勢也許能增加你的自信，但是不能真正改變你(2017增強版)</a></li>
-  <li><a href="/Text/text_2017005/">貝氏八步</a></li>
-  <li><a href="/Text/text_2017004/">時態門</a></li>
-  <li><a href="/Text/text_2017003/">從科學危機認識開放科學</a></li>
-  <li><a href="/Text/text_2017002/">註冊研究(Registered Research)</a></li>
-  <li><a href="/Text/text_2017001/">影片介紹：科學家之路</a></li>
-  <li><a href="/Text/text_2016006/">開放科學在荷蘭</a></li>
-</ul>
+<div class="highlighter-rouge"><pre class="highlight"><code>##      [,1] [,2] [,3] [,4]
+## [1,] "A"  "B"  "C"  "D" 
+## [2,] "B"  "C"  "D"  "A" 
+## [3,] "C"  "D"  "A"  "B" 
+## [4,] "D"  "A"  "B"  "C"
+</code></pre>
+</div>
 
-<h2 id="2016">2016</h2>
-<ul>
-  <li><a href="/Text/text_2016007/">JASP~操作像SPSS的程序可重製統計開源軟體</a></li>
-  <li><a href="/Text/text_2016005/">擺姿勢也許能增加你的自信，但是不能真正改變你</a></li>
-  <li><a href="/Text/TPA2016_REP.html">註冊研究如何去除有害研究品質的因素~TPA2016簡報</a><br />
-      * <a href="/Text/CSC_RR.Rmd">簡報原始碼</a></li>
-  <li><a href="/Text/text_2016004/">纪錄已經出現與即將出現的再現危機~2016版</a></li>
-  <li><a href="/Text/text_2016003/">荷蘭科研補助機構推動提昇科研品質的五年計劃（一）：訊息整理</a></li>
-  <li><a href="/Text/text_2016002/">Donders 與 de Groot：兩位荷蘭心理學者代表的時代精神</a></li>
-  <li><a href="/Text/text_2016001/">啟動你對促發實驗的認識</a></li>
-</ul>
+<div class="highlighter-rouge"><pre class="highlight"><code>##      [,1] [,2] [,3] [,4]
+## [1,] "C"  "D"  "A"  "B" 
+## [2,] "D"  "A"  "B"  "C" 
+## [3,] "A"  "B"  "C"  "D" 
+## [4,] "B"  "C"  "D"  "A"
+</code></pre>
+</div>
 
-<h2 id="2015">2015</h2>
-<ul>
-  <li><a href="http://scchen.com/Reproducible-Think/">可重製研究：時代意義與實踐</a></li>
-</ul>
+<div class="highlighter-rouge"><pre class="highlight"><code>##      [,1] [,2] [,3] [,4]
+## [1,] "A"  "B"  "C"  "D" 
+## [2,] "D"  "A"  "B"  "C" 
+## [3,] "C"  "D"  "A"  "B" 
+## [4,] "B"  "C"  "D"  "A"
+</code></pre>
+</div>
 
-<h2 id="2014">2014</h2>
-<ul>
-  <li><a href="/Text/text_20140406/">可重覆的實驗結果是科學進步的基礎？</a></li>
-  <li><a href="/Text/text_20140806/">演進中的科學研究方法(1/4) - 心理科學的研究樣態</a></li>
-  <li><a href="/Text/text_20140414/">演進中的科學研究方法(2/4) - 區間估計砍得掉特設假設?</a></li>
-  <li><a href="/Text/text_20140805/">演進中的科學研究方法(3/4) - 假設檢定能衡量研究結果的價值嗎？</a></li>
-  <li><a href="/Text/text_20140805A/">演進中的科學研究方法(4/4) - 運用巨量資料評價實驗結果的再現性</a></li>
-</ul>
+<p>If this experiment will recruit 32 participant, the first 16 and second 16 better obtain one of the 24 sequences in a pseudo randomization. On the other hand, I wish to reproduce this random sequence in the other place. The best way is to generate the randomization sequence in terms of a seed. Thanks to <a href="http://osdoc.cogsci.nl/">Opensesame</a>, I found the way to make this plan come true.</p>
 
-<h2 id="2008">2008</h2>
-<ul>
-  <li><a href="/Text/text_20080511/">人類的侷限與無限</a></li>
-</ul>
+<p>Opensesame is the open source experiment software. Because it is developed in <a href="https://www.python.org/">python</a>, the users are able to create the function based on their need. This program offers the object <strong>inline_script</strong> where the users put the python codes. I created the python codes to select the stimuli list from the file pool. You can use it before the program runs the object <strong>loop</strong> based on the list.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>### Get the subject number
+nr = self.get('subject_nr')
+
+### Generate a random sequence based the prior seed
+### Defind seed by yourself
+import random
+SEED = 345
+
+seq = [0,4,8,12]
+random.seed(SEED)
+random.shuffle(seq)
+
+### Shift the subject numbers
+### Push to the next sequence
+if nr &lt;=16:
+	nr += seq[0]
+elif nr &gt; 16 &amp; nr &lt;= 32:
+	nr += seq[1]
+elif nr &gt; 32 &amp; nr &lt;= 48:
+	nr += seq[2]
+else:
+	nr += seq[3]
+
+### Assign the list in one Latin Squane
+if (nr / 4) % 4 == 1:
+	if nr % 4 == 0:
+		lst = 'List01.csv'
+	elif nr % 4 == 1:
+		lst = 'List02.csv'
+	elif nr % 4 == 2:
+		lst = 'List03.csv'
+	else:
+		lst = 'List04.csv'
+elif (nr / 4) % 4 == 2:
+	if nr % 4 == 1:
+		lst = 'List01.csv'
+	elif nr % 4 == 2:
+		lst = 'List02.csv'
+	elif nr % 4 == 3:
+		lst = 'List03.csv'
+	else:
+		lst = 'List04.csv'
+elif (nr / 4) % 4 == 3:
+	if nr % 4 == 2:
+		lst = 'List01.csv'
+	elif nr % 4 == 3:
+		lst = 'List02.csv'
+	elif nr % 4 == 0:
+		lst = 'List03.csv'
+	else:
+		lst = 'List04.csv'
+else:
+	if nr % 4 == 3:
+		lst = 'List01.csv'
+	elif nr % 4 == 0:
+		lst = 'List02.csv'
+	elif nr % 4 == 1:
+		lst = 'List03.csv'
+	else:
+		lst = 'List04.csv'
+
+### Output [List] to the loop object
+exp.set('List', lst)
+</code></pre>
+</div>
 
   </article>
-  
+
 <div id="disqus_thread"></div>
 <script>
     /**
@@ -214,6 +268,7 @@
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </div>
 
       </div>

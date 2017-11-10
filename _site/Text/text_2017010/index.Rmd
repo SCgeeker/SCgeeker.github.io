@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="blogger"/>
+  <meta name="author" content="Sau-Chin Chen"/>
+  <meta property="og:title" content="更嚴苛的標準能否打造嚴謹的科學？"/>
+  <meta property="article:published_time" content="September 21, 2017"/>
+  <meta property="og:site_name" content="Sau-Chin Chen's website"/>
+
+  <!--title>更嚴苛的標準能否打造嚴謹的科學？</title-->
+  <!--meta name="description" content="This website is hosted by Sau-Chin Chen. You can check the source codes at my github page.
+"-->
+  
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://scchen.com/Text/text_2017010/">
+  <link rel="alternate" type="application/rss+xml" title="Sau-Chin Chen" href="http://scchen.com/feed.xml" />
+<link rel='stylesheet' id='open-sans-css'  href='//fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&#038;subset=latin%2Clatin-ext&#038;ver=4.2.4' type='text/css' media='all' />
+<link href='http://fonts.googleapis.com/css?family=Titillium+Web:600italic,600,400,400italic' rel='stylesheet' type='text/css'>
+
+
+
+
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">Sau-Chin Chen</a>
+
+
+    <nav class="site-nav">
+
+      <a href="#" class="menu-icon menu.open">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>  
+
+    <div class="trigger"><h1>Main Navigation</h1>
+
+ <ul class="menu">
+
+    
+    
+     <li><a href="/about/" class="page-link">About</a>
+    
+    </li>
+    
+    
+     <li><a href="/cv/" class="page-link">CV</a>
+    
+    </li>
+    
+    
+    <li><a href="/blog/" class="page-link">CodeBLO</a>
+    <ul class="sub-menu">
+    
+    <li><a href="/blog/">by Date</a></li>
+    
+    <li><a href="/categories/">by Category</a></li>
+    
+    </ul>
+    
+    </li>
+    
+    
+     <li><a href="/Text/" class="page-link">Text</a>
+    
+    </li>
+    
+    
+    <li><a href="/construction/" class="page-link">Construction</a>
+    <ul class="sub-menu">
+    
+    <li><a href="/construction/item-1/">How to build this site</a></li>
+    
+    <li><a href="/construction/item-2/">How to post in use of Rmarkdown</a></li>
+    
+    <li><a href="/construction/item-3/">Update R and reserve management</a></li>
+    
+    </ul>
+    
+    </li>
+    
+    </ul>
+
+
+<!-- <ul class="menu">
+        <li> <a class="page-link" href="/about">About</a></li>
+        <li> <a class="page-link"  href="/blog">Blog</a>
+        <li> <a class="page-link" href="/blog">CV</a>
+        <li> <a class="page-link" href="/blog">For Students</a></li>
+        <li> <a class="page-link"  href="/blog">Research</a></a>
+        <li> <a class="page-link" href="/blog">Teaching</a>
+<ul class="sub-menu">
+	<li><a href="http://svmiller.com/teaching/posc-1020-introduction-to-international-relations/">POSC 1020 – Introduction to International Relations</a></li>
+	<li><a href="http://svmiller.com/teaching/posc-3410-quantitative-methods-in-political-science/">POSC 3410 – Quantitative Methods in Political Science</a></li>
+	<li><a href="http://svmiller.com/teaching/posc-3610-international-politics-in-crisis/">POSC 3610 – International Politics in Crisis</a></li>
+	<li><a href="http://svmiller.com/teaching/posc-3630-united-states-foreign-policy/">POSC 3630 – United States Foreign Policy</a></li>
+</ul></li>
+        <li> <a class="page-link" href="/blog">Miscellany</a>
+<ul class="sub-menu">
+	<li><a href="http://svmiller.com/teaching/posc-1020-introduction-to-international-relations/">Clean USAID Greenbook Data</a></li>
+	<li><a href="http://svmiller.com/teaching/posc-3410-quantitative-methods-in-political-science/">Journal of Peace Research *.bst File</a></li>
+	<li><a href="http://svmiller.com/teaching/posc-3610-international-politics-in-crisis/">My Custom Beamer Style</a></li>
+</ul> 
+
+</li>
+</ul> -->
+
+     </div>  
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+            <h1 class="post-title">更嚴苛的標準能否打造嚴謹的科學？</h1>
+  </header>
+
+  <article class="post-content">
+    ## 為何要重新定義統計顯著水準？
+就在今年七月下旬，來自重要的社會科學領域：有心理學、社會學、經濟學、政治學等，著作等身的72名資深學者。合作撰寫論文"[Redefine statistical significance][1]"，倡議從今天起，所有科學研究的統計顯著水準標準，從.005開始起算。經過一個多月的熱議，這篇論文已於九月一日被Nature Human Research正式接受。
+  
+這篇論文現世之前，使用統計檢定分析資料的研究者，在各自的專業領域內依靠有共識的水準，判斷結果是否符合預期或假設。像是心理學、教育界、以及許多醫療研究，採取多數學過統計者熟知的.05。公認是硬科學的高能物理研究，採用5個標準差之外的.000006做為顯著水準。雖然.005與.000006依然有不小的差距，比一般接受的.05是嚴苛十倍的標準。此倡議一出，立刻有新進學者表達，[採此標準，會增加研究所的樣本(估計增加70%才能達到.005)，且不利新想法被人看見的意見][2]。
+  
+提出這項倡議的主要目的是改善社會科學領域，充斥高比例偽陽性結果(false-positive results)的新奇研究現象。這類研究的特徵是研究想法有創意，設計符合最起碼的科學標準，但是分析結果只是剛好小於.05，而且尚未有可信的重現研究結果。這種研究非常有可能無法被重現，例如兩個月前我注意到的[這一篇][3]。Benjamin等72位學者倡議改成.005的重要理由，是如此能明顯降低偽陽性結果的，就像以下由[這份論文][1]再製的模擬結果。可以看到不論研究者事前對自己的理論能獲得研究結果支持的賠率(Prior Odds)有多高，整體而言.005的偽陽率比.05的偽陽率少了一半。
+
+```{r Benjamin_Fig2, echo=FALSE, message=FALSE, warning=FALSE}
+pow1=c(5:999)/1000   # power range for 0.005 tests 
+pow2=c(50:999)/1000  # power range for 0.05 tests 
+alpha=0.005 # test size 
+pi0=5/6  # prior probability 
+N=10^6  # doesn't matter 
+ 
+ 
+#graph margins 
+par(mai=c(0.8,0.8,0.1,0.1)) 
+par(mgp=c(2,1,0))   
+ 
+ 
+plot(pow1,alpha*N*pi0/(alpha*N*pi0+pow1*(1-pi0)*N),type='n',ylim = 
+c(0,1), xlim = c(0,1.5), 
+     xlab='Power                                      ', 
+     ylab='False positive rate', bty="n", xaxt="n", yaxt="n") 
+#grid lines 
+segments(x0 = -0.058, y0 = 0, x1 = 1, y1 = 0,lty=1,col = "gray92") 
+segments(x0 = -0.058, y0 = 0.2, x1 = 1, y1 = 0.2,lty=1,col = 
+"gray92") 
+segments(x0 = -0.058, y0 = 0.4, x1 = 1, y1 = 0.4,lty=1,col = 
+"gray92") 
+segments(x0 = -0.058, y0 = 0.6, x1 = 1, y1 = 0.6,lty=1,col = 
+"gray92") 
+segments(x0 = -0.058, y0 = 0.8, x1 = 1, y1 = 0.8,lty=1,col = 
+"gray92") 
+segments(x0 = -0.058, y0 = 1, x1 = 1, y1 = 1,lty=1,col = "gray92") 
+ 
+ 
+lines(pow1,alpha*N*pi0/(alpha*N*pi0+pow1*(1-
+pi0)*N),lty=1,col="blue",lwd=2) 
+odd_1_5_1 = alpha*N*pi0/(alpha*N*pi0+pow1[995]*(1-pi0)*N) 
+alpha=0.05 
+pi0=5/6  
+lines(pow2,alpha*N*pi0/(alpha*N*pi0+pow2*(1-
+pi0)*N),lty=2,col="blue",lwd=2) 
+odd_1_5_2 = alpha*N*pi0/(alpha*N*pi0+pow2[950]*(1-pi0)*N) 
+ 
+ 
+alpha=0.05 
+pi0=10/11 
+lines(pow2,alpha*N*pi0/(alpha*N*pi0+pow2*(1-
+pi0)*N),lty=2,col="red",lwd=2) 
+odd_1_10_2 = alpha*N*pi0/(alpha*N*pi0+pow2[950]*(1-pi0)*N) 
+alpha=0.005 
+pi0=10/11 
+lines(pow1,alpha*N*pi0/(alpha*N*pi0+pow1*(1-
+pi0)*N),lty=1,col="red",lwd=2) 
+odd_1_10_1 = alpha*N*pi0/(alpha*N*pi0+pow1[995]*(1-pi0)*N) 
+ 
+alpha=0.05 
+pi0=40/41 
+lines(pow2,alpha*N*pi0/(alpha*N*pi0+pow2*(1-
+pi0)*N),lty=2,col="green",lwd=2) 
+odd_1_40_2 = alpha*N*pi0/(alpha*N*pi0+pow2[950]*(1-pi0)*N) 
+alpha=0.005 
+pi0=40/41 
+lines(pow1,alpha*N*pi0/(alpha*N*pi0+pow1*(1-
+pi0)*N),lty=1,col="green",lwd=2) 
+odd_1_40_1 = alpha*N*pi0/(alpha*N*pi0+pow1[995]*(1-pi0)*N) 
+ 
+ 
+ 
+ 
+#customizing axes 
+axis(side=2,at=c(-0.5,0,0.2,0.4,0.6,0.8,1.0),labels = 
+c("","0.0","0.2","0.4","0.6","0.8","1.0"), 
+     lwd=1,las= 1,tck = -0.01, hadj = 0.4, cex.axis = .8) 
+axis(side=1,at=c(-0.5,0,0.2,0.4,0.6,0.8,1.0),labels = 
+c("","0.0","0.2","0.4","0.6","0.8","1.0"), 
+     lwd=1,las= 1, tck = -0.01, padj = -1.1, cex.axis = .8) 
+ 
+ 
+ 
+legend(1.05,1,c("Prior odds = 1:40","Prior odds = 1:10","Prior odds = 1:5"),pch=c(15,15,15), 
+       col=c("green","red","blue"), cex = 1) 
+ 
+ 
+###############  Use these commands to add brackets in Figure 2 
+ 
+library(pBrackets) 
+ 
+ 
+#add text and brackets 
+text(1.11,(odd_1_5_2+odd_1_40_2)/2, expression(paste(italic(P)," < 0.05 threshold")), cex = 0.8,adj=0) 
+text(1.11,(odd_1_5_1+odd_1_40_1)/2, expression(paste(italic(P)," < 0.005 threshold")), cex = 0.8,adj=0) 
+brackets(1.03, odd_1_40_1, 1.03, odd_1_5_1, h = NULL, ticks = 0.5, 
+curvature = 0.7, type = 1, 
+        col = 1, lwd = 1, lty = 1, xpd = FALSE) 
+brackets(1.03, odd_1_40_2, 1.03, odd_1_5_2, h = NULL, ticks = 0.5, 
+curvature = 0.7, type = 1, 
+         col = 1, lwd = 1, lty = 1, xpd = FALSE) 
+```
+
+以上的推論是建立在[貝氏統計][4]的概念之上。Benjamin等人認為以事前賠率1:10的條件來看，設.05為顯著水準的研究結果貝氏因子(Bayes Factor)會落在2.4到3.4之間，.005為顯著水準的研究結果貝氏因子大約是13.9到25.7之間。統計學者Jeffreys Harold在影響深遠的著作"[Theory of Probability][5]"(機率的理論)，認為前者表示研究結果的證據力差強人意，後者代表有起碼可觀的證據力。有此論證與72位學者中有著名的貝氏統計提倡者，像是[Zoltan Dienes][6]、[ Eric-Jan Wagenmakers][7]。我第一次看完這份倡議，就有這樣的主張真正目的，是不是想引導更多人改投貝氏統計的陣營？
+
+## 蘊釀兩個月的另一種聲音
+
+除了七月下旬起有一波個別學者透過私人部落格，發表支持與反對意見的浪潮。對.005主張有不同想法的學者，也在七月底於開放科學中心(Center for Open Science)主辦的[SIPS研討會][8]集結。會議結束後，由[Daniel Lakens][9]透過推特發起，集合88位世界各地的青壯世代為主的學者，一起透過網路協作，撰寫回應Benjamin等72位學者的評論"[Justify your alpha][10]"，預印本於本週一9/18正式投稿Nature Human Research並上網公開。
+
+這份評論的基本立場是肯定必須採取消減偽陽性研究的措施，但是只從設定更嚴苛的統計顯著水準下手是不夠的。不同於Benjamin等人的主張只依賴數值模擬，Lakens等人評論以實際資料的分析做為佐證。就以研究的可再現性來說，從著名的[2015年心理學再現研究專案][11]來說，有40多份的原始研究p值是小於.005，但是只有一半能被成功再現。所以就實際的資訊來說，並不能真正有效降低偽陽性研究的產出。
+
+採取更嚴苛的顯著水準並不只是改變解讀分析結果的標準而己，而是牽動研究工作裡的每一項操作。如一開始提到提高顯著水準，就要增加至少70%的樣本才能得到顯著結果，如此會同時提高原創研究與再現研究的成本。
+
+對於大多數研究者來說，統計分析只是工具，在我所知道的亞洲學術圈。多數學者們的報告只有提供p值，採用更嚴格的統計水準主張，對主張內容不會深究的多數人來說，可能會想追求更小的p值，做為彰顯研究成果的價值。這應該與Benjamin等72位學者想提昇的科學研究嚴謹度，是背道而馳的局面。
+
+## 微小的想法和建議
+
+因為我與Daniel Lakens等作者有在SIPS親身交流的經歷，也在評論草稿初期就加入寫作，所以忝列為88名回應者之一。其中有許多有創作力與寫作高手，評論主體並未貢獻一詞。初版草稿之中有一段討論科學價值與研究操作的問題，我發現這段的草稿寫得太偏向數值分析，讓整篇評論的調性接近Benjamin等人的倡議。所以提出個人的修改建議，也很高興被其他作者接受，而成就了最後的完稿。
+
+我在參與經驗中再次反思華人社會科學圈的科學操作問題：運用分析資料提出理論判斷的學者，是抱著多少的事前期待看待自已的理論。像Benjamin等人的倡議與Lakens等人的回應，都是設定相對低的事前賠率(最高1:10)，討論今後研究者該採取的最佳操作。在我成長的學術環境中，卻似乎存在對自己的研究理論有相當高的信心，如1:1。這或許與多數研究是借鑒已出版的西方研究有關，但是不論是普遍的信心還是可能的原因，都沒有實際的研究資料，我的感受只是個人臆測。然而我相信這是亞洲地區的開放科學人士可以做的研究題目，可藉此找到在這樣的學術環境推廣開放科學的切入點。
+
+最後藉Benjamin等人的倡議與Lakens等人的回應，介紹預印發表。這種發表模式在資訊科學領域從1991年起，已運作將近30年。學者在初次投稿時，就將手稿與研究材料，上傳至有公信力的資料庫公開，如[arXiv][12]，期刊尚在評審時，讀者就能閱覽論文資料。社會科學領域也在1994年出現性質類似的[SSRN][13]，近年開放科學中心為推廣開放取用(Open Access)，也建置整合多項領域的[OSF Preprints][14]，包括屬於心理學的[PsyArxiv][15]。只要期刊允許，作者可自行於這些網站公開投稿。在今年的SIPS，我就得知美國心理學學會(APA)，已經接受PsyArxiv做為[APA旗下期刊發表預印本主要平台][16]的消息。我所知道的亞洲地區本土期刊還沒有開始這樣的政策，如果有那一國出現這樣的期刊，或者有規模的支持措施開始營運，該國會成為亞洲開放科學的領導國。
+
+
+[1]:https://psyarxiv.com/mky9j/ "Benjamin, D. J., Berger, J. O., Johannesson, M., Nosek, B. A., Wagenmakers, E.-J., Berk, R., … Johnson, V. E. (2017). Redefine statistical significance. Nature Human Behaviour, 1. doi:10.1038/s41562-017-0189-z"
+[2]:https://rolfzwaan.blogspot.tw/2017/07/defending-05-its-not-enough-to-be_26.html " Fernanda Ferreira & John M. Henderson, Defending .05: It’s Not Enough to be Suggestive"
+[3]:http://scchen.com/Text/text_2017008/ "再等等，你確定這不是「雷」研究嗎？"
+[4]:https://zh.wikipedia.org/zh-tw/%E8%B4%9D%E5%8F%B6%E6%96%AF%E6%A6%82%E7%8E%87 "貝氏機率"
+[5]:https://www.amazon.com/Theory-Probability-Classic-Physical-Sciences/dp/0198503687 "Jeffreys, H. (1961). Theory of probability (3rd ed). Oxford [Oxfordshire]: New York: Clarendon Press; Oxford University Press."
+[6]:http://www.sussex.ac.uk/profiles/718
+[7]:http://www.ejwagenmakers.com/
+[8]:http://improvingpsych.org/
+[9]:http://daniellakens.blogspot.tw/
+[10]:https://psyarxiv.com/9s3y6 "Lakens, D., Adolfi, F., Albers, C., Anvari, F., Apps, M., Argamon, S., … Zwaan, R. (2017). Justify Your Alpha: A Response to “Redefine Statistical Significance.” PsyArXiv. doi:/10.17605/OSF.IO/9S3Y6"
+[11]:http://www.sciencemag.org/content/349/6251/aac4716 "Open Science Collaboration. (2015). Estimating the reproducibility of psychological science. Science, 349(6251), aac4716. doi:10.1126/science.aac4716"
+[12]:http://arxiv.org/ 
+[13]:https://www.ssrn.com/
+[14]:https://osf.io/preprints/
+[15]:https://psyarxiv.com/
+[16]:http://blog.psyarxiv.com/2017/08/14/apa-names-psyarxiv-preferred-preprint-service/ "APA Names PsyArXiv as Preferred Preprint Service"
+
+  </article>
+  
+<div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    /*
+    var disqus_config = function () {
+        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        
+        s.src = '//scchen.disqus.com/embed.js';
+        
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+<!--     <h2 class="footer-heading">Sau-Chin Chen</h2> -->
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li><strong>Sau-Chin Chen</strong></li>
+
+          <li><a href="mailto:pmsp96@gmail.com">pmsp96@gmail.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/SCgeeker">
+              <span class="icon  icon--github">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+                </svg>
+              </span>
+
+              <span class="username">SCgeeker</span>
+            </a>
+          </li>
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+         <p class="text">
+This website is hosted by Sau-Chin Chen. You can check the source codes at my github page.
+ Subscribe the least updated <a href="/feed.xml">via RSS</a>.
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+    <link href="/feed.xml" type="application/rss+xml" rel="alternate" title="Subscribe the least posts (atom)" />
+  </body>
+
+</html>

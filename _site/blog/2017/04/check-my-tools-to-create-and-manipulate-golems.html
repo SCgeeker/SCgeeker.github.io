@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="blogger"/>
+  <meta name="author" content="Sau-Chin Chen"/>
+  <meta property="og:title" content="Check My Tools to Create and Manipulate Golems"/>
+  <meta property="article:published_time" content="April 7, 2017"/>
+  <meta property="og:site_name" content="Sau-Chin Chen's website"/>
+
+  <!--title>Check My Tools to Create and Manipulate Golems</title-->
+  <!--meta name="description" content="Since two weeks before I published this post, I have started read the book Statistical Rethinking: A Bayesian Course with Examples in R and Stan written by R..."-->
+  
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://scchen.com/blog/2017/04/check-my-tools-to-create-and-manipulate-golems.html">
+  <link rel="alternate" type="application/rss+xml" title="Sau-Chin Chen" href="http://scchen.com/feed.xml" />
+<link rel='stylesheet' id='open-sans-css'  href='//fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&#038;subset=latin%2Clatin-ext&#038;ver=4.2.4' type='text/css' media='all' />
+<link href='http://fonts.googleapis.com/css?family=Titillium+Web:600italic,600,400,400italic' rel='stylesheet' type='text/css'>
+
+
+
+
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">Sau-Chin Chen</a>
+
+
+    <nav class="site-nav">
+
+      <a href="#" class="menu-icon menu.open">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>  
+
+    <div class="trigger"><h1>Main Navigation</h1>
+
+ <ul class="menu">
+
+    
+    
+     <li><a href="/about/" class="page-link">About</a>
+    
+    </li>
+    
+    
+     <li><a href="/cv/" class="page-link">CV</a>
+    
+    </li>
+    
+    
+    <li><a href="/blog/" class="page-link">CodeBLO</a>
+    <ul class="sub-menu">
+    
+    <li><a href="/blog/">by Date</a></li>
+    
+    <li><a href="/categories/">by Category</a></li>
+    
+    </ul>
+    
+    </li>
+    
+    
+     <li><a href="/Text/" class="page-link">Text</a>
+    
+    </li>
+    
+    
+    <li><a href="/construction/" class="page-link">Construction</a>
+    <ul class="sub-menu">
+    
+    <li><a href="/construction/item-1/">How to build this site</a></li>
+    
+    <li><a href="/construction/item-2/">How to post in use of Rmarkdown</a></li>
+    
+    <li><a href="/construction/item-3/">Update R and reserve management</a></li>
+    
+    </ul>
+    
+    </li>
+    
+    </ul>
+
+
+<!-- <ul class="menu">
+        <li> <a class="page-link" href="/about">About</a></li>
+        <li> <a class="page-link"  href="/blog">Blog</a>
+        <li> <a class="page-link" href="/blog">CV</a>
+        <li> <a class="page-link" href="/blog">For Students</a></li>
+        <li> <a class="page-link"  href="/blog">Research</a></a>
+        <li> <a class="page-link" href="/blog">Teaching</a>
+<ul class="sub-menu">
+	<li><a href="http://svmiller.com/teaching/posc-1020-introduction-to-international-relations/">POSC 1020 – Introduction to International Relations</a></li>
+	<li><a href="http://svmiller.com/teaching/posc-3410-quantitative-methods-in-political-science/">POSC 3410 – Quantitative Methods in Political Science</a></li>
+	<li><a href="http://svmiller.com/teaching/posc-3610-international-politics-in-crisis/">POSC 3610 – International Politics in Crisis</a></li>
+	<li><a href="http://svmiller.com/teaching/posc-3630-united-states-foreign-policy/">POSC 3630 – United States Foreign Policy</a></li>
+</ul></li>
+        <li> <a class="page-link" href="/blog">Miscellany</a>
+<ul class="sub-menu">
+	<li><a href="http://svmiller.com/teaching/posc-1020-introduction-to-international-relations/">Clean USAID Greenbook Data</a></li>
+	<li><a href="http://svmiller.com/teaching/posc-3410-quantitative-methods-in-political-science/">Journal of Peace Research *.bst File</a></li>
+	<li><a href="http://svmiller.com/teaching/posc-3610-international-politics-in-crisis/">My Custom Beamer Style</a></li>
+</ul> 
+
+</li>
+</ul> -->
+
+     </div>  
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Check My Tools to Create and Manipulate Golems</h1>
+    <p class="post-meta">Posted on April 7, 2017 by   
+
+  in
+  
+  <a href="/categories/#R_programming" title="R_programming">R_programming</a>&nbsp;
+  
+  <a href="/categories/#Rethinking" title="Rethinking">Rethinking</a>&nbsp;
+  
+
+
+</p>
+  </header>
+
+  <article class="post-content">
+    <p>Since two weeks before I published this post, I have started read the book <a href="http://xcelab.net/rm/statistical-rethinking/">Statistical Rethinking: A Bayesian Course with Examples in R and Stan</a> written by <a href="http://xcelab.net/rm/">Richard McElreath</a>. Richard is the evolutionary anthropologist at Max Planck Institute. He wrote this textbook for the PhD students who will use the Bayesian statistics in their research projects. Compared to the textbooks written by statisians and data scientistst, Richard’s book explain and demonstrate the statistical methods with examples instead of equations. His intention is to help who are not staticians but used to use statistics realize one fact: we rely on the statistical models as the representations of our answers rather than answer the questions by the raw data or naked truth. Many non-statisticians are used to find and learn what kind of methods or apps to deal with their data, but few are interested to know the models under the mentods and apps they are using. The trouble and danger is that they thought their jobs are done when the program printed the tables and figures but these outputs are from the statistical model is unable to answer their question. This situation is originated from many non-statisticans consider themselves the end-users of statistical models. Like any user of a packaged software, non-statisticans have no time to understand how the tools in their hands designed and conducted by statisticans.<br />
+Richard introduced the story of <a href="https://en.wikipedia.org/wiki/Golem">golem</a> to raise the non-statsiticans’ attention to the troubles they had made and will make. A statistical model, like a golem, has the power beyond human to finish the work the human are unable to do, for example, trace the passengers’ track from the trillion of camera. Its power could be misused or out of control if we do not understand what is the root of its action. A user of ststistical method, no matter you are or are not stistician, have to keep the awareness of engineer when you are dealing with your data. Today everyone has many easier ways than a decade ago to keep the awareness of engineer. One advantage is that the learning curve for being an part-time hacker is getting smooth. Increasing R apps are opening many windows for who are want to outlook and modify the statistical models.<br />
+Since this post, every post listed in the category <code class="highlighter-rouge">Rethinking</code> is one of the summaries and feedbacks to <a href="https://www.crcpress.com/Statistical-Rethinking-A-Bayesian-Course-with-Examples-in-R-and-Stan/McElreath/9781482253443">Statistical Rethinking: A Bayesian Course with Examples in R and Stan</a>. At first I have to check my toolkits for create and manipulate the statistical models. They are R core and the packages. Years ago I have used to use the packages in my data processing. Now I show them for who start to use R after read this post.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>install.packages(c("rpart","chron","Hmisc","Design","Matrix","stringr","lme4","coda","e1071","zipfR","ape","languageR","multcomp","contrast","shiny","ggplot2", "dplyr"))
+</code></pre>
+</div>
+
+<p>Some of the packages are learned from I participated in <a href="https://www.coursera.org/specializations/jhu-data-science">Cousera Data Science</a>. Now I used to use <code class="highlighter-rouge">dplyr</code> to process the raw data, and I am learning how to draw the figures I need in use of <code class="highlighter-rouge">ggplot2</code>. When this post is published, I have updated my R to R version 3.3.3 (2017-03-06). Through <a href="http://xcelab.net/rm/statistical-rethinking/">the codes of Heuristic Andrew</a>, here are my installed packages.</p>
+
+<div class="language-r highlighter-rouge"><pre class="highlight"><code><span class="n">ip</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">as.data.frame</span><span class="p">(</span><span class="n">installed.packages</span><span class="p">()[,</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">3</span><span class="o">:</span><span class="m">4</span><span class="p">)])</span><span class="w">
+</span><span class="n">rownames</span><span class="p">(</span><span class="n">ip</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="kc">NULL</span><span class="w">
+</span><span class="n">ip</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">ip</span><span class="p">[</span><span class="nf">is.na</span><span class="p">(</span><span class="n">ip</span><span class="o">$</span><span class="n">Priority</span><span class="p">),</span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">,</span><span class="n">drop</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">]</span><span class="w">
+</span><span class="n">print</span><span class="p">(</span><span class="n">ip</span><span class="p">,</span><span class="w"> </span><span class="n">row.names</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span><span class="w">
+</span></code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>##             Package    Version
+##              R2jags      0.5-7
+##               rjags        4-6
+##               abind      1.4-5
+##             acepack      1.4.1
+##       addinexamples      0.1.0
+##          assertthat        0.1
+##           backports      1.0.5
+##           base64enc      0.1-3
+##         BayesFactor   0.9.12-2
+##           bayesplot      1.1.0
+##                  BH   1.62.0-1
+##              bibtex      0.4.0
+##               binom      1.1-1
+##                 bit     1.1-12
+##              bitops      1.0-6
+##                brew      1.0-6
+##              brocks 0.3.999999
+##                 car      2.1-4
+##             caTools     1.17.1
+##           checkmate      1.8.2
+##               chron     2.3-50
+##                coda     0.19-1
+##          colorspace      1.3-2
+##        colourpicker        0.3
+##          commonmark        1.2
+##          compute.es      0.2-4
+##                covr      2.2.2
+##              crayon      1.3.2
+##                 CTT        2.1
+##                curl        2.3
+##               darch     0.12.0
+##          data.table     1.10.4
+##                 DBI        0.6
+##                desc      1.1.0
+##            devtools     1.12.0
+##           dichromat      2.0-0
+##              digest     0.6.12
+##          doParallel     1.0.10
+##               dplyr      0.5.0
+##                  DT        0.2
+##            dygraphs    1.1.1.4
+##               editR      0.2.2
+##            evaluate       0.10
+##                  ff     2.2-13
+##             foreach      1.4.3
+##             formatR        1.4
+##             Formula      1.2-1
+##       futile.logger      1.4.3
+##      futile.options      1.0.0
+##           gcookbook        1.0
+##               gdata     2.17.0
+##             ggplot2      2.2.1
+##               git2r     0.18.0
+##              gmailr      0.7.1
+##              gplots      3.0.1
+##            gridBase      0.4-7
+##           gridExtra      2.2.1
+##              gtable      0.2.0
+##              gtools      3.5.0
+##            gWidgets     0.0-54
+##  gWidgetsManipulate        1.0
+##                 h2o   3.10.3.6
+##               highr        0.6
+##               Hmisc      4.0-2
+##                 hms        0.3
+##           htmlTable        1.9
+##           htmltools      0.3.5
+##         htmlwidgets        0.8
+##              httpuv      1.3.3
+##                httr      1.2.1
+##            hunspell        2.3
+##              igraph      1.0.1
+##              inline     0.3.14
+##            installr     0.18.0
+##               irlba      2.1.2
+##           iterators      1.0.8
+##                jpeg      0.1-8
+##            jsonlite        1.3
+##       knitcitations      1.0.7
+##               knitr     1.15.1
+##            labeling        0.3
+##            lambda.r      1.1.9
+##        latticeExtra     0.6-28
+##            lazyeval      0.2.0
+##               lintr      1.0.0
+##                lme4     1.1-12
+##                 loo      1.0.0
+##           lubridate      1.6.0
+##            magrittr        1.5
+##          manipulate      1.0.1
+##            markdown      0.7.7
+##        MatrixModels      0.4-1
+##         matrixStats     0.51.0
+##                mcmc      0.9-4
+##            MCMCpack      1.3-9
+##              memisc     0.99.8
+##             memoise      1.0.0
+##             metafor      1.9-9
+##                mime        0.5
+##              miniUI      0.1.1
+##               minqa      1.2.4
+##              mnormt      1.5-5
+##        ModelMetrics      1.1.0
+##             munsell      0.4.3
+##                 MVR     1.31.0
+##             mvtnorm      1.0-6
+##            nhstplot      1.0.1
+##              nloptr      1.0.4
+##                 NMF     0.20.6
+##             openssl      0.9.6
+##                osfr 0.0.0.9000
+##             packrat    0.4.8-1
+##              pacman      0.4.1
+##             pbapply      1.3-2
+##            pbkrtest      0.4-6
+##            pkgmaker       0.22
+##                 PKI      0.1-3
+##                plyr      1.8.4
+##                 png      0.1-7
+##           polspline     1.1.12
+##              praise      1.0.0
+##                 psy        1.1
+##               psych     1.6.12
+##                 pwr      1.2-0
+##           qualtRics        0.3
+##            quantreg       5.29
+##              R2jags      0.5-7
+##           R2WinBUGS     2.1-21
+##                  R6      2.2.0
+##            rappdirs      0.3.1
+##             rCharts      0.4.5
+##        RColorBrewer      1.1-2
+##                Rcpp     0.12.9
+##           RcppEigen  0.3.2.9.0
+##               RCurl   1.95-4.8
+##               readr      1.0.0
+##          RefManageR     0.13.1
+##            registry        0.3
+##            reshape2      1.4.2
+##          rethinking       1.59
+##                 rex      1.1.1
+##            Rgitbook        0.9
+##               rJava      0.9-8
+##               rjson     0.2.15
+##             RJSONIO      1.3-0
+##           rmarkdown        1.3
+##            rngtools      1.2.4
+##                Rook      1.1-1
+##            roxygen2      6.0.1
+##           rprojroot        1.2
+##             rpsychi        0.8
+##           rsconnect        0.7
+##               rstan     2.14.1
+##          rstudioapi        0.6
+##               RUnit     0.4.31
+##           rversions      1.0.3
+##               rvest      0.3.2
+##              scales      0.4.1
+##             selectr      0.3-1
+##               servr        0.5
+##               shiny      1.0.0
+##             shinyBS       0.61
+##         shinyCustom      0.1.0
+##             shinyjs        0.9
+##           shinystan      2.3.0
+##         shinythemes      1.1.1
+##              slackr      1.4.2
+##             slidify        0.5
+##    slidifyLibraries      0.3.1
+##         sourcetools      0.1.5
+##             SparseM       1.74
+##             statmod     1.4.29
+##          stringdist    0.9.4.4
+##             stringi      1.1.2
+##             stringr      1.2.0
+##            testthat      1.0.2
+##             threejs      0.2.2
+##              tibble        1.2
+##               tutor      0.2.0
+##             viridis      0.3.4
+##             whisker      0.3-2
+##               withr      1.0.2
+##                xlsx      0.5.7
+##            xlsxjars      0.6.1
+##                 XML   3.98-1.5
+##                xml2      1.1.1
+##              xtable      1.8-2
+##                 xts      0.9-7
+##                yaml     2.1.14
+##               yarrr      0.1.4
+##                 zoo     1.7-14
+</code></pre>
+</div>
+
+<div class="language-r highlighter-rouge"><pre class="highlight"><code><span class="n">print</span><span class="p">(</span><span class="n">paste0</span><span class="p">(</span><span class="s2">"There are "</span><span class="p">,</span><span class="nf">dim</span><span class="p">(</span><span class="n">ip</span><span class="p">)[</span><span class="m">1</span><span class="p">],</span><span class="w"> </span><span class="s2">" packages installed in my laptop."</span><span class="p">))</span><span class="w">
+</span></code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>## [1] "There are 191 packages installed in my laptop."
+</code></pre>
+</div>
+
+<p>Richard’s book inspired me help people control their golems/ststistical models in the process of coding. In his book, literature and codes are separated. Readers who are not familiar with coding skill might hardly follow his literature. Literatural coding might be the best way to impliment the <code class="highlighter-rouge">Rethinking</code>. I am going to accumulating the codes of Bayesian statistics and thake notes of his and others literatures in the coming posts.</p>
+
+  </article>
+
+<div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    /*
+    var disqus_config = function () {
+        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        
+        s.src = '//scchen.disqus.com/embed.js';
+        
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+<!--     <h2 class="footer-heading">Sau-Chin Chen</h2> -->
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li><strong>Sau-Chin Chen</strong></li>
+
+          <li><a href="mailto:pmsp96@gmail.com">pmsp96@gmail.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/SCgeeker">
+              <span class="icon  icon--github">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+                </svg>
+              </span>
+
+              <span class="username">SCgeeker</span>
+            </a>
+          </li>
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+         <p class="text">
+This website is hosted by Sau-Chin Chen. You can check the source codes at my github page.
+ Subscribe the least updated <a href="/feed.xml">via RSS</a>.
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+    <link href="/feed.xml" type="application/rss+xml" rel="alternate" title="Subscribe the least posts (atom)" />
+  </body>
+
+</html>
